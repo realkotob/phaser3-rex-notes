@@ -1,3 +1,4 @@
+// Return null if (x, y) is out of any cell, or that cell is invisible
 var PointToCellIndex = function (x, y) {
     y -= (this.y + this.topLeftY);
     x -= (this.x + this.topLeftX);

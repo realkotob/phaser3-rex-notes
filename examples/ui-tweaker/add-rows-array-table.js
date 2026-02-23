@@ -289,6 +289,12 @@ var CreatePanel = function (scene) {
                     },
                 },
 
+                cellBackground: {
+                    strokeWidth: 0,
+                    'hover.strokeColor': 0xffffff,
+                    'hover.strokeWidth': 2
+                },
+
                 index: {
                     width: 25,
                 },

@@ -8,6 +8,7 @@ import NOOP from '../../../plugins/utils/object/NOOP.js';
 import SetItems from './SetItems.js';
 import Refresh from './Refresh.js';
 import ScrollMethods from './ScrollMethods.js';
+import PointerOverTest from './input/PointerOverTest.js';
 
 const GetValue = Phaser.Utils.Objects.GetValue;
 
@@ -151,6 +152,7 @@ class GridTable extends Scrollable {
 var methods = {
     setItems: SetItems,
     refresh: Refresh,
+    pointerOverTest: PointerOverTest,
 }
 Object.assign(
     GridTable.prototype,

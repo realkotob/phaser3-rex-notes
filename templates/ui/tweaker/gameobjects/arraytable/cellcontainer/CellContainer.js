@@ -1,6 +1,7 @@
 import Sizer from '../../../../sizer/Sizer.js';
 import Build from './Build.js';
 import OnClickButtonMethods from './OnClickButtonMethods.js';
+import OnPointerOverOutMethods from './OnPointerOverOutMethods.js';
 
 class CellContainer extends Sizer {
     constructor(scene, config) {
@@ -69,6 +70,7 @@ Object.assign(
     CellContainer.prototype,
     Methods,
     OnClickButtonMethods,
+    OnPointerOverOutMethods,
 )
 
 export default CellContainer;

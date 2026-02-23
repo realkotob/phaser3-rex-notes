@@ -4,6 +4,7 @@ import MonitorTargetMethods from './MonitorTargetMethods.js';
 import InputRowTitleWidthMethods from './InputRowTitleWidthMethods.js';
 import InstallAddButton from './InstallAddButton.js';
 import InstallClearButton from './InstallClearButton.js';
+import InstallCellInteractiveEvents from './InstallCellInteractiveEvents.js';
 import OnClickButtonMethods from './OnClickButtonMethods.js';
 
 class ArrayTable extends GridTable {
@@ -16,6 +17,7 @@ class ArrayTable extends GridTable {
 
         InstallClearButton.call(this, config);
         InstallAddButton.call(this, config);
+        InstallCellInteractiveEvents.call(this, config);
     }
 
     destroy(fromScene) {
