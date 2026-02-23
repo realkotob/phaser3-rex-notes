@@ -1,4 +1,5 @@
 import KeyMap from '../../../utils/input/KeyMap.js';
+import CreateFakeKeyboardEvent from '../../../utils/input/CreateFakeKeyboardEvent.js';
 
 const Key = Phaser.Input.Keyboard.Key;
 const AddItem = Phaser.Utils.Array.Add;
@@ -135,14 +136,6 @@ class KeyHub extends Key {
     }
 }
 
-var FakeEvent = {
-    timeStamp: 0,
-    keyCode: 0,
-    altKey: false,
-    ctrlKey: false,
-    shiftKey: false,
-    metaKey: false,
-    location: 0,
-};
+var FakeEvent = CreateFakeKeyboardEvent();
 
 export default KeyHub;
