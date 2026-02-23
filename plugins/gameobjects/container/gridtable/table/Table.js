@@ -225,7 +225,10 @@ class Table {
     }
 
     colRowToCellIndex(colIdx, rowIdx) {
-        if (colIdx >= this.colCount) {
+        if (
+            (colIdx < 0) || (colIdx >= this.colCount) ||
+            (rowIdx < 0) || (rowIdx >= this.rowCount)
+        ) {
             return null;
         }
         return (rowIdx * this.colCount) + colIdx;
