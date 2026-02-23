@@ -386,20 +386,32 @@ class GridTable extends ContainerLite {
         return w;
     }
 
-    get bottomLeftY() {
-        return -(this.displayHeight * this.originY) + this.displayHeight;
+    get topLeftX() {
+        return -(this.displayWidth * this.originX);
+    }
+    get topLeftY() {
+        return -(this.displayHeight * this.originY);
     }
 
     get topRightX() {
         return -(this.displayWidth * this.originX) + this.displayWidth;
     }
-
-    get topLeftX() {
-        return -(this.displayWidth * this.originX);
+    get topRightY() {
+        return this.topLeftY;
     }
 
-    get topLeftY() {
-        return -(this.displayHeight * this.originY)
+    get bottomLeftY() {
+        return -(this.displayHeight * this.originY) + this.displayHeight;
+    }
+    get bottomLeftX() {
+        return this.topLeftX;
+    }
+
+    get bottomRightX() {
+        return this.topRightX;
+    }
+    get bottomRightY() {
+        return this.bottomLeftY;
     }
 
     get bottomBound() {

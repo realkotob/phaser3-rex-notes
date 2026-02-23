@@ -2,6 +2,13 @@
 var PointToCellIndex = function (x, y) {
     y -= (this.y + this.topLeftY);
     x -= (this.x + this.topLeftX);
+    if (
+        (x < 0) || (x >= this.displayWidth) ||
+        (y < 0) || (y >= this.displayHeight)
+    ) {
+        return null;
+    }
+
     var offsetTableOY = this.tableOY - ((this.scrollMode === 0) ? y : x);
     var offsetTableOX = this.tableOX - ((this.scrollMode === 0) ? x : y);
 
