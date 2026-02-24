@@ -12,7 +12,7 @@ class ArrayTable extends GridTable {
     constructor(scene, config) {
         SetValue(config, 'reuseCellContainer', true);
         SetValue(config, 'enableLayer', true);
-        SetValue(config, 'table.interactive.over.mode', 'boundary');
+        SetValue(config, 'table.over.mode', 'boundary');
 
         super(scene, config);
         this.type = 'rexTweaker.ArrayTable';

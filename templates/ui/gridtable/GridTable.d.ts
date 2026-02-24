@@ -1,6 +1,10 @@
 // import * as Phaser from 'phaser';
 import Scrollable from '../utils/scrollable/Scrollable';
 import GridTableCore from '../../../plugins/gridtable'
+import Button from '../../../plugins/input/button/Button';
+import Tap from '../../../plugins/input/gestures/tap/Tap';
+import Press from '../../../plugins/input/gestures/press/Press';
+import Swipe from '../../../plugins/input/gestures/swipe/Swipe';
 
 export default GridTable;
 
@@ -29,6 +33,19 @@ declare namespace GridTable {
         cellContainer: Phaser.GameObjects.GameObject | null,
         gridTable: GridTable,
     ) => Phaser.GameObjects.GameObject | null;
+
+    /**
+     * Pointer-over detection configuration for table cells.
+     */
+    interface IOverCellConfig {
+        /**
+         * Pointer-over test mode.
+         *
+         * - `undefined` or `pointer`: Use table input events.
+         * - `boundary`: Use global pointer-move boundary test.
+         */
+        mode?: 'pointer' | 'boundary',
+    }
 
     interface IConfig extends Scrollable.IConfig {
         /**
@@ -127,9 +144,29 @@ declare namespace GridTable {
              */
             mask?: GridTableCore.MaskConfig,
             /**
-             * True to enable cell interaction.
+             * Set to true to enable table interactions.
              */
             interactive?: boolean,
+            /**
+             * Click behavior configuration, or false to disable click events.
+             */
+            click?: Button.IConfig | false,
+            /**
+             * Pointer-over detection behavior configuration.
+             */
+            over?: IOverCellConfig | false,
+            /**
+             * Tap gesture configuration, or false to disable tap events.
+             */
+            tap?: Tap.IConfig | false,
+            /**
+             * Press gesture configuration, or false to disable press events.
+             */
+            press?: Press.IConfig | false,
+            /**
+             * Swipe gesture configuration, or false to disable swipe events.
+             */
+            swipe?: Swipe.IConfig | false,
             /**
              * True to reuse cell containers.
              */

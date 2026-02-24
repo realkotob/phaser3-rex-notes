@@ -128,6 +128,9 @@ var table = scene.rexUI.add.gridTable({
         reuseCellContainer: false,
         // startFromBottom: false,
 
+        // over: {
+        //     mode: 'pointer',  // 'pointer' or 'boundary'
+        // },
         // click: undefined,
         // tap: undefined,
         // press: undefined,
@@ -325,14 +328,24 @@ var table = scene.rexUI.add.gridTable({
         - `false` : Start from top. Default behavior.
         - `true` : If cells' height is less then a page, align cells to bottom.
     - `table.interactive` : Set `true` to install touch events (tap/press/over/out/click). Default value is `true`.
+    - `table.over` : Pointer-over behavior configuration, if `table.interactive` is `true`.
+        - `undefined` : Use default over behavior.
+        - `false` : Disable Pointer-over detector.
+        - `table.over.mode` :
+            - `undefined`, or `'pointer'` : Use table input events (`pointermove`, `pointerover`, `pointerout`) to detect over/out.
+            - `'boundary'` : Use global `pointermove` boundary testing.          
     - `table.click` : [Configuration of cell-click behavior](button.md#create-instance), if `table.interactive` is `true`.
         - `undefined` : Use default click behavior.
+        - `false` : Disable click events.
     - `table.tap` : [Configuration of cell-tap behavior](gesture-tap.md#create-instance), if `table.interactive` is `true`.
         - `undefined` : Use default tap behavior.
+        - `false` : Disable tap events.
     - `table.press` : [Configuration of cell-press behavior](gesture-press.md#create-instance), if `table.interactive` is `true`.
         - `undefined` : Use default press behavior.
+        - `false` : Disable press events.
     - `table.swipe` : [Configuration of cell-swipe behavior](gesture-swipe.md#create-instance), if `table.interactive` is `true`.
         - `undefined` : Use default swipe behavior.
+        - `false` : Disable swipe events.
 - `slider` : Componments of slider, optional.
     - `slider.background` : Game object of slider background, optional.
     - `slider.track` : Game object of track.
