@@ -1,34 +1,34 @@
 import EmitCellEvent from './EmitCellEvent.js';
 
+const GetValue = Phaser.Utils.Objects.GetValue;
+
 var OverCell = function (table, tableConfig) {
-    table
-        .on('pointermove', OnMove, this)
-        .on('pointerover', OnMove, this)
-        .on('pointerout', OnOut, this)  // pointer-up is included too
-}
+    var overConfig = GetValue(tableConfig, 'over', undefined);
+    var overTestMode = GetValue(overConfig, 'mode', undefined);
 
-var OnMove = function (pointer, localX, localY, event) {
-    var table = this.childrenMap.child;
-    var camera = pointer.camera;
-    var px = pointer.worldX + camera.scrollX * (table.scrollFactorX - 1);
-    var py = pointer.worldY + camera.scrollY * (table.scrollFactorY - 1);
+    if (overTestMode === 'boundary') {
+        // Use global input detecting
+        var OnMove = function (pointer, currentlyOver) {
+            this.pointerOverTest(pointer);
+        }
+        table.scene.input.on('pointermove', OnMove, this);
 
-    var cellIndex = table.pointToCellIndex(px, py);
-    if (cellIndex === table.input.lastOverCellIndex) {
-        return;
+    } else {
+        // Attach input detector to table game object
+        var OnMove = function (pointer, localX, localY, event) {
+            this.pointerOverTest(pointer, event);
+        }
+        var OnOut = function (pointer, event) {
+            var table = this.childrenMap.child;
+            var cellIndex = table.input.lastOverCellIndex;
+            table.input.lastOverCellIndex = undefined;
+            EmitCellEvent(this.eventEmitter, 'cell.out', table, cellIndex, undefined, pointer, event);
+        }
+        table
+            .on('pointermove', OnMove, this)
+            .on('pointerover', OnMove, this)
+            .on('pointerout', OnOut, this)  // pointer-up is included too
     }
-
-    var preCellIndex = table.input.lastOverCellIndex;
-    table.input.lastOverCellIndex = cellIndex;
-    EmitCellEvent(this.eventEmitter, 'cell.out', table, preCellIndex, undefined, pointer, event);
-    EmitCellEvent(this.eventEmitter, 'cell.over', table, cellIndex, undefined, pointer, event);
-}
-
-var OnOut = function (pointer, event) {
-    var table = this.childrenMap.child;
-    var cellIndex = table.input.lastOverCellIndex;
-    table.input.lastOverCellIndex = undefined;
-    EmitCellEvent(this.eventEmitter, 'cell.out', table, cellIndex, undefined, pointer, event);
 }
 
 export default OverCell;

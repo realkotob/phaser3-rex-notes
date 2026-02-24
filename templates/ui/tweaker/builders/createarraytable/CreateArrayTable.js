@@ -20,8 +20,6 @@ var CreateArrayTable = function (parent, config, style) {
 
     // table config
     var tableConfig = GetValue(config, 'table', undefined, style) || {};
-    tableConfig.reuseCellContainer = true;
-    tableConfig.enableLayer = true;
 
     // slider
     var slider = CreateSlider(scene, config.slider, style.slider);

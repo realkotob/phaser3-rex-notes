@@ -73,8 +73,9 @@ class GridTable extends Scrollable {
             this.resizeControllerFlag = true;
         }, this);
 
-        if (GetValue(tableConfig, 'interactive', true)) {
-            TableSetInteractive.call(this, table, tableConfig);
+        var interactiveConfig = GetValue(tableConfig, 'interactive', true);
+        if (interactiveConfig) {
+            TableSetInteractive.call(this, table, interactiveConfig);
         }
 
         this.setItems(GetValue(config, 'items'), false);

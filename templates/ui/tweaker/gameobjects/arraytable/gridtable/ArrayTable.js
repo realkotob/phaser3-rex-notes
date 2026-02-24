@@ -6,9 +6,14 @@ import InstallAddButton from './InstallAddButton.js';
 import InstallClearButton from './InstallClearButton.js';
 import InstallCellInteractiveEvents from './InstallCellInteractiveEvents.js';
 import OnClickButtonMethods from './OnClickButtonMethods.js';
+import SetValue from '../../../../../../plugins/utils/object/SetValue.js';
 
 class ArrayTable extends GridTable {
     constructor(scene, config) {
+        SetValue(config, 'reuseCellContainer', true);
+        SetValue(config, 'enableLayer', true);
+        SetValue(config, 'table.interactive.over.mode', 'boundary');
+
         super(scene, config);
         this.type = 'rexTweaker.ArrayTable';
 
