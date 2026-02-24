@@ -30,7 +30,7 @@ var PointerOverTest = function (pointer, event) {
         }
 
         if (event === undefined) {
-            event = CreateFakeInputEvent(pointer.event);
+            event = CreateFakeInputEvent();
         }
 
         table.input.lastOverCellIndex = currentIndex;

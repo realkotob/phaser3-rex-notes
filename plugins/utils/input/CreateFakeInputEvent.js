@@ -1,8 +1,7 @@
-var CreateFakeInputEvent = function (sourceEvent) {
+var CreateFakeInputEvent = function () {
     return {
         cancelled: false,
         isSynthetic: true,
-        sourceEvent: sourceEvent,
         stopPropagation() { this.cancelled = true; }
     }
 }
