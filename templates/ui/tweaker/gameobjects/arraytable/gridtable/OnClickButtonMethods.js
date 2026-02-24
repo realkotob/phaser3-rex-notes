@@ -7,6 +7,7 @@ export default {
         this.lastItemsCount = this.items.length; // Prevent monitor triggering
 
         this.refresh(); // Invoke createCellContainerCallback for each cell again
+        this.resetPointerOver();
     },
 
     addItem(item) {
@@ -25,10 +26,14 @@ export default {
             .setChildLocalAlpha(cellContainer, 0)
             .setChildLocalScale(cellContainer, 1, 0)
 
+        var self = this;
         cellContainer.tweenSelf({
             alpha: 1,
             scaleY: 1,
             duration: 500,
+            onComplete() {
+                self.resetPointerOver();
+            }
         })
         return this;
     },
@@ -46,6 +51,7 @@ export default {
                         self.items.length = 0;
                         self.lastItemsCount = self.items.length; // Prevent monitor triggering
                         self.refresh();
+                        self.resetPointerOver();
                     }
                 })
             } else {
