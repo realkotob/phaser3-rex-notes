@@ -5,7 +5,7 @@ var InstallClearButton = function (config) {
     }
 
     button.onClick(function () {
-        this.clearItems();
+        this.clearItemsWithTransition();
     }, this)
 }
 

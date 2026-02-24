@@ -8,7 +8,7 @@ var InstallAddButton = function (config) {
 
     button.onClick(function () {
         var item = createDefaultItemCallback();
-        this.addItem(item);
+        this.addItemWithTransition(item);
     }, this)
 }
 

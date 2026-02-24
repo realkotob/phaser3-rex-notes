@@ -5,17 +5,7 @@ export default {
             return;
         }
 
-        var self = this;
-        this.tweenSelf({
-            alpha: 0,
-            scaleY: 0,
-            duration: 500,
-            onComplete() {
-                var cellItem = self.cellItem;
-                self.cellItem = undefined;
-                self.gridTable.deleteItem(cellItem);
-            },
-        })
+        this.gridTable.deleteItemWithTransition(this);
     },
 
     onClickMoveUpButton() {

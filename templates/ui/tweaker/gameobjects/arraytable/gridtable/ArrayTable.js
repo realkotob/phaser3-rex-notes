@@ -6,6 +6,7 @@ import InstallAddButton from './InstallAddButton.js';
 import InstallClearButton from './InstallClearButton.js';
 import InstallCellInteractiveEvents from './InstallCellInteractiveEvents.js';
 import OnClickButtonMethods from './OnClickButtonMethods.js';
+import TransitionMethods from './TransitionMethods.js';
 import SetValue from '../../../../../../plugins/utils/object/SetValue.js';
 
 class ArrayTable extends GridTable {
@@ -69,6 +70,7 @@ Object.assign(
     MonitorTargetMethods,
     InputRowTitleWidthMethods,
     OnClickButtonMethods,
+    TransitionMethods,
 )
 
 export default ArrayTable;
