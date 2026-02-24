@@ -76929,7 +76929,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
     class ArrayTable extends GridTable {
         constructor(scene, config) {
             SetValue(config, 'reuseCellContainer', true);
-            SetValue(config, 'enableLayer', true);
+            SetValue(config, 'table.enableLayer', true);
             SetValue(config, 'table.over.mode', 'boundary');
 
             super(scene, config);
