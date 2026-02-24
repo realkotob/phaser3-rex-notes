@@ -3613,7 +3613,10 @@
         }
 
         colRowToCellIndex(colIdx, rowIdx) {
-            if (colIdx >= this.colCount) {
+            if (
+                (colIdx < 0) || (colIdx >= this.colCount) ||
+                (rowIdx < 0) || (rowIdx >= this.rowCount)
+            ) {
                 return null;
             }
             return (rowIdx * this.colCount) + colIdx;
@@ -4875,9 +4878,17 @@
         return cell && this.visibleCells.contains(cell);
     };
 
+    // Return null if (x, y) is out of any cell, or that cell is invisible
     var PointToCellIndex = function (x, y) {
         y -= (this.y + this.topLeftY);
         x -= (this.x + this.topLeftX);
+        if (
+            (x < 0) || (x >= this.displayWidth) ||
+            (y < 0) || (y >= this.displayHeight)
+        ) {
+            return null;
+        }
+
         var offsetTableOY = this.tableOY - ((this.scrollMode === 0) ? y : x);
         var offsetTableOX = this.tableOX - ((this.scrollMode === 0) ? x : y);
 
@@ -5482,20 +5493,32 @@
             return w;
         }
 
-        get bottomLeftY() {
-            return -(this.displayHeight * this.originY) + this.displayHeight;
+        get topLeftX() {
+            return -(this.displayWidth * this.originX);
+        }
+        get topLeftY() {
+            return -(this.displayHeight * this.originY);
         }
 
         get topRightX() {
             return -(this.displayWidth * this.originX) + this.displayWidth;
         }
-
-        get topLeftX() {
-            return -(this.displayWidth * this.originX);
+        get topRightY() {
+            return this.topLeftY;
         }
 
-        get topLeftY() {
-            return -(this.displayHeight * this.originY)
+        get bottomLeftY() {
+            return -(this.displayHeight * this.originY) + this.displayHeight;
+        }
+        get bottomLeftX() {
+            return this.topLeftX;
+        }
+
+        get bottomRightX() {
+            return this.topRightX;
+        }
+        get bottomRightY() {
+            return this.bottomLeftY;
         }
 
         get bottomBound() {
