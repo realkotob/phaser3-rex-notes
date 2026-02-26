@@ -1,7 +1,7 @@
 import BaseGeom from '../base/BaseGeom.js';
 import StrokePathWebGL from '../../../utils/render/StrokePathWebGL.js';
 import FillStyleCanvas from '../../../utils/render/FillStyleCanvas.js';
-import LineStyleCanvas from '../../../utils/render/LineStyleCanvas.js';
+import StrokePathCanvas from '../../../utils/render/StrokePathCanvas.js';
 import StrokePathMethods from '../../../utils/strokepath/StrokePathMethods.js';
 
 const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
@@ -142,10 +142,7 @@ class Rectangle extends BaseGeom {
         }
 
         if (this.isStroked) {
-            LineStyleCanvas(ctx, this);
-            ctx.beginPath();
-            ctx.rect(-dx, -dy, this.width, this.height);
-            ctx.stroke();
+            StrokePathCanvas(ctx, this, dx, dy);
         }
     }
 }

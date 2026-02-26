@@ -1,6 +1,11 @@
 import phaser from 'phaser/src/phaser.js';
 import CustomShapesPlugin from '../../plugins/customshapes-plugin.js';
 
+
+const FILL_COLOR = 0x1B1F2A;
+const STROKE_COLOR = 0x2F3B55;
+const LINE_WIDTH = 4;
+
 class Demo extends Phaser.Scene {
     constructor() {
         super({
@@ -11,17 +16,29 @@ class Demo extends Phaser.Scene {
     preload() { }
 
     create() {
-        CreateShapeGameObject(this)
+        CreateTriangleShape(this)
             .setSize(200, 200)
-            .setPosition(400, 300)
+            .setPosition(150, 200)
+
+        CreateRoundRectangleShape(this)
+            .setSize(200, 200)
+            .setPosition(400, 200)
+
+        CreateRectangleShape(this)
+            .setSize(200, 200)
+            .setPosition(650, 200)
+
+        CreatePieShape(this)
+            .setSize(200, 200)
+            .setPosition(150, 450)
 
     }
 
     update() { }
 }
 
-var CreateShapeGameObject = function (scene) {
-    var shape = scene.add.rexCustomShapes({
+var CreateRoundRectangleShape = function (scene) {
+    return scene.add.rexCustomShapes({
         type: 'shape',
         create: {
             roundRectangle: 1
@@ -34,45 +51,96 @@ var CreateShapeGameObject = function (scene) {
                 height = width;
             var x = centerX - radius,
                 y = centerY - radius;
-            var lineWidth = 4;
-            var radius = lineWidth * 3;
-            var fillColor = 0x1B1F2A;
-            var strokeColor = 0x2F3B55;
+            var radius = LINE_WIDTH * 3;
 
             var shape = this.getShapes()[0];
             if (this.isSizeChanged) {
-                var halfBoxLineWidth = lineWidth / 2;
+                var halfBoxLineWidth = LINE_WIDTH / 2;
                 shape
                     .setTopLeftPosition(x + halfBoxLineWidth, y + halfBoxLineWidth)
-                    .setSize(width - lineWidth, height - lineWidth)
+                    .setSize(width - LINE_WIDTH, height - LINE_WIDTH)
                     .setRadius(radius)
                     .setDashPattern([30, 30])
             }
 
-            shape.fillStyle(fillColor).lineStyle(lineWidth, strokeColor)
+            shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
         }
     })
+}
 
-    shape.setColor = function (color) {
-        shape.setFillStyle(color);
-        return shape;
-    }
+var CreateTriangleShape = function (scene) {
+    return scene.add.rexCustomShapes({
+        type: 'shape',
+        create: {
+            triangle: 1
+        },
+        update: function () {
+            var centerX = this.width / 2,
+                centerY = this.height / 2;
 
-    shape.setChecked = function (checked) {
-        if (checked === undefined) {
-            checked = true;
+            var shape = this.getShapes()[0];
+            if (this.isSizeChanged) {
+                var halfBoxLineWidth = LINE_WIDTH / 2;
+                shape
+                    .setP0(centerX, 0 + halfBoxLineWidth)
+                    .setP1(0 + halfBoxLineWidth, this.height - halfBoxLineWidth)
+                    .setP2(this.width - halfBoxLineWidth, this.height - halfBoxLineWidth)
+                    .setDashPattern([30, 30])
+            }
+
+            shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
         }
-        if (shape.checked === checked) {
-            return shape;
+    })
+}
+
+var CreateRectangleShape = function (scene) {
+    return scene.add.rexCustomShapes({
+        type: 'shape',
+        create: {
+            rectangle: 1
+        },
+        update: function () {
+            var centerX = this.width / 2,
+                centerY = this.height / 2;
+
+            var shape = this.getShapes()[0];
+            if (this.isSizeChanged) {
+                shape
+                    // Set size before set center
+                    .setSize(centerX - LINE_WIDTH, this.height - LINE_WIDTH)
+                    .setCenterPosition(centerX, centerY)
+                    .setDashPattern([30, 30])
+            }
+
+            shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
         }
-        shape.checked = checked;
-        shape.setDirty();
-        return shape;
-    }
+    })
+}
 
-    shape.setChecked(false);
+var CreatePieShape = function (scene) {
+    return scene.add.rexCustomShapes({
+        type: 'shape',
+        create: {
+            arc: 1
+        },
+        update: function () {
+            var centerX = this.width / 2,
+                centerY = this.height / 2;
 
-    return shape;
+            var shape = this.getShapes()[0];
+            if (this.isSizeChanged) {
+                var halfBoxLineWidth = LINE_WIDTH / 2;
+                shape
+                    .setRadius(centerX - halfBoxLineWidth, centerY - halfBoxLineWidth)
+                    .setCenterPosition(centerX, centerY)
+                    .setAngle(270 - 45, 270 + 45)
+                    .setPie()
+                    .setDashPattern([30, 30])
+            }
+
+            shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
+        }
+    })
 }
 
 var config = {

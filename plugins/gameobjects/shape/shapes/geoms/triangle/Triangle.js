@@ -1,10 +1,11 @@
 import BaseGeom from '../base/BaseGeom.js';
+import FillPathWebGL from '../../../utils/render/FillPathWebGL.js';
 import StrokePathWebGL from '../../../utils/render/StrokePathWebGL.js';
-import FillStyleCanvas from '../../../utils/render/FillStyleCanvas.js';
-import LineStyleCanvas from '../../../utils/render/LineStyleCanvas.js';
+import FillPathCanvas from '../../../utils/render/FillPathCanvas.js';
+import StrokePathCanvas from '../../../utils/render/StrokePathCanvas.js';
 import StrokePathMethods from '../../../utils/strokepath/StrokePathMethods.js';
 
-const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+const Earcut = Phaser.Geom.Polygon.Earcut;
 
 class Triangle extends BaseGeom {
     constructor(x0, y0, x1, y1, x2, y2) {
@@ -25,6 +26,7 @@ class Triangle extends BaseGeom {
         this.dashPattern = undefined;
         this.dashOffset = 0;
 
+        this.pathIndexes = [];
         this.closePath = true;
 
         this.setP0(x0, y0);
@@ -111,6 +113,7 @@ class Triangle extends BaseGeom {
         this.pathData.push(this.x1, this.y1);
         this.pathData.push(this.x2, this.y2);
         this.pathData.push(this.x0, this.y0);
+        this.pathIndexes = Earcut(this.pathData);
 
         super.updateData();
 
@@ -120,23 +123,7 @@ class Triangle extends BaseGeom {
 
     webglRender(pipeline, calcMatrix, alpha, dx, dy) {
         if (this.isFilled) {
-            var fillTintColor = GetTint(this.fillColor, this.fillAlpha * alpha);
-
-            var x0 = this.x0 - dx;
-            var y0 = this.y0 - dy;
-            var x1 = this.x1 - dx;
-            var y1 = this.y1 - dy;
-            var x2 = this.x2 - dx;
-            var y2 = this.y2 - dy;
-
-            var tx0 = calcMatrix.getX(x0, y0);
-            var ty0 = calcMatrix.getY(x0, y0);
-            var tx1 = calcMatrix.getX(x1, y1);
-            var ty1 = calcMatrix.getY(x1, y1);
-            var tx2 = calcMatrix.getX(x2, y2);
-            var ty2 = calcMatrix.getY(x2, y2);
-
-            pipeline.batchTri(this, tx0, ty0, tx1, ty1, tx2, ty2, 0, 0, 1, 1, fillTintColor, fillTintColor, fillTintColor, 2);
+            FillPathWebGL(pipeline, calcMatrix, this, alpha, dx, dy);
         }
 
         if (this.isStroked) {
@@ -145,29 +132,12 @@ class Triangle extends BaseGeom {
     }
 
     canvasRender(ctx, dx, dy) {
-        var x1 = this.x1 - dx;
-        var y1 = this.y1 - dy;
-        var x2 = this.x2 - dx;
-        var y2 = this.y2 - dy;
-        var x3 = this.x3 - dx;
-        var y3 = this.y3 - dy;
-
-        ctx.beginPath();
-
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.lineTo(x3, y3);
-
-        ctx.closePath();
-
         if (this.isFilled) {
-            FillStyleCanvas(ctx, this);
-            ctx.fill();
+            FillPathCanvas(ctx, this, dx, dy);
         }
 
         if (this.isStroked) {
-            LineStyleCanvas(ctx, this);
-            ctx.stroke();
+            StrokePathCanvas(ctx, this, dx, dy);
         }
     }
 }

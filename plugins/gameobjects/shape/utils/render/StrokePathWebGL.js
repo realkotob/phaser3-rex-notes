@@ -80,8 +80,6 @@ var StrokePathWebGL = function (pipeline, src, alpha, dx, dy) {
                 );
                 segLineIdx++;
 
-                console.log(px1, py1, px2, py2)
-
             } else {
                 segLineIdx = 0;
 
