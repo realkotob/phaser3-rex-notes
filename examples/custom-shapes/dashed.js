@@ -60,7 +60,7 @@ var CreateRoundRectangleShape = function (scene) {
                     .setTopLeftPosition(x + halfBoxLineWidth, y + halfBoxLineWidth)
                     .setSize(width - LINE_WIDTH, height - LINE_WIDTH)
                     .setRadius(radius)
-                    .setDashPattern([30, 30])
+                    .setDashPattern([40, 20])
             }
 
             shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
@@ -109,7 +109,9 @@ var CreateRectangleShape = function (scene) {
                     // Set size before set center
                     .setSize(this.width - LINE_WIDTH, this.height - LINE_WIDTH)
                     .setCenterPosition(centerX, centerY)
-                    .setDashPattern([30, 30])
+                    .setDashPattern({
+                        segments: 8
+                    })
             }
 
             shape.fillStyle(FILL_COLOR).lineStyle(LINE_WIDTH, STROKE_COLOR)
