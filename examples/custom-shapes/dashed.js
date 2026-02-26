@@ -76,7 +76,7 @@ var CreateShapeGameObject = function (scene) {
 }
 
 var config = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     parent: 'phaser-example',
     width: 800,
     height: 600,

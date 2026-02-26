@@ -1,8 +1,8 @@
 import BaseGeom from '../base/BaseGeom.js';
 import FillPathWebGL from '../../../utils/render/FillPathWebGL.js';
 import StrokePathWebGL from '../../../utils/render/StrokePathWebGL.js';
-import FillStyleCanvas from '../../../utils/render/FillStyleCanvas.js';
-import LineStyleCanvas from '../../../utils/render/LineStyleCanvas.js';
+import FillPathCanvas from '../../../utils/render/FillPathCanvas.js';
+import StrokePathCanvas from '../../../utils/render/StrokePathCanvas.js';
 import StrokePathMethods from '../../../utils/strokepath/StrokePathMethods.js';
 
 const Earcut = Phaser.Geom.Polygon.Earcut;
@@ -43,39 +43,12 @@ class PathBase extends BaseGeom {
     }
 
     canvasRender(ctx, dx, dy) {
-        var path = this.pathData;
-        var pathLength = path.length - 1;
-
-        var px1 = path[0] - dx;
-        var py1 = path[1] - dy;
-
-        ctx.beginPath();
-
-        ctx.moveTo(px1, py1);
-
-        if (!this.closePath) {
-            pathLength -= 2;
-        }
-
-        for (var i = 2; i < pathLength; i += 2) {
-            var px2 = path[i] - dx;
-            var py2 = path[i + 1] - dy;
-            ctx.lineTo(px2, py2);
-        }
-
-        if (this.closePath) {
-            ctx.closePath();
-        }
-
-
         if (this.isFilled) {
-            FillStyleCanvas(ctx, this);
-            ctx.fill();
+            FillPathCanvas(ctx, this, dx, dy);
         }
 
         if (this.isStroked) {
-            LineStyleCanvas(ctx, this);
-            ctx.stroke();
+            StrokePathCanvas(ctx, this, dx, dy);
         }
     }
 }

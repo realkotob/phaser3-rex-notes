@@ -21,7 +21,7 @@ var StrokePathWebGL = function (pipeline, src, alpha, dx, dy) {
     strokeTint.BL = strokeTintColor;
     strokeTint.BR = strokeTintColor;
 
-    var isDashed = src.isDashed;
+    var isDashed = src.isDashed && !!src.strokePathData;
     var path = (!isDashed) ? src.pathData : src.strokePathData;
     var pathLength = path.length - 1;
     var lineWidth = src.lineWidth;
