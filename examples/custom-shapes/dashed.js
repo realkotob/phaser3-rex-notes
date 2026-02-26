@@ -107,7 +107,7 @@ var CreateRectangleShape = function (scene) {
             if (this.isSizeChanged) {
                 shape
                     // Set size before set center
-                    .setSize(centerX - LINE_WIDTH, this.height - LINE_WIDTH)
+                    .setSize(this.width - LINE_WIDTH, this.height - LINE_WIDTH)
                     .setCenterPosition(centerX, centerY)
                     .setDashPattern([30, 30])
             }

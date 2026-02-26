@@ -512,7 +512,7 @@
         }
     };
 
-    const GetValue$2D = Phaser.Utils.Objects.GetValue;
+    const GetValue$2E = Phaser.Utils.Objects.GetValue;
     const BaseAdd = Base$2.prototype.add;
 
     var Add$8 = function (gameObject, config) {
@@ -584,13 +584,13 @@
             state.syncCameraFilter = config;
             state.syncDisplayList = config;
         } else {
-            state.syncPosition = GetValue$2D(config, 'syncPosition', true);
-            state.syncRotation = GetValue$2D(config, 'syncRotation', true);
-            state.syncScale = GetValue$2D(config, 'syncScale', true);
-            state.syncAlpha = GetValue$2D(config, 'syncAlpha', true);
-            state.syncScrollFactor = GetValue$2D(config, 'syncScrollFactor', true);
-            state.syncCameraFilter = GetValue$2D(config, 'syncCameraFilter', true);
-            state.syncDisplayList = GetValue$2D(config, 'syncDisplayList', true);
+            state.syncPosition = GetValue$2E(config, 'syncPosition', true);
+            state.syncRotation = GetValue$2E(config, 'syncRotation', true);
+            state.syncScale = GetValue$2E(config, 'syncScale', true);
+            state.syncAlpha = GetValue$2E(config, 'syncAlpha', true);
+            state.syncScrollFactor = GetValue$2E(config, 'syncScrollFactor', true);
+            state.syncCameraFilter = GetValue$2E(config, 'syncCameraFilter', true);
+            state.syncDisplayList = GetValue$2E(config, 'syncDisplayList', true);
         }
 
     };
@@ -2176,17 +2176,17 @@
         }
     };
 
-    const Rectangle$5 = Phaser.Geom.Rectangle;
+    const Rectangle$6 = Phaser.Geom.Rectangle;
     const Vector2 = Phaser.Math.Vector2;
     const RotateAround$6 = Phaser.Math.RotateAround;
     const P3Container$1 = Phaser.GameObjects.Container;
 
     var GetBounds = function (gameObject, output) {
         if (output === undefined) {
-            output = new Rectangle$5();
+            output = new Rectangle$6();
         } else if (output === true) {
             if (GlobRect$2 === undefined) {
-                GlobRect$2 = new Rectangle$5();
+                GlobRect$2 = new Rectangle$6();
             }
             output = GlobRect$2;
         }
@@ -2373,15 +2373,15 @@
         return output;
     };
 
-    const Rectangle$4 = Phaser.Geom.Rectangle;
+    const Rectangle$5 = Phaser.Geom.Rectangle;
     const Union = Phaser.Geom.Rectangle.Union;
 
     var GetBoundsOfGameObjects = function (gameObjects, out) {
         if (out === undefined) {
-            out = new Rectangle$4();
+            out = new Rectangle$5();
         } else if (out === true) {
             if (GlobRect$1 === undefined) {
-                GlobRect$1 = new Rectangle$4();
+                GlobRect$1 = new Rectangle$5();
             }
             out = GlobRect$1;
         }
@@ -2463,7 +2463,7 @@
         return (object instanceof GameObjectClass) || (object instanceof LayerClass);
     };
 
-    var GetValue$2C = Phaser.Utils.Objects.GetValue;
+    var GetValue$2D = Phaser.Utils.Objects.GetValue;
 
     var Snapshot = function (config) {
         if (!config) {
@@ -2473,13 +2473,13 @@
         var gameObjects = config.gameObjects;
         var renderTexture = config.renderTexture;  // renderTexture, or dynamicTexture
         var saveTexture = config.saveTexture;
-        var x = GetValue$2C(config, 'x', undefined);
-        var y = GetValue$2C(config, 'y', undefined);
-        var width = GetValue$2C(config, 'width', undefined);
-        var height = GetValue$2C(config, 'height', undefined);
-        var originX = GetValue$2C(config, 'originX', 0);
-        var originY = GetValue$2C(config, 'originY', 0);
-        var padding = GetValue$2C(config, 'padding', 0);
+        var x = GetValue$2D(config, 'x', undefined);
+        var y = GetValue$2D(config, 'y', undefined);
+        var width = GetValue$2D(config, 'width', undefined);
+        var height = GetValue$2D(config, 'height', undefined);
+        var originX = GetValue$2D(config, 'originX', 0);
+        var originY = GetValue$2D(config, 'originY', 0);
+        var padding = GetValue$2D(config, 'padding', 0);
 
         var scrollX, scrollY;
         if ((width === undefined) || (height === undefined) || (x === undefined) || (y === undefined)) {
@@ -2589,19 +2589,19 @@
         }
     };
 
-    const GetValue$2B = Phaser.Utils.Objects.GetValue;
+    const GetValue$2C = Phaser.Utils.Objects.GetValue;
 
     var DrawBounds$2 = function (gameObjects, graphics, config) {
         var strokeColor, lineWidth, fillColor, fillAlpha, padding, includeParent;
         if (typeof (config) === 'number') {
             strokeColor = config;
         } else {
-            strokeColor = GetValue$2B(config, 'color');
-            lineWidth = GetValue$2B(config, 'lineWidth');
-            fillColor = GetValue$2B(config, 'fillColor');
-            fillAlpha = GetValue$2B(config, 'fillAlpha');
-            padding = GetValue$2B(config, 'padding');
-            includeParent = GetValue$2B(config, 'includeParent');
+            strokeColor = GetValue$2C(config, 'color');
+            lineWidth = GetValue$2C(config, 'lineWidth');
+            fillColor = GetValue$2C(config, 'fillColor');
+            fillAlpha = GetValue$2C(config, 'fillAlpha');
+            padding = GetValue$2C(config, 'padding');
+            includeParent = GetValue$2C(config, 'includeParent');
         }
 
         if (strokeColor === undefined) { strokeColor = 0xffffff; }
@@ -2656,12 +2656,12 @@
 
     var Points = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }];
 
-    const GetValue$2A = Phaser.Utils.Objects.GetValue;
+    const GetValue$2B = Phaser.Utils.Objects.GetValue;
 
     var DrawBounds$1 = function (graphics, config) {
-        var drawContainer = GetValue$2A(config, 'drawContainer', true);
+        var drawContainer = GetValue$2B(config, 'drawContainer', true);
 
-        var gameObjects = GetValue$2A(config, 'children');
+        var gameObjects = GetValue$2B(config, 'children');
         if (gameObjects === undefined) {
             gameObjects = this.getAllVisibleChildren([this]);
         }
@@ -3042,7 +3042,7 @@
         return (object instanceof CameraClass);
     };
 
-    const Rectangle$3 = Phaser.Geom.Rectangle;
+    const Rectangle$4 = Phaser.Geom.Rectangle;
 
     var GetViewport = function (scene, camera, out) {
         if (!IsCameraObject(camera)) {
@@ -3051,7 +3051,7 @@
         }
 
         if (out === undefined) {
-            out = new Rectangle$3();
+            out = new Rectangle$4();
         } else if (out === true) {
             out = globRect;
         }
@@ -3063,7 +3063,7 @@
         }
     };
 
-    var globRect = new Rectangle$3();
+    var globRect = new Rectangle$4();
 
     var PushIntoBounds = function (bounds) {
         if (bounds === undefined) {
@@ -3433,7 +3433,7 @@
         QuickSet(child, globZone, align);
     };
 
-    const GetValue$2z = Phaser.Utils.Objects.GetValue;
+    const GetValue$2A = Phaser.Utils.Objects.GetValue;
     const Group$1 = Phaser.GameObjects.Group;
     const P3Container = Phaser.GameObjects.Container;
 
@@ -3445,13 +3445,13 @@
         if (typeof (config) === 'number') {
             color = config;
         } else {
-            color = GetValue$2z(config, 'color');
-            lineWidth = GetValue$2z(config, 'lineWidth');
-            var nameTextConfig = GetValue$2z(config, 'name', false);
+            color = GetValue$2A(config, 'color');
+            lineWidth = GetValue$2A(config, 'lineWidth');
+            var nameTextConfig = GetValue$2A(config, 'name', false);
             if (nameTextConfig) {
-                createTextCallback = GetValue$2z(nameTextConfig, 'createTextCallback', DefaultCreateTextCallback);
-                createTextCallbackScope = GetValue$2z(nameTextConfig, 'createTextCallbackScope', undefined);
-                textAlign = GetValue$2z(nameTextConfig, 'align', 'left-top');
+                createTextCallback = GetValue$2A(nameTextConfig, 'createTextCallback', DefaultCreateTextCallback);
+                createTextCallbackScope = GetValue$2A(nameTextConfig, 'createTextCallbackScope', undefined);
+                textAlign = GetValue$2A(nameTextConfig, 'align', 'left-top');
                 if (typeof (textAlign) === 'string') {
                     textAlign = AlignConst[textAlign];
                 }
@@ -3541,7 +3541,7 @@
 
     var GlobRect = undefined;
 
-    const GetValue$2y = Phaser.Utils.Objects.GetValue;
+    const GetValue$2z = Phaser.Utils.Objects.GetValue;
 
     var GetBoundsConfig$1 = function (config, out) {
         if (config === undefined) {
@@ -3557,10 +3557,10 @@
             out.top = config;
             out.bottom = config;
         } else {
-            out.left = GetValue$2y(config, 'left', 0);
-            out.right = GetValue$2y(config, 'right', 0);
-            out.top = GetValue$2y(config, 'top', 0);
-            out.bottom = GetValue$2y(config, 'bottom', 0);
+            out.left = GetValue$2z(config, 'left', 0);
+            out.right = GetValue$2z(config, 'right', 0);
+            out.top = GetValue$2z(config, 'top', 0);
+            out.bottom = GetValue$2z(config, 'bottom', 0);
         }
         return out;
     };
@@ -3876,7 +3876,7 @@
         }
     };
 
-    const GetValue$2x = Phaser.Utils.Objects.GetValue;
+    const GetValue$2y = Phaser.Utils.Objects.GetValue;
 
     var GetPadding$1 = function (padding, key) {
         if (key === undefined) {
@@ -3902,10 +3902,10 @@
             padding.top = key;
             padding.bottom = key;
         } else {
-            padding.left = GetValue$2x(key, 'left', 0);
-            padding.right = GetValue$2x(key, 'right', 0);
-            padding.top = GetValue$2x(key, 'top', 0);
-            padding.bottom = GetValue$2x(key, 'bottom', 0);
+            padding.left = GetValue$2y(key, 'left', 0);
+            padding.right = GetValue$2y(key, 'right', 0);
+            padding.top = GetValue$2y(key, 'top', 0);
+            padding.bottom = GetValue$2y(key, 'bottom', 0);
         }
         return padding;
     };
@@ -4628,7 +4628,7 @@
         }
     };
 
-    const GetValue$2w = Phaser.Utils.Objects.GetValue;
+    const GetValue$2x = Phaser.Utils.Objects.GetValue;
 
     class ComponentBase {
         constructor(parent, config) {
@@ -4637,7 +4637,7 @@
             this.isShutdown = false;
 
             // Event emitter, default is private event emitter
-            this.setEventEmitter(GetValue$2w(config, 'eventEmitter', true));
+            this.setEventEmitter(GetValue$2x(config, 'eventEmitter', true));
 
             // Register callback of parent destroy event, also see `shutdown` method
             if (this.parent) {
@@ -4718,7 +4718,7 @@
         ResizeGameObject(gameObject, width, height);
     };
 
-    const GetValue$2v = Phaser.Utils.Objects.GetValue;
+    const GetValue$2w = Phaser.Utils.Objects.GetValue;
 
     class Anchor extends ComponentBase {
         constructor(gameObject, config) {
@@ -4829,12 +4829,12 @@
             this.setSizePadding(paddingWidth, paddingHeight);
             this.setAspectRatio(aspectRatio);
 
-            var onResizeCallback = GetValue$2v(o, 'onResizeCallback', DefaultResizeCallback);
-            var onResizeCallbackScope = GetValue$2v(o, 'onResizeCallbackScope');
+            var onResizeCallback = GetValue$2w(o, 'onResizeCallback', DefaultResizeCallback);
+            var onResizeCallbackScope = GetValue$2w(o, 'onResizeCallbackScope');
             this.setResizeCallback(onResizeCallback, onResizeCallbackScope);
 
-            var onUpdateViewportCallback = GetValue$2v(o, 'onUpdateViewportCallback');
-            var onUpdateViewportCallbackScope = GetValue$2v(o, 'onUpdateViewportCallbackScope');
+            var onUpdateViewportCallback = GetValue$2w(o, 'onUpdateViewportCallback');
+            var onUpdateViewportCallbackScope = GetValue$2w(o, 'onUpdateViewportCallbackScope');
             this.setUpdateViewportCallback(onUpdateViewportCallback, onUpdateViewportCallbackScope);
 
             this.autoAnchor(o.enable);
@@ -5041,7 +5041,7 @@
         return this;
     };
 
-    const GetValue$2u = Phaser.Utils.Objects.GetValue;
+    const GetValue$2v = Phaser.Utils.Objects.GetValue;
 
     class TickTask extends ComponentBase {
         constructor(parent, config) {
@@ -5050,7 +5050,7 @@
             this._isRunning = false;
             this.isPaused = false;
             this.tickingState = false;
-            this.setTickingMode(GetValue$2u(config, 'tickingMode', 1));
+            this.setTickingMode(GetValue$2v(config, 'tickingMode', 1));
             // boot() later
         }
 
@@ -5154,7 +5154,7 @@
         'always': 2
     };
 
-    const GetValue$2t = Phaser.Utils.Objects.GetValue;
+    const GetValue$2u = Phaser.Utils.Objects.GetValue;
 
     class SceneUpdateTickTask extends TickTask {
         constructor(parent, config) {
@@ -5165,7 +5165,7 @@
 
             // If this.scene is not available, use game's 'step' event
             var defaultEventName = (this.scene) ? 'update' : 'step';
-            this.tickEventName = GetValue$2t(config, 'tickEventName', defaultEventName);
+            this.tickEventName = GetValue$2u(config, 'tickEventName', defaultEventName);
             this.isSceneTicker = !IsGameUpdateEvent(this.tickEventName);
 
         }
@@ -5201,7 +5201,7 @@
         return (eventName === 'step') || (eventName === 'poststep');
     };
 
-    const GetValue$2s = Phaser.Utils.Objects.GetValue;
+    const GetValue$2t = Phaser.Utils.Objects.GetValue;
     const Clamp$a = Phaser.Math.Clamp;
 
     class Timer {
@@ -5210,15 +5210,15 @@
         }
 
         resetFromJSON(o) {
-            this.state = GetValue$2s(o, 'state', IDLE$6);
-            this.timeScale = GetValue$2s(o, 'timeScale', 1);
-            this.delay = GetValue$2s(o, 'delay', 0);
-            this.repeat = GetValue$2s(o, 'repeat', 0);
-            this.repeatCounter = GetValue$2s(o, 'repeatCounter', 0);
-            this.repeatDelay = GetValue$2s(o, 'repeatDelay', 0);
-            this.duration = GetValue$2s(o, 'duration', 0);
-            this.nowTime = GetValue$2s(o, 'nowTime', 0);
-            this.justRestart = GetValue$2s(o, 'justRestart', false);
+            this.state = GetValue$2t(o, 'state', IDLE$6);
+            this.timeScale = GetValue$2t(o, 'timeScale', 1);
+            this.delay = GetValue$2t(o, 'delay', 0);
+            this.repeat = GetValue$2t(o, 'repeat', 0);
+            this.repeatCounter = GetValue$2t(o, 'repeatCounter', 0);
+            this.repeatDelay = GetValue$2t(o, 'repeatDelay', 0);
+            this.duration = GetValue$2t(o, 'duration', 0);
+            this.nowTime = GetValue$2t(o, 'nowTime', 0);
+            this.justRestart = GetValue$2t(o, 'justRestart', false);
         }
 
         toJSON() {
@@ -5426,19 +5426,19 @@
 
     }
 
-    const GetValue$2r = Phaser.Utils.Objects.GetValue;
+    const GetValue$2s = Phaser.Utils.Objects.GetValue;
     const GetAdvancedValue$4 = Phaser.Utils.Objects.GetAdvancedValue;
     const GetEaseFunction = Phaser.Tweens.Builders.GetEaseFunction;
 
     class EaseValueTaskBase extends TimerTickTask {
         resetFromJSON(o) {
-            this.timer.resetFromJSON(GetValue$2r(o, 'timer'));
-            this.setEnable(GetValue$2r(o, 'enable', true));
-            this.setTarget(GetValue$2r(o, 'target', this.parent));
+            this.timer.resetFromJSON(GetValue$2s(o, 'timer'));
+            this.setEnable(GetValue$2s(o, 'enable', true));
+            this.setTarget(GetValue$2s(o, 'target', this.parent));
             this.setDelay(GetAdvancedValue$4(o, 'delay', 0));
             this.setDuration(GetAdvancedValue$4(o, 'duration', 1000));
-            this.setEase(GetValue$2r(o, 'ease', 'Linear'));
-            this.setRepeat(GetValue$2r(o, 'repeat', 0));
+            this.setEase(GetValue$2s(o, 'ease', 'Linear'));
+            this.setRepeat(GetValue$2s(o, 'repeat', 0));
 
             return this;
         }
@@ -5558,7 +5558,7 @@
         }
     }
 
-    const GetValue$2q = Phaser.Utils.Objects.GetValue;
+    const GetValue$2r = Phaser.Utils.Objects.GetValue;
     const GetAdvancedValue$3 = Phaser.Utils.Objects.GetAdvancedValue;
     const Linear$a = Phaser.Math.Linear;
 
@@ -5578,7 +5578,7 @@
         resetFromJSON(o) {
             super.resetFromJSON(o);
 
-            this.setMode(GetValue$2q(o, 'mode', 0));
+            this.setMode(GetValue$2r(o, 'mode', 0));
             this.setScaleRange(
                 GetAdvancedValue$3(o, 'start', undefined),
                 GetAdvancedValue$3(o, 'end', 0)
@@ -5969,7 +5969,7 @@
         });
     };
 
-    const GetValue$2p = Phaser.Utils.Objects.GetValue;
+    const GetValue$2q = Phaser.Utils.Objects.GetValue;
     const GetAdvancedValue$2 = Phaser.Utils.Objects.GetAdvancedValue;
     const Linear$9 = Phaser.Math.Linear;
 
@@ -5986,7 +5986,7 @@
         resetFromJSON(o) {
             super.resetFromJSON(o);
 
-            this.setMode(GetValue$2p(o, 'mode', 0));
+            this.setMode(GetValue$2q(o, 'mode', 0));
             this.setAlphaRange(
                 GetAdvancedValue$2(o, 'start', this.parent.alpha),
                 GetAdvancedValue$2(o, 'end', 0)
@@ -6218,7 +6218,7 @@
         });
     };
 
-    const GetValue$2o = Phaser.Utils.Objects.GetValue;
+    const GetValue$2p = Phaser.Utils.Objects.GetValue;
     const GetAdvancedValue$1 = Phaser.Utils.Objects.GetAdvancedValue;
     const Linear$8 = Phaser.Math.Linear;
 
@@ -6235,7 +6235,7 @@
         resetFromJSON(o) {
             super.resetFromJSON(o);
 
-            this.setMode(GetValue$2o(o, 'mode', 0));
+            this.setMode(GetValue$2p(o, 'mode', 0));
 
             if (o && (o.hasOwnProperty('x') || o.hasOwnProperty('y'))) {
                 var endX = GetAdvancedValue$1(o, 'x', undefined);
@@ -6552,7 +6552,7 @@
         });
     };
 
-    const GetValue$2n = Phaser.Utils.Objects.GetValue;
+    const GetValue$2o = Phaser.Utils.Objects.GetValue;
 
     class ShakePosition extends TickTask {
         constructor(gameObject, config) {
@@ -6565,16 +6565,16 @@
         }
 
         resetFromJSON(o) {
-            this.timer.resetFromJSON(GetValue$2n(o, 'timer'));
-            this.setEnable(GetValue$2n(o, 'enable', true));
-            this.setMode(GetValue$2n(o, 'mode', 1));
-            this.isRunning = GetValue$2n(o, 'isRunning', false);
-            this.setMagnitudeMode(GetValue$2n(o, 'magnitudeMode', 1));
-            this.setAxisMode(GetValue$2n(o, "axis", 0));
-            this.setDuration(GetValue$2n(o, 'duration', 500));
-            this.setMagnitude(GetValue$2n(o, 'magnitude', 10));
-            this.ox = GetValue$2n(o, 'ox', undefined);
-            this.oy = GetValue$2n(o, 'oy', undefined);
+            this.timer.resetFromJSON(GetValue$2o(o, 'timer'));
+            this.setEnable(GetValue$2o(o, 'enable', true));
+            this.setMode(GetValue$2o(o, 'mode', 1));
+            this.isRunning = GetValue$2o(o, 'isRunning', false);
+            this.setMagnitudeMode(GetValue$2o(o, 'magnitudeMode', 1));
+            this.setAxisMode(GetValue$2o(o, "axis", 0));
+            this.setDuration(GetValue$2o(o, 'duration', 500));
+            this.setMagnitude(GetValue$2o(o, 'magnitude', 10));
+            this.ox = GetValue$2o(o, 'ox', undefined);
+            this.oy = GetValue$2o(o, 'oy', undefined);
             return this;
         }
 
@@ -6675,8 +6675,8 @@
         start(duration, magnitude) {
             if (typeof (duration) !== 'number') {
                 var config = duration;
-                magnitude = GetValue$2n(config, 'magnitude', undefined);
-                duration = GetValue$2n(config, 'duration', undefined);
+                magnitude = GetValue$2o(config, 'magnitude', undefined);
+                duration = GetValue$2o(config, 'duration', undefined);
             }
             if (magnitude !== undefined) {
                 this.setMagnitude(magnitude);
@@ -6851,7 +6851,7 @@
         },
     };
 
-    const GetValue$2m = Phaser.Utils.Objects.GetValue;
+    const GetValue$2n = Phaser.Utils.Objects.GetValue;
     const Linear$7 = Phaser.Math.Linear;
 
     class EaseValueTask extends EaseValueTaskBase {
@@ -6870,16 +6870,16 @@
             }
 
             var target = this.target;
-            this.propertyKey = GetValue$2m(config, 'key', 'value');
+            this.propertyKey = GetValue$2n(config, 'key', 'value');
             var currentValue = target[this.propertyKey];
-            this.fromValue = GetValue$2m(config, 'from', currentValue);
-            this.toValue = GetValue$2m(config, 'to', currentValue);
+            this.fromValue = GetValue$2n(config, 'from', currentValue);
+            this.toValue = GetValue$2n(config, 'to', currentValue);
 
-            this.setEase(GetValue$2m(config, 'ease', this.ease));
-            this.setDuration(GetValue$2m(config, 'duration', this.duration));
-            this.setRepeat(GetValue$2m(config, 'repeat', 0));
-            this.setDelay(GetValue$2m(config, 'delay', 0));
-            this.setRepeatDelay(GetValue$2m(config, 'repeatDelay', 0));
+            this.setEase(GetValue$2n(config, 'ease', this.ease));
+            this.setDuration(GetValue$2n(config, 'duration', this.duration));
+            this.setRepeat(GetValue$2n(config, 'repeat', 0));
+            this.setDelay(GetValue$2n(config, 'delay', 0));
+            this.setRepeatDelay(GetValue$2n(config, 'repeatDelay', 0));
 
             this.timer
                 .setDuration(this.duration)
@@ -7606,7 +7606,7 @@
         },
     };
 
-    var GetValue$2l = function (source, key, defaultValue, altSource) {
+    var GetValue$2m = function (source, key, defaultValue, altSource) {
         var isValidSource = source && (typeof source === 'object' || typeof source === 'function');
         var isValidAltSource = altSource && (typeof altSource === 'object' || typeof altSource === 'function');
 
@@ -7709,13 +7709,13 @@
         */
         constructor(config) {
             // Attach get-next-state function
-            var states = GetValue$2l(config, 'states', undefined);
+            var states = GetValue$2m(config, 'states', undefined);
             if (states) {
                 this.addStates(states);
             }
 
             // Attach extend members
-            var extend = GetValue$2l(config, 'extend', undefined);
+            var extend = GetValue$2m(config, 'extend', undefined);
             if (extend) {
                 for (var name in extend) {
                     if (!this.hasOwnProperty(name) || this[name] === undefined) {
@@ -7725,8 +7725,8 @@
             }
 
             // Event emitter
-            var eventEmitter = GetValue$2l(config, 'eventEmitter', undefined);
-            var EventEmitterClass = GetValue$2l(config, 'EventEmitterClass', undefined);
+            var eventEmitter = GetValue$2m(config, 'eventEmitter', undefined);
+            var EventEmitterClass = GetValue$2m(config, 'EventEmitterClass', undefined);
             this.setEventEmitter(eventEmitter, EventEmitterClass);
 
             this._stateLock = false;
@@ -7742,9 +7742,9 @@
         }
 
         resetFromJSON(o) {
-            this.setEnable(GetValue$2l(o, 'enable', true));
-            this.start(GetValue$2l(o, 'start', undefined));
-            var init = GetValue$2l(o, 'init', undefined);
+            this.setEnable(GetValue$2m(o, 'enable', true));
+            this.start(GetValue$2m(o, 'start', undefined));
+            var init = GetValue$2m(o, 'init', undefined);
             if (init) {
                 init.call(this);
             }
@@ -7974,7 +7974,7 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this._scene = GetValue$2l(o, 'scene', undefined);
+            this._scene = GetValue$2m(o, 'scene', undefined);
             return this;
         }
 
@@ -8307,7 +8307,7 @@
         CloseMethods,
     );
 
-    const GetValue$2k = Phaser.Utils.Objects.GetValue;
+    const GetValue$2l = Phaser.Utils.Objects.GetValue;
 
     class OpenCloseTransition extends ComponentBase {
         constructor(gameObject, config) {
@@ -8315,17 +8315,17 @@
             // this.parent = gameObject;
             // this.scene
 
-            this.setTransitInTime(GetValue$2k(config, 'duration.in', 200));
-            this.setTransitOutTime(GetValue$2k(config, 'duration.out', 200));
-            this.setTransitInCallback(GetValue$2k(config, 'transitIn'));
-            this.setTransitOutCallback(GetValue$2k(config, 'transitOut'));
+            this.setTransitInTime(GetValue$2l(config, 'duration.in', 200));
+            this.setTransitOutTime(GetValue$2l(config, 'duration.out', 200));
+            this.setTransitInCallback(GetValue$2l(config, 'transitIn'));
+            this.setTransitOutCallback(GetValue$2l(config, 'transitOut'));
 
-            this.oneShotMode = GetValue$2k(config, 'destroy', false);
+            this.oneShotMode = GetValue$2l(config, 'destroy', false);
 
             this.delayCallTimer = undefined;
             this._state = new State$1(this, {
                 eventEmitter: false,
-                initState: GetValue$2k(config, 'initState', 'IDLE')
+                initState: GetValue$2l(config, 'initState', 'IDLE')
             });
             this.openEventData = undefined;
             this.closeEventData = undefined;
@@ -8458,9 +8458,9 @@
 
     }
 
-    const Rectangle$2 = Phaser.GameObjects.Rectangle;
+    const Rectangle$3 = Phaser.GameObjects.Rectangle;
 
-    let FullWindowRectangle$1 = class FullWindowRectangle extends Rectangle$2 {
+    let FullWindowRectangle$1 = class FullWindowRectangle extends Rectangle$3 {
         constructor(scene, color, alpha) {
             super(scene, 0, 0, 2, 2, color, 1);
 
@@ -8478,7 +8478,7 @@
         }
     };
 
-    const GetValue$2j = Phaser.Utils.Objects.GetValue;
+    const GetValue$2k = Phaser.Utils.Objects.GetValue;
 
     class TouchEventStop extends ComponentBase {
         constructor(gameObject, config) {
@@ -8491,9 +8491,9 @@
         }
 
         resetFromJSON(o) {
-            this.setHitAreaMode(GetValue$2j(o, 'hitAreaMode', 0));
-            this.setEnable(GetValue$2j(o, 'enable', true));
-            this.setStopMode(GetValue$2j(o, 'stopAllLevels', true));
+            this.setHitAreaMode(GetValue$2k(o, 'hitAreaMode', 0));
+            this.setEnable(GetValue$2k(o, 'enable', true));
+            this.setStopMode(GetValue$2k(o, 'stopAllLevels', true));
             return this;
         }
 
@@ -8582,12 +8582,12 @@
         fullWindow: 1
     };
 
-    const GetValue$2i = Phaser.Utils.Objects.GetValue;
+    const GetValue$2j = Phaser.Utils.Objects.GetValue;
 
     class Cover extends FullWindowRectangle$1 {
         constructor(scene, config) {
-            var fillColor = GetValue$2i(config, 'color', 0x0);
-            var fillAlpha = GetValue$2i(config, 'alpha', 0.8);
+            var fillColor = GetValue$2j(config, 'color', 0x0);
+            var fillAlpha = GetValue$2j(config, 'alpha', 0.8);
             super(scene, fillColor, fillAlpha);
 
             this.touchEventStop = new TouchEventStop(this, { hitAreaMode: 1 });
@@ -8684,7 +8684,7 @@
         return true;
     };
 
-    const GetValue$2h = Phaser.Utils.Objects.GetValue;
+    const GetValue$2i = Phaser.Utils.Objects.GetValue;
 
     let Modal$1 = class Modal extends OpenCloseTransition {
         constructor(gameObject, config) {
@@ -8698,26 +8698,26 @@
                 config.transitOut = TransitionMode.scaleDown;
             }
 
-            config.destroy = GetValue$2h(config, 'destroy', true);
+            config.destroy = GetValue$2i(config, 'destroy', true);
 
             super(gameObject, config);
             // this.parent = gameObject;
             // this.scene
 
             // Cover : key of modal, to block touch input        
-            var coverConfig = GetValue$2h(config, 'cover');
+            var coverConfig = GetValue$2i(config, 'cover');
             this.cover = (coverConfig !== false) ? CreateCover(gameObject, coverConfig) : undefined;
             if (this.cover) {
-                this.setCoverTransitInCallback(GetValue$2h(coverConfig, 'transitIn', DefaultCoverTransitInCallback));
-                this.setCoverTransitOutCallback(GetValue$2h(coverConfig, 'transitOut', DefaultCoverTransitOutCallback));
+                this.setCoverTransitInCallback(GetValue$2i(coverConfig, 'transitIn', DefaultCoverTransitInCallback));
+                this.setCoverTransitOutCallback(GetValue$2i(coverConfig, 'transitOut', DefaultCoverTransitOutCallback));
             }
 
             // Close conditions:
-            var touchOutsideClose = GetValue$2h(config, 'touchOutsideClose', false);
-            var timeOutDuration = GetValue$2h(config, 'duration.hold', -1);
-            var timeOutClose = GetValue$2h(config, 'timeOutClose', (timeOutDuration >= 0));
-            var anyTouchClose = GetValue$2h(config, 'anyTouchClose', false);
-            var manualClose = GetValue$2h(config, 'manualClose', false);
+            var touchOutsideClose = GetValue$2i(config, 'touchOutsideClose', false);
+            var timeOutDuration = GetValue$2i(config, 'duration.hold', -1);
+            var timeOutClose = GetValue$2i(config, 'timeOutClose', (timeOutDuration >= 0));
+            var anyTouchClose = GetValue$2i(config, 'anyTouchClose', false);
+            var manualClose = GetValue$2i(config, 'manualClose', false);
 
             if (manualClose) {
                 touchOutsideClose = false;
@@ -8742,7 +8742,7 @@
                 this.once('open', this.touchOutsideClose, this);
             }
 
-            if (GetValue$2h(config, 'openOnStart', true)) {
+            if (GetValue$2i(config, 'openOnStart', true)) {
                 // Run this.requestOpen() next tick
                 // User can register events before this.requestOpen()
                 this.delayCall(0, this.requestOpen, this);
@@ -9368,7 +9368,7 @@
         return this;
     };
 
-    const GetValue$2g = Phaser.Utils.Objects.GetValue;
+    const GetValue$2h = Phaser.Utils.Objects.GetValue;
 
     class Button extends ComponentBase {
         constructor(gameObject, config) {
@@ -9376,7 +9376,7 @@
             // this.parent = gameObject;
 
             this._enable = undefined;
-            gameObject.setInteractive(GetValue$2g(config, "inputConfig", undefined));
+            gameObject.setInteractive(GetValue$2h(config, "inputConfig", undefined));
             this.resetFromJSON(config);
             this.boot();
         }
@@ -9386,10 +9386,10 @@
             this.lastClickTime = undefined;
             this.isDown = false;
             this.isOver = false;
-            this.setEnable(GetValue$2g(o, "enable", true));
-            this.setMode(GetValue$2g(o, "mode", 1));
-            this.setClickInterval(GetValue$2g(o, "clickInterval", 100));
-            this.setDragThreshold(GetValue$2g(o, 'threshold', undefined));
+            this.setEnable(GetValue$2h(o, "enable", true));
+            this.setMode(GetValue$2h(o, "mode", 1));
+            this.setClickInterval(GetValue$2h(o, "clickInterval", 100));
+            this.setDragThreshold(GetValue$2h(o, 'threshold', undefined));
             return this;
         }
 
@@ -9717,7 +9717,7 @@
 
     var HitTestResult = [];
 
-    const GetValue$2f = Phaser.Utils.Objects.GetValue;
+    const GetValue$2g = Phaser.Utils.Objects.GetValue;
 
     class ClickOutside extends ComponentBase {
         constructor(gameObject, config) {
@@ -9726,7 +9726,7 @@
 
             this._enable = undefined;
 
-            var inputConfig = GetValue$2f(config, "inputConfig", undefined);
+            var inputConfig = GetValue$2g(config, "inputConfig", undefined);
             if (inputConfig) {
                 gameObject.setInteractive(inputConfig);
             }
@@ -9738,10 +9738,10 @@
         resetFromJSON(o) {
             this.pointer = undefined;
             this.lastClickTime = undefined;
-            this.setEnable(GetValue$2f(o, "enable", true));
-            this.setMode(GetValue$2f(o, "mode", 1));
-            this.setClickInterval(GetValue$2f(o, "clickInterval", 100));
-            this.setDragThreshold(GetValue$2f(o, 'threshold', undefined));
+            this.setEnable(GetValue$2g(o, "enable", true));
+            this.setMode(GetValue$2g(o, "mode", 1));
+            this.setClickInterval(GetValue$2g(o, "clickInterval", 100));
+            this.setDragThreshold(GetValue$2g(o, 'threshold', undefined));
             return this;
         }
 
@@ -10037,7 +10037,7 @@
 
     }
 
-    const GetValue$2e = Phaser.Utils.Objects.GetValue;
+    const GetValue$2f = Phaser.Utils.Objects.GetValue;
 
     class InTouching extends ComponentBase {
         constructor(gameObject, config) {
@@ -10046,7 +10046,7 @@
 
             this._enable = undefined;
             this.cooldown = new Cooldown();
-            this.parent.setInteractive(GetValue$2e(config, 'inputConfig', undefined));
+            this.parent.setInteractive(GetValue$2f(config, 'inputConfig', undefined));
             this.resetFromJSON(config);
             this.boot();
         }
@@ -10055,8 +10055,8 @@
             this.pointer = undefined;
             this.prevIsInTouch = false;
             this.isInTouching = false;
-            this.setEnable(GetValue$2e(o, 'enable', true));
-            this.setCooldown(GetValue$2e(o, 'cooldown', undefined));
+            this.setEnable(GetValue$2f(o, 'enable', true));
+            this.setCooldown(GetValue$2f(o, 'cooldown', undefined));
             return this;
         }
 
@@ -10375,10 +10375,10 @@
         eventEmitter.emit(eventName, child, pointer, event);
     };
 
-    const GetValue$2d = Phaser.Utils.Objects.GetValue;
+    const GetValue$2e = Phaser.Utils.Objects.GetValue;
 
     var DownChild = function (config) {
-        var downConfig = GetValue$2d(config, 'down', undefined);
+        var downConfig = GetValue$2e(config, 'down', undefined);
         if (downConfig === false) {
             return;
         } else if (downConfig === true) {
@@ -10402,10 +10402,10 @@
         );
     };
 
-    const GetValue$2c = Phaser.Utils.Objects.GetValue;
+    const GetValue$2d = Phaser.Utils.Objects.GetValue;
 
     var UpChild = function (config) {
-        var upConfig = GetValue$2c(config, 'up', undefined);
+        var upConfig = GetValue$2d(config, 'up', undefined);
         if (upConfig === false) {
             return;
         } else if (upConfig === true) {
@@ -10429,10 +10429,10 @@
         );
     };
 
-    const GetValue$2b = Phaser.Utils.Objects.GetValue;
+    const GetValue$2c = Phaser.Utils.Objects.GetValue;
 
     var OverChild = function (config) {
-        var overConfig = GetValue$2b(config, 'over', undefined);
+        var overConfig = GetValue$2c(config, 'over', undefined);
         if (overConfig === false) {
             return;
         } else if (overConfig === true) {
@@ -10495,10 +10495,10 @@
         );
     };
 
-    const GetValue$2a = Phaser.Utils.Objects.GetValue;
+    const GetValue$2b = Phaser.Utils.Objects.GetValue;
 
     var ClickChild = function (config) {
-        var clickConfig = GetValue$2a(config, 'click', undefined);
+        var clickConfig = GetValue$2b(config, 'click', undefined);
         if (clickConfig === false) {
             return;
         } else if (clickConfig === true) {
@@ -10526,7 +10526,7 @@
         }, this);
     };
 
-    const GetValue$29 = Phaser.Utils.Objects.GetValue;
+    const GetValue$2a = Phaser.Utils.Objects.GetValue;
 
     class OnePointerTracer extends TickTask {
         constructor(gameObject, config) {
@@ -10538,7 +10538,7 @@
 
             this.gameObject = gameObject;
             if (gameObject) {
-                gameObject.setInteractive(GetValue$29(config, 'inputConfig', undefined));
+                gameObject.setInteractive(GetValue$2a(config, 'inputConfig', undefined));
             }
             this._enable = undefined;
             this.resetFromJSON(config);
@@ -10546,11 +10546,11 @@
         }
 
         resetFromJSON(o) {
-            this.setEnable(GetValue$29(o, 'enable', true));
+            this.setEnable(GetValue$2a(o, 'enable', true));
 
             this.setDetectBounds();
             if (this.gameObject === undefined) {
-                this.setDetectBounds(GetValue$29(o, 'bounds', undefined));
+                this.setDetectBounds(GetValue$2a(o, 'bounds', undefined));
             } else {
                 this.setDetectBounds();
             }
@@ -10782,7 +10782,7 @@
 
     const IDLE$5 = 'IDLE';
 
-    const GetValue$28 = Phaser.Utils.Objects.GetValue;
+    const GetValue$29 = Phaser.Utils.Objects.GetValue;
     const DistanceBetween$6 = Phaser.Math.Distance.Between;
 
     class Tap extends OnePointerTracer {
@@ -10835,17 +10835,17 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this.setHoldTime(GetValue$28(o, 'time', 250)); // min-hold-time of Press is 251
-            this.setTapInterval(GetValue$28(o, 'tapInterval', 200));
-            this.setDragThreshold(GetValue$28(o, 'threshold', 9));
-            this.setTapOffset(GetValue$28(o, 'tapOffset', 10));
+            this.setHoldTime(GetValue$29(o, 'time', 250)); // min-hold-time of Press is 251
+            this.setTapInterval(GetValue$29(o, 'tapInterval', 200));
+            this.setDragThreshold(GetValue$29(o, 'threshold', 9));
+            this.setTapOffset(GetValue$29(o, 'tapOffset', 10));
 
-            var taps = GetValue$28(o, 'taps', undefined);
+            var taps = GetValue$29(o, 'taps', undefined);
             if (taps !== undefined) {
                 this.setTaps(taps);
             } else {
-                this.setMaxTaps(GetValue$28(o, 'maxTaps', undefined));
-                this.setMinTaps(GetValue$28(o, 'minTaps', undefined));
+                this.setMaxTaps(GetValue$29(o, 'maxTaps', undefined));
+                this.setMinTaps(GetValue$29(o, 'minTaps', undefined));
             }
             return this;
         }
@@ -10982,7 +10982,7 @@
     const BEGIN$3 = 'BEGIN';
     const RECOGNIZED$3 = 'RECOGNIZED';
 
-    const GetValue$27 = Phaser.Utils.Objects.GetValue;
+    const GetValue$28 = Phaser.Utils.Objects.GetValue;
 
     class Press extends OnePointerTracer {
         constructor(gameObject, config) {
@@ -11034,8 +11034,8 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this.setDragThreshold(GetValue$27(o, 'threshold', 9));
-            this.setHoldTime(GetValue$27(o, 'time', 251));
+            this.setDragThreshold(GetValue$28(o, 'threshold', 9));
+            this.setHoldTime(GetValue$28(o, 'time', 251));
             return this;
         }
 
@@ -11222,7 +11222,7 @@
 
     var globOut$2 = {};
 
-    const GetValue$26 = Phaser.Utils.Objects.GetValue;
+    const GetValue$27 = Phaser.Utils.Objects.GetValue;
     const RadToDeg$3 = Phaser.Math.RadToDeg;
 
     class Swipe extends OnePointerTracer {
@@ -11276,9 +11276,9 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this.setDragThreshold(GetValue$26(o, 'threshold', 10));
-            this.setVelocityThreshold(GetValue$26(o, 'velocityThreshold', 1000));
-            this.setDirectionMode(GetValue$26(o, 'dir', '8dir'));
+            this.setDragThreshold(GetValue$27(o, 'threshold', 10));
+            this.setVelocityThreshold(GetValue$27(o, 'velocityThreshold', 1000));
+            this.setDirectionMode(GetValue$27(o, 'dir', '8dir'));
             return this;
         }
 
@@ -11372,7 +11372,7 @@
     const BEGIN$1 = 'BEGIN';
     const RECOGNIZED$1 = 'RECOGNIZED';
 
-    const GetValue$25 = Phaser.Utils.Objects.GetValue;
+    const GetValue$26 = Phaser.Utils.Objects.GetValue;
     const SpliceOne$1 = Phaser.Utils.Array.SpliceOne;
     const DistanceBetween$4 = Phaser.Math.Distance.Between;
     const AngleBetween = Phaser.Math.Angle.Between;
@@ -11392,11 +11392,11 @@
             this.scene = scene;
             this.gameObject = gameObject;
             if (gameObject) {
-                gameObject.setInteractive(GetValue$25(config, 'inputConfig', undefined));
+                gameObject.setInteractive(GetValue$26(config, 'inputConfig', undefined));
             }
 
             // Event emitter
-            this.setEventEmitter(GetValue$25(config, 'eventEmitter', undefined));
+            this.setEventEmitter(GetValue$26(config, 'eventEmitter', undefined));
 
             this._enable = undefined;
             this.pointers = [];
@@ -11406,8 +11406,8 @@
         }
 
         resetFromJSON(o) {
-            this.setEnable(GetValue$25(o, "enable", true));
-            this.bounds = GetValue$25(o, 'bounds', undefined);
+            this.setEnable(GetValue$26(o, "enable", true));
+            this.bounds = GetValue$26(o, 'bounds', undefined);
 
             this.tracerState = TOUCH0;
             this.pointers.length = 0;
@@ -11795,7 +11795,7 @@
         return this;
     };
 
-    const GetValue$24 = Phaser.Utils.Objects.GetValue;
+    const GetValue$25 = Phaser.Utils.Objects.GetValue;
     const WrapDegrees = Phaser.Math.Angle.WrapDegrees; // Wrap degrees: -180 to 180 
     const ShortestBetween = Phaser.Math.Angle.ShortestBetween;
     const RadToDeg$2 = Phaser.Math.RadToDeg;
@@ -11835,7 +11835,7 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this.setDragThreshold(GetValue$24(o, 'threshold', 0));
+            this.setDragThreshold(GetValue$25(o, 'threshold', 0));
             return this;
         }
 
@@ -11904,10 +11904,10 @@
     const BEGIN = 'BEGIN';
     const RECOGNIZED = 'RECOGNIZED';
 
-    const GetValue$23 = Phaser.Utils.Objects.GetValue;
+    const GetValue$24 = Phaser.Utils.Objects.GetValue;
 
     var TapChild = function (config) {
-        var tapConfig = GetValue$23(config, 'tap', undefined);
+        var tapConfig = GetValue$24(config, 'tap', undefined);
         if (tapConfig === false) {
             return;
         } else if (tapConfig === true) {
@@ -11938,10 +11938,10 @@
             }, this);
     };
 
-    const GetValue$22 = Phaser.Utils.Objects.GetValue;
+    const GetValue$23 = Phaser.Utils.Objects.GetValue;
 
     var PressChild = function (config) {
-        var pressConfig = GetValue$22(config, 'press', undefined);
+        var pressConfig = GetValue$23(config, 'press', undefined);
         if (pressConfig === false) {
             return;
         } else if (pressConfig === true) {
@@ -11973,10 +11973,10 @@
             }, this);
     };
 
-    const GetValue$21 = Phaser.Utils.Objects.GetValue;
+    const GetValue$22 = Phaser.Utils.Objects.GetValue;
 
     var SwipeChild = function (config) {
-        var swipeConfig = GetValue$21(config, 'swipe', undefined);
+        var swipeConfig = GetValue$22(config, 'swipe', undefined);
         if (swipeConfig === false) {
             return;
         } else if (swipeConfig === true) {
@@ -12019,20 +12019,20 @@
             }, this);
     };
 
-    const GetValue$20 = Phaser.Utils.Objects.GetValue;
+    const GetValue$21 = Phaser.Utils.Objects.GetValue;
 
     var SetChildrenInteractive$1 = function (gameObject, config) {
         gameObject.setInteractive();
 
-        if (GetValue$20(config, 'dropZone', false)) {
+        if (GetValue$21(config, 'dropZone', false)) {
             gameObject.input.dropZone = true;
         }
 
         gameObject._childrenInteractive = {
-            targetSizers: GetValue$20(config, 'targets', [gameObject]),
-            targetMode: GetValue$20(config, 'targetMode', 'parent'),
-            eventEmitter: GetValue$20(config, 'eventEmitter', gameObject),
-            eventNamePrefix: GetValue$20(config, 'inputEventPrefix', 'child.')
+            targetSizers: GetValue$21(config, 'targets', [gameObject]),
+            targetMode: GetValue$21(config, 'targetMode', 'parent'),
+            eventEmitter: GetValue$21(config, 'eventEmitter', gameObject),
+            eventNamePrefix: GetValue$21(config, 'inputEventPrefix', 'child.')
         };
 
         DownChild.call(gameObject, config);
@@ -12126,20 +12126,20 @@
         BindEventMethods,
     );
 
-    const GetValue$1$ = Phaser.Utils.Objects.GetValue;
+    const GetValue$20 = Phaser.Utils.Objects.GetValue;
 
     let Base$1 = class Base extends ContainerLite {
         constructor(scene, x, y, minWidth, minHeight, config) {
             super(scene, x, y, 1, 1);
             this.isRexSizer = true;
 
-            var origin = GetValue$1$(config, 'origin', 0.5);
-            var originX = GetValue$1$(config, 'originX', origin);
-            var originY = GetValue$1$(config, 'originY', origin);
+            var origin = GetValue$20(config, 'origin', 0.5);
+            var originX = GetValue$20(config, 'originX', origin);
+            var originY = GetValue$20(config, 'originY', origin);
             this.setOrigin(originX, originY);
 
             this.setMinSize(minWidth, minHeight);
-            this.setName(GetValue$1$(config, 'name', ''));
+            this.setName(GetValue$20(config, 'name', ''));
             this.rexSizer = {};
             this.space = {};
             this.backgroundChildren = undefined;
@@ -12152,22 +12152,22 @@
 
             this.enableLayoutWarn(false);
 
-            var anchorConfig = GetValue$1$(config, 'anchor', undefined);
+            var anchorConfig = GetValue$20(config, 'anchor', undefined);
             if (anchorConfig) {
                 this.setAnchor(anchorConfig);
             }
 
-            this.setInnerPadding(GetValue$1$(config, 'space', 0));
+            this.setInnerPadding(GetValue$20(config, 'space', 0));
 
-            var draggable = GetValue$1$(config, 'draggable', false);
+            var draggable = GetValue$20(config, 'draggable', false);
             if (draggable) {
                 this.setDraggable(draggable);
             }
 
-            this.setSizerEventsEnable(GetValue$1$(config, 'sizerEvents', false));
+            this.setSizerEventsEnable(GetValue$20(config, 'sizerEvents', false));
             this.setDirty(true);
 
-            if (GetValue$1$(config, 'enableLayer', false)) {
+            if (GetValue$20(config, 'enableLayer', false)) {
                 this.enableLayer();
             }
         }
@@ -12950,7 +12950,7 @@
     };
 
     const IsPlainObject$o = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$1_ = Phaser.Utils.Objects.GetValue;
+    const GetValue$1$ = Phaser.Utils.Objects.GetValue;
     const ALIGN_CENTER$3 = Phaser.Display.Align.CENTER;
     const PROPORTIONMODE = {
         min: 0,
@@ -12977,24 +12977,24 @@
             proportion = PROPORTIONMODE[proportion];
         } else if (IsPlainObject$o(proportion)) {
             var config = proportion;
-            proportion = GetValue$1_(config, 'proportion', undefined);
-            align = GetValue$1_(config, 'align', ALIGN_CENTER$3);
-            paddingConfig = GetValue$1_(config, 'padding', 0);
-            expand = GetValue$1_(config, 'expand', false);
-            childKey = GetValue$1_(config, 'key', undefined);
-            index = GetValue$1_(config, 'index', undefined);
+            proportion = GetValue$1$(config, 'proportion', undefined);
+            align = GetValue$1$(config, 'align', ALIGN_CENTER$3);
+            paddingConfig = GetValue$1$(config, 'padding', 0);
+            expand = GetValue$1$(config, 'expand', false);
+            childKey = GetValue$1$(config, 'key', undefined);
+            index = GetValue$1$(config, 'index', undefined);
 
             if (!gameObject.isRexSizer) {
-                minWidth = GetValue$1_(config, 'minWidth', undefined);
-                minHeight = GetValue$1_(config, 'minHeight', undefined);
+                minWidth = GetValue$1$(config, 'minWidth', undefined);
+                minHeight = GetValue$1$(config, 'minHeight', undefined);
             }
 
-            fitRatio = GetValue$1_(config, 'fitRatio', 0);  // width/height
+            fitRatio = GetValue$1$(config, 'fitRatio', 0);  // width/height
 
-            offsetX = GetValue$1_(config, 'offsetX', 0);
-            offsetY = GetValue$1_(config, 'offsetY', 0);
-            offsetOriginX = GetValue$1_(config, 'offsetOriginX', 0);
-            offsetOriginY = GetValue$1_(config, 'offsetOriginY', 0);
+            offsetX = GetValue$1$(config, 'offsetX', 0);
+            offsetY = GetValue$1$(config, 'offsetY', 0);
+            offsetOriginX = GetValue$1$(config, 'offsetOriginX', 0);
+            offsetOriginY = GetValue$1$(config, 'offsetOriginY', 0);
         }
 
         if (typeof (align) === 'string') {
@@ -13392,25 +13392,25 @@
     };
 
     const IsPlainObject$n = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$1Z = Phaser.Utils.Objects.GetValue;
+    const GetValue$1_ = Phaser.Utils.Objects.GetValue;
 
     class Sizer extends Base$1 {
         constructor(scene, x, y, minWidth, minHeight, orientation, config) {
             if (IsPlainObject$n(x)) {
                 config = x;
-                x = GetValue$1Z(config, 'x', 0);
-                y = GetValue$1Z(config, 'y', 0);
-                minWidth = GetValue$1Z(config, 'width', undefined);
-                minHeight = GetValue$1Z(config, 'height', undefined);
-                orientation = GetValue$1Z(config, 'orientation', 0);
+                x = GetValue$1_(config, 'x', 0);
+                y = GetValue$1_(config, 'y', 0);
+                minWidth = GetValue$1_(config, 'width', undefined);
+                minHeight = GetValue$1_(config, 'height', undefined);
+                orientation = GetValue$1_(config, 'orientation', 0);
             } else if (IsPlainObject$n(minWidth)) {
                 config = minWidth;
-                minWidth = GetValue$1Z(config, 'width', undefined);
-                minHeight = GetValue$1Z(config, 'height', undefined);
-                orientation = GetValue$1Z(config, 'orientation', 0);
+                minWidth = GetValue$1_(config, 'width', undefined);
+                minHeight = GetValue$1_(config, 'height', undefined);
+                orientation = GetValue$1_(config, 'orientation', 0);
             } else if (IsPlainObject$n(orientation)) {
                 config = orientation;
-                orientation = GetValue$1Z(config, 'orientation', 0);
+                orientation = GetValue$1_(config, 'orientation', 0);
             }
 
             if (orientation === undefined) {
@@ -13421,9 +13421,9 @@
             this.type = 'rexSizer';
             this.sizerChildren = [];
             this.setOrientation(orientation);
-            this.setItemSpacing(GetValue$1Z(config, 'space.item', 0));
-            this.setStartChildIndex(GetValue$1Z(config, 'startChildIndex', 0));
-            this.setRTL(GetValue$1Z(config, 'rtl', false));
+            this.setItemSpacing(GetValue$1_(config, 'space.item', 0));
+            this.setStartChildIndex(GetValue$1_(config, 'startChildIndex', 0));
+            this.setRTL(GetValue$1_(config, 'rtl', false));
 
             this.addChildrenMap('items', this.sizerChildren);
         }
@@ -13921,7 +13921,7 @@
     };
 
     const IsPlainObject$m = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$1Y = Phaser.Utils.Objects.GetValue;
+    const GetValue$1Z = Phaser.Utils.Objects.GetValue;
     const ALIGN_CENTER$2 = Phaser.Display.Align.CENTER;
 
     var Add$6 = function (gameObject, paddingConfig, childKey, index) {
@@ -13937,14 +13937,14 @@
 
         if (IsPlainObject$m(paddingConfig)) {
             var config = paddingConfig;
-            paddingConfig = GetValue$1Y(config, 'padding', 0);
-            childKey = GetValue$1Y(config, 'key', undefined);
-            index = GetValue$1Y(config, 'index', undefined);
+            paddingConfig = GetValue$1Z(config, 'padding', 0);
+            childKey = GetValue$1Z(config, 'key', undefined);
+            index = GetValue$1Z(config, 'index', undefined);
 
-            offsetX = GetValue$1Y(config, 'offsetX', 0);
-            offsetY = GetValue$1Y(config, 'offsetY', 0);
-            offsetOriginX = GetValue$1Y(config, 'offsetOriginX', 0);
-            offsetOriginY = GetValue$1Y(config, 'offsetOriginY', 0);
+            offsetX = GetValue$1Z(config, 'offsetX', 0);
+            offsetY = GetValue$1Z(config, 'offsetY', 0);
+            offsetOriginX = GetValue$1Z(config, 'offsetOriginX', 0);
+            offsetOriginY = GetValue$1Z(config, 'offsetOriginY', 0);
         }
         if (paddingConfig === undefined) {
             paddingConfig = 0;
@@ -14131,20 +14131,20 @@
     };
 
     const IsPlainObject$l = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$1X = Phaser.Utils.Objects.GetValue;
+    const GetValue$1Y = Phaser.Utils.Objects.GetValue;
 
     class FixWidthSizer extends Base$1 {
         constructor(scene, x, y, minWidth, minHeight, config) {
             if (IsPlainObject$l(x)) {
                 config = x;
-                x = GetValue$1X(config, 'x', 0);
-                y = GetValue$1X(config, 'y', 0);
-                minWidth = GetValue$1X(config, 'width', undefined);
-                minHeight = GetValue$1X(config, 'height', undefined);
+                x = GetValue$1Y(config, 'x', 0);
+                y = GetValue$1Y(config, 'y', 0);
+                minWidth = GetValue$1Y(config, 'width', undefined);
+                minHeight = GetValue$1Y(config, 'height', undefined);
             } else if (IsPlainObject$l(minWidth)) {
                 config = minWidth;
-                minWidth = GetValue$1X(config, 'width', undefined);
-                minHeight = GetValue$1X(config, 'height', undefined);
+                minWidth = GetValue$1Y(config, 'width', undefined);
+                minHeight = GetValue$1Y(config, 'height', undefined);
             }
 
             super(scene, x, y, minWidth, minHeight, config);
@@ -14153,20 +14153,20 @@
 
             this.runChildrenWrapFlag = true;
 
-            this.setOrientation(GetValue$1X(config, 'orientation', 0));
-            this.setItemSpacing(GetValue$1X(config, 'space.item', 0));
-            this.setLineSpacing(GetValue$1X(config, 'space.line', 0));
+            this.setOrientation(GetValue$1Y(config, 'orientation', 0));
+            this.setItemSpacing(GetValue$1Y(config, 'space.item', 0));
+            this.setLineSpacing(GetValue$1Y(config, 'space.line', 0));
             this.setIntentLeft(
-                GetValue$1X(config, 'space.indentLeftOdd', 0),
-                GetValue$1X(config, 'space.indentLeftEven', 0)
+                GetValue$1Y(config, 'space.indentLeftOdd', 0),
+                GetValue$1Y(config, 'space.indentLeftEven', 0)
             );
             this.setIntentTop(
-                GetValue$1X(config, 'space.indentTopOdd', 0),
-                GetValue$1X(config, 'space.indentTopEven', 0)
+                GetValue$1Y(config, 'space.indentTopOdd', 0),
+                GetValue$1Y(config, 'space.indentTopEven', 0)
             );
-            this.setAlign(GetValue$1X(config, 'align', 0));
-            this.setJustifyPercentage(GetValue$1X(config, 'justifyPercentage', 0.25));
-            this.setRTL(GetValue$1X(config, 'rtl', false));
+            this.setAlign(GetValue$1Y(config, 'align', 0));
+            this.setJustifyPercentage(GetValue$1Y(config, 'justifyPercentage', 0.25));
+            this.setRTL(GetValue$1Y(config, 'rtl', false));
 
             this.wrapResult = undefined;  // {lines, width, height}
 
@@ -15477,7 +15477,7 @@
 
         getData(key, defaultValue) {
             this.enableData();
-            return (key === undefined) ? this.data : GetValue$2l(this.data, key, defaultValue);
+            return (key === undefined) ? this.data : GetValue$2m(this.data, key, defaultValue);
         },
 
         incData(key, inc, defaultValue) {
@@ -15655,7 +15655,7 @@
 
     var globPoint$1;
 
-    const Rectangle$1 = Phaser.Geom.Rectangle;
+    const Rectangle$2 = Phaser.Geom.Rectangle;
 
     var Contains = function (canvasX, canvasY) {
         if ((this.width === 0) || (this.height === 0)) {
@@ -15668,7 +15668,7 @@
 
     var GetBobBounds = function (bob) {
         if (bobBounds === undefined) {
-            bobBounds = new Rectangle$1();
+            bobBounds = new Rectangle$2();
         }
 
         var x = bob.drawTLX,
@@ -15772,7 +15772,7 @@
 
     const DegToRad$5 = Phaser.Math.DegToRad;
     const RadToDeg$1 = Phaser.Math.RadToDeg;
-    const GetValue$1W = Phaser.Utils.Objects.GetValue;
+    const GetValue$1X = Phaser.Utils.Objects.GetValue;
 
     class RenderBase extends Base {
         constructor(parent, type) {
@@ -16026,10 +16026,10 @@
             }
 
             // ScaleX, ScaleY
-            var width = GetValue$1W(o, 'width', undefined);
-            var height = GetValue$1W(o, 'height', undefined);
-            var scaleX = GetValue$1W(o, 'scaleX', undefined);
-            var scaleY = GetValue$1W(o, 'scaleY', undefined);
+            var width = GetValue$1X(o, 'width', undefined);
+            var height = GetValue$1X(o, 'height', undefined);
+            var scaleX = GetValue$1X(o, 'scaleX', undefined);
+            var scaleY = GetValue$1X(o, 'scaleY', undefined);
 
             if (width !== undefined) {
                 if ((height === undefined) && (scaleY === undefined)) {
@@ -16164,7 +16164,7 @@
         }
     };
 
-    const GetValue$1V = Phaser.Utils.Objects.GetValue;
+    const GetValue$1W = Phaser.Utils.Objects.GetValue;
 
     let RoundRectangle$2 = class RoundRectangle {
         constructor(x, y, width, height, radiusConfig) {
@@ -16255,15 +16255,15 @@
                 defaultRadiusX = value;
                 defaultRadiusY = value;
             } else {
-                defaultRadiusX = GetValue$1V(value, 'x', 0);
-                defaultRadiusY = GetValue$1V(value, 'y', 0);
+                defaultRadiusX = GetValue$1W(value, 'x', 0);
+                defaultRadiusY = GetValue$1W(value, 'y', 0);
             }
 
             var radius = this.cornerRadius;
-            radius.tl = GetRadius(GetValue$1V(value, 'tl', undefined), defaultRadiusX, defaultRadiusY);
-            radius.tr = GetRadius(GetValue$1V(value, 'tr', undefined), defaultRadiusX, defaultRadiusY);
-            radius.bl = GetRadius(GetValue$1V(value, 'bl', undefined), defaultRadiusX, defaultRadiusY);
-            radius.br = GetRadius(GetValue$1V(value, 'br', undefined), defaultRadiusX, defaultRadiusY);
+            radius.tl = GetRadius(GetValue$1W(value, 'tl', undefined), defaultRadiusX, defaultRadiusY);
+            radius.tr = GetRadius(GetValue$1W(value, 'tr', undefined), defaultRadiusX, defaultRadiusY);
+            radius.bl = GetRadius(GetValue$1W(value, 'bl', undefined), defaultRadiusX, defaultRadiusY);
+            radius.br = GetRadius(GetValue$1W(value, 'br', undefined), defaultRadiusX, defaultRadiusY);
         }
 
         get radiusTL() {
@@ -16326,8 +16326,8 @@
             radius.x = value;
             radius.y = value;
         } else {
-            radius.x = GetValue$1V(value, 'x', 0);
-            radius.y = GetValue$1V(value, 'y', 0);
+            radius.x = GetValue$1W(value, 'x', 0);
+            radius.y = GetValue$1W(value, 'y', 0);
         }
 
         SetConvex(radius);
@@ -16551,7 +16551,7 @@
         );
     };
 
-    const GetValue$1U = Phaser.Utils.Objects.GetValue;
+    const GetValue$1V = Phaser.Utils.Objects.GetValue;
 
     class Background extends RenderBase {
         constructor(parent, config) {
@@ -16560,19 +16560,19 @@
             this.setScrollFactor(0);
 
             this.setColor(
-                GetValue$1U(config, 'color', null),
-                GetValue$1U(config, 'color2', null),
-                GetValue$1U(config, 'horizontalGradient', true)
+                GetValue$1V(config, 'color', null),
+                GetValue$1V(config, 'color2', null),
+                GetValue$1V(config, 'horizontalGradient', true)
             );
 
             this.setStroke(
-                GetValue$1U(config, 'stroke', null),
-                GetValue$1U(config, 'strokeThickness', 2)
+                GetValue$1V(config, 'stroke', null),
+                GetValue$1V(config, 'strokeThickness', 2)
             );
 
             this.setCornerRadius(
-                GetValue$1U(config, 'cornerRadius', 0),
-                GetValue$1U(config, 'cornerIteration', null)
+                GetValue$1V(config, 'cornerRadius', 0),
+                GetValue$1V(config, 'cornerIteration', null)
             );
         }
 
@@ -16716,7 +16716,7 @@
         }
     }
 
-    const GetValue$1T = Phaser.Utils.Objects.GetValue;
+    const GetValue$1U = Phaser.Utils.Objects.GetValue;
 
     class InnerBounds extends RenderBase {
         constructor(parent, config) {
@@ -16725,14 +16725,14 @@
             this.setScrollFactor(0);
 
             this.setColor(
-                GetValue$1T(config, 'color', null),
-                GetValue$1T(config, 'color2', null),
-                GetValue$1T(config, 'horizontalGradient', true)
+                GetValue$1U(config, 'color', null),
+                GetValue$1U(config, 'color2', null),
+                GetValue$1U(config, 'horizontalGradient', true)
             );
 
             this.setStroke(
-                GetValue$1T(config, 'stroke', null),
-                GetValue$1T(config, 'strokeThickness', 2)
+                GetValue$1U(config, 'stroke', null),
+                GetValue$1U(config, 'strokeThickness', 2)
             );
         }
 
@@ -16812,14 +16812,14 @@
             if (o.hasOwnProperty('color')) {
                 this.setColor(
                     o.color,
-                    GetValue$1T(o, 'color2', null),
-                    GetValue$1T(o, 'horizontalGradient', true)
+                    GetValue$1U(o, 'color2', null),
+                    GetValue$1U(o, 'horizontalGradient', true)
                 );
             }
             if (o.hasOwnProperty('stroke')) {
                 this.setStroke(
                     o.stroke,
-                    GetValue$1T(o, 'strokeThickness', 2)
+                    GetValue$1U(o, 'strokeThickness', 2)
                 );
             }
         }
@@ -16859,7 +16859,7 @@
         }
     }
 
-    const GetValue$1S = Phaser.Utils.Objects.GetValue;
+    const GetValue$1T = Phaser.Utils.Objects.GetValue;
 
     let TextStyle$1 = class TextStyle {
         constructor(parent, config) {
@@ -16891,35 +16891,35 @@
         }
 
         set(o) {
-            this.setBold(GetValue$1S(o, 'bold', false));
-            this.setItalic(GetValue$1S(o, 'italic', false));
-            this.setFontSize(GetValue$1S(o, 'fontSize', '16px'));
-            this.setFontFamily(GetValue$1S(o, 'fontFamily', 'Courier'));
-            this.setColor(GetValue$1S(o, 'color', '#fff'));
+            this.setBold(GetValue$1T(o, 'bold', false));
+            this.setItalic(GetValue$1T(o, 'italic', false));
+            this.setFontSize(GetValue$1T(o, 'fontSize', '16px'));
+            this.setFontFamily(GetValue$1T(o, 'fontFamily', 'Courier'));
+            this.setColor(GetValue$1T(o, 'color', '#fff'));
             this.setStrokeStyle(
-                GetValue$1S(o, 'stroke', null),
-                GetValue$1S(o, 'strokeThickness', 0)
+                GetValue$1T(o, 'stroke', null),
+                GetValue$1T(o, 'strokeThickness', 0)
             );
             this.setShadow(
-                GetValue$1S(o, 'shadowColor', null),
-                GetValue$1S(o, 'shadowOffsetX', 0),
-                GetValue$1S(o, 'shadowOffsetY', 0),
-                GetValue$1S(o, 'shadowBlur', 0)
+                GetValue$1T(o, 'shadowColor', null),
+                GetValue$1T(o, 'shadowOffsetX', 0),
+                GetValue$1T(o, 'shadowOffsetY', 0),
+                GetValue$1T(o, 'shadowBlur', 0)
             );
             this.setOffset(
-                GetValue$1S(o, 'offsetX', 0),
-                GetValue$1S(o, 'offsetY', 0)
+                GetValue$1T(o, 'offsetX', 0),
+                GetValue$1T(o, 'offsetY', 0)
             );
             this.setSpace(
-                GetValue$1S(o, 'leftSpace', 0),
-                GetValue$1S(o, 'rightSpace', 0)
+                GetValue$1T(o, 'leftSpace', 0),
+                GetValue$1T(o, 'rightSpace', 0)
             );
-            this.setAlign(GetValue$1S(o, 'align', undefined));
-            this.setBackgroundColor(GetValue$1S(o, 'backgroundColor', null));
-            this.setBackgroundHeight(GetValue$1S(o, 'backgroundHeight', undefined));
-            this.setBackgroundBottomY(GetValue$1S(o, 'backgroundBottomY', undefined));
-            this.setBackgroundLeftX(GetValue$1S(o, 'backgroundLeftX', 0));
-            this.setBackgroundRightX(GetValue$1S(o, 'backgroundRightX', 0));
+            this.setAlign(GetValue$1T(o, 'align', undefined));
+            this.setBackgroundColor(GetValue$1T(o, 'backgroundColor', null));
+            this.setBackgroundHeight(GetValue$1T(o, 'backgroundHeight', undefined));
+            this.setBackgroundBottomY(GetValue$1T(o, 'backgroundBottomY', undefined));
+            this.setBackgroundLeftX(GetValue$1T(o, 'backgroundLeftX', 0));
+            this.setBackgroundRightX(GetValue$1T(o, 'backgroundRightX', 0));
 
             return this;
         }
@@ -18502,24 +18502,24 @@
 
     var Result = {};
 
-    const GetValue$1R = Phaser.Utils.Objects.GetValue;
+    const GetValue$1S = Phaser.Utils.Objects.GetValue;
 
     var RunWordWrap$1 = function (config) {
         // Parse parameters
-        var startIndex = GetValue$1R(config, 'start', 0);
+        var startIndex = GetValue$1S(config, 'start', 0);
 
-        SetPadding$1(this.wrapPadding, GetValue$1R(config, 'padding', 0));
+        SetPadding$1(this.wrapPadding, GetValue$1S(config, 'padding', 0));
         var paddingVertical = this.padding.top + this.padding.bottom + this.wrapPadding.top + this.wrapPadding.bottom;
         var paddingHorizontal = this.padding.left + this.padding.right + this.wrapPadding.left + this.wrapPadding.right;
 
         // Get lineHeight, maxLines
-        var lineHeight = GetValue$1R(config, 'lineHeight');
-        var ascent = GetValue$1R(config, 'ascent', lineHeight);
+        var lineHeight = GetValue$1S(config, 'lineHeight');
+        var ascent = GetValue$1S(config, 'ascent', lineHeight);
         var maxLines;
         if (lineHeight === undefined) {
             // Calculate lineHeight
-            var useDefaultTextHeight = GetValue$1R(config, 'useDefaultTextHeight', false);
-            maxLines = GetValue$1R(config, 'maxLines', 0);
+            var useDefaultTextHeight = GetValue$1S(config, 'useDefaultTextHeight', false);
+            maxLines = GetValue$1S(config, 'maxLines', 0);
             if ((this.fixedHeight > 0) && (!useDefaultTextHeight)) {
                 var innerHeight = this.fixedHeight - paddingVertical;
                 if (maxLines > 0) {
@@ -18542,13 +18542,13 @@
             // Calculate maxLines
             if (this.fixedHeight > 0) {
                 // Calculate maxLines via lineHeight, in fixedHeight mode
-                maxLines = GetValue$1R(config, 'maxLines');
+                maxLines = GetValue$1S(config, 'maxLines');
                 if (maxLines === undefined) {
                     var innerHeight = this.fixedHeight - paddingVertical;
                     maxLines = Math.floor(innerHeight / lineHeight);
                 }
             } else {
-                maxLines = GetValue$1R(config, 'maxLines', 0); // Default is show all lines
+                maxLines = GetValue$1S(config, 'maxLines', 0); // Default is show all lines
             }
 
         }
@@ -18560,9 +18560,9 @@
 
         var showAllLines = (maxLines === 0);
 
-        var wrapMode = GetValue$1R(config, 'wrapMode');
+        var wrapMode = GetValue$1S(config, 'wrapMode');
         if (wrapMode === undefined) {
-            var charWrap = GetValue$1R(config, 'charWrap', false);
+            var charWrap = GetValue$1S(config, 'charWrap', false);
             wrapMode = (charWrap) ? 'char' : 'word';
         }
         if (typeof (wrapMode) === 'string') {
@@ -18570,7 +18570,7 @@
         }
 
         // Get wrapWidth
-        var wrapWidth = GetValue$1R(config, 'wrapWidth', undefined);
+        var wrapWidth = GetValue$1S(config, 'wrapWidth', undefined);
         if (wrapWidth === undefined) {
             if (this.fixedWidth > 0) {
                 wrapWidth = this.fixedWidth - paddingHorizontal;
@@ -18580,11 +18580,11 @@
             }
         }
 
-        var letterSpacing = GetValue$1R(config, 'letterSpacing', 0);
+        var letterSpacing = GetValue$1S(config, 'letterSpacing', 0);
 
-        var hAlign = GetValue$1R(config, 'hAlign', 0);
-        var vAlign = GetValue$1R(config, 'vAlign', 0);
-        var justifyPercentage = GetValue$1R(config, 'justifyPercentage', 0.25);
+        var hAlign = GetValue$1S(config, 'hAlign', 0);
+        var vAlign = GetValue$1S(config, 'vAlign', 0);
+        var justifyPercentage = GetValue$1S(config, 'justifyPercentage', 0.25);
 
         var result = CreateWrapResultData({
             // Override properties
@@ -18784,21 +18784,21 @@
         }
     };
 
-    const GetValue$1Q = Phaser.Utils.Objects.GetValue;
+    const GetValue$1R = Phaser.Utils.Objects.GetValue;
 
     var RunVerticalWrap$1 = function (config) {
         // Parse parameters
-        var startIndex = GetValue$1Q(config, 'start', 0);
+        var startIndex = GetValue$1R(config, 'start', 0);
 
-        SetPadding$1(this.wrapPadding, GetValue$1Q(config, 'padding', 0));
+        SetPadding$1(this.wrapPadding, GetValue$1R(config, 'padding', 0));
         var paddingVertical = this.padding.top + this.padding.bottom + this.wrapPadding.top + this.wrapPadding.bottom;
         var paddingHorizontal = this.padding.left + this.padding.right + this.wrapPadding.left + this.wrapPadding.right;
 
-        var lineWidth = GetValue$1Q(config, 'lineWidth', undefined);
+        var lineWidth = GetValue$1R(config, 'lineWidth', undefined);
         var maxLines;
         if (lineWidth === undefined) {
             // Calculate lineWidth via maxLines, in fixedWidth mode
-            maxLines = GetValue$1Q(config, 'maxLines', 0);
+            maxLines = GetValue$1R(config, 'maxLines', 0);
             if (this.fixedWidth > 0) {
                 var innerWidth = this.fixedWidth - paddingHorizontal;
                 lineWidth = innerWidth / maxLines;
@@ -18808,22 +18808,22 @@
         } else {
             if (this.fixedWidth > 0) {
                 // Calculate maxLines via lineWidth, in fixedWidth mode
-                maxLines = GetValue$1Q(config, 'maxLines', undefined);
+                maxLines = GetValue$1R(config, 'maxLines', undefined);
                 if (maxLines === undefined) {
                     var innerWidth = this.fixedWidth - paddingHorizontal;
                     maxLines = Math.floor(innerWidth / lineWidth) + 1;
                 }
             } else {
-                maxLines = GetValue$1Q(config, 'maxLines', 0); // Default is show all lines
+                maxLines = GetValue$1R(config, 'maxLines', 0); // Default is show all lines
             }
 
         }
         var showAllLines = (maxLines === 0);
 
         // Get fixedCharacterHeight
-        var fixedCharacterHeight = GetValue$1Q(config, 'fixedCharacterHeight', undefined);
+        var fixedCharacterHeight = GetValue$1R(config, 'fixedCharacterHeight', undefined);
         if (fixedCharacterHeight === undefined) {
-            var charPerLine = GetValue$1Q(config, 'charPerLine', undefined);
+            var charPerLine = GetValue$1R(config, 'charPerLine', undefined);
             if (charPerLine !== undefined) {
                 var innerHeight = this.fixedHeight - paddingVertical;
                 fixedCharacterHeight = Math.floor(innerHeight / charPerLine);
@@ -18831,7 +18831,7 @@
         }
 
         // Get wrapHeight
-        var wrapHeight = GetValue$1Q(config, 'wrapHeight', undefined);
+        var wrapHeight = GetValue$1R(config, 'wrapHeight', undefined);
         if (wrapHeight === undefined) {
             if (this.fixedHeight > 0) {
                 wrapHeight = this.fixedHeight - paddingVertical;
@@ -18840,11 +18840,11 @@
             }
         }
 
-        var letterSpacing = GetValue$1Q(config, 'letterSpacing', 0);
+        var letterSpacing = GetValue$1R(config, 'letterSpacing', 0);
 
-        var rtl = GetValue$1Q(config, 'rtl', true);
-        var hAlign = GetValue$1Q(config, 'hAlign', rtl ? 2 : 0);
-        var vAlign = GetValue$1Q(config, 'vAlign', 0);
+        var rtl = GetValue$1R(config, 'rtl', true);
+        var hAlign = GetValue$1R(config, 'hAlign', rtl ? 2 : 0);
+        var vAlign = GetValue$1R(config, 'vAlign', 0);
 
         var result = CreateWrapResultData({
             // Override properties
@@ -18977,12 +18977,12 @@
         return RunVerticalWrap$1.call(this, Merge$1(config, this.wrapConfig));
     };
 
-    const GetValue$1P = Phaser.Utils.Objects.GetValue;
+    const GetValue$1Q = Phaser.Utils.Objects.GetValue;
 
     var RunWrap = function (config) {
-        var wrapCallback = GetValue$1P(this.wrapConfig, 'callback');
+        var wrapCallback = GetValue$1Q(this.wrapConfig, 'callback');
         if (!wrapCallback) {
-            wrapCallback = GetValue$1P(config, 'callback', this.runWordWrap);
+            wrapCallback = GetValue$1Q(config, 'callback', this.runWordWrap);
         }
         if (typeof (wrapCallback) === 'string') {
             wrapCallback = this[wrapCallback];
@@ -19659,25 +19659,25 @@
     }
 
     const IsPlainObject$k = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$1O = Phaser.Utils.Objects.GetValue;
+    const GetValue$1P = Phaser.Utils.Objects.GetValue;
 
     class DynamicText extends Canvas$1 {
         constructor(scene, x, y, fixedWidth, fixedHeight, resolution, config) {
             if (IsPlainObject$k(x)) {
                 config = x;
-                x = GetValue$1O(config, 'x', 0);
-                y = GetValue$1O(config, 'y', 0);
-                fixedWidth = GetValue$1O(config, 'width', 0);
-                fixedHeight = GetValue$1O(config, 'height', 0);
-                resolution = GetValue$1O(config, 'resolution', 1);
+                x = GetValue$1P(config, 'x', 0);
+                y = GetValue$1P(config, 'y', 0);
+                fixedWidth = GetValue$1P(config, 'width', 0);
+                fixedHeight = GetValue$1P(config, 'height', 0);
+                resolution = GetValue$1P(config, 'resolution', 1);
             } else if (IsPlainObject$k(fixedWidth)) {
                 config = fixedWidth;
-                fixedWidth = GetValue$1O(config, 'width', 0);
-                fixedHeight = GetValue$1O(config, 'height', 0);
-                resolution = GetValue$1O(config, 'resolution', 1);
+                fixedWidth = GetValue$1P(config, 'width', 0);
+                fixedHeight = GetValue$1P(config, 'height', 0);
+                resolution = GetValue$1P(config, 'resolution', 1);
             } else if (IsPlainObject$k(resolution)) {
                 config = resolution;
-                resolution = GetValue$1O(config, 'resolution', 1);
+                resolution = GetValue$1P(config, 'resolution', 1);
             }
 
             var width = (fixedWidth === 0) ? 1 : fixedWidth;
@@ -19688,26 +19688,26 @@
             this.padding = SetPadding$1();
             this.wrapPadding = SetPadding$1();
 
-            var textStyleConfig = GetValue$1O(config, 'style', undefined);
+            var textStyleConfig = GetValue$1P(config, 'style', undefined);
             this.defaultTextStyle = new TextStyle$1(null, textStyleConfig);
             this.textStyle = this.defaultTextStyle.clone();
-            this.setTestString(GetValue$1O(config, 'testString', '|MÉqgy'));
+            this.setTestString(GetValue$1P(config, 'testString', '|MÉqgy'));
 
             this._textOX = 0;
             this._textOY = 0;
-            this.background = new Background(this, GetValue$1O(config, 'background', undefined));
-            this.innerBounds = new InnerBounds(this, GetValue$1O(config, 'innerBounds', undefined));
+            this.background = new Background(this, GetValue$1P(config, 'background', undefined));
+            this.innerBounds = new InnerBounds(this, GetValue$1P(config, 'innerBounds', undefined));
             this.children = [];
             this.lastAppendedChildren = [];
             this.lastOverChild = null;
             this.poolManager = new PoolManager(config);
 
             this.setFixedSize(fixedWidth, fixedHeight);
-            this.setPadding(GetValue$1O(config, 'padding', 0));
-            this.setWrapConfig(GetValue$1O(config, 'wrap', undefined));
-            this.setChildrenInteractiveEnable(GetValue$1O(config, 'childrenInteractive', false));
+            this.setPadding(GetValue$1P(config, 'padding', 0));
+            this.setWrapConfig(GetValue$1P(config, 'wrap', undefined));
+            this.setChildrenInteractiveEnable(GetValue$1P(config, 'childrenInteractive', false));
 
-            var text = GetValue$1O(config, 'text', undefined);
+            var text = GetValue$1P(config, 'text', undefined);
             if (text) {
                 this.setText(text);
             }
@@ -19941,7 +19941,7 @@
         style.update(false);
     };
 
-    const GetValue$1N = Phaser.Utils.Objects.GetValue;
+    const GetValue$1O = Phaser.Utils.Objects.GetValue;
 
     var FontSizeExpandText = function (textObject, config) {
         if (typeof (config) === 'number') {
@@ -19950,9 +19950,9 @@
             };
         }
 
-        var minWidth = GetValue$1N(config, 'minWidth', 0);
-        var minHeight = GetValue$1N(config, 'minHeight', 0);
-        var fitHeight = GetValue$1N(config, 'fitHeight', false);
+        var minWidth = GetValue$1O(config, 'minWidth', 0);
+        var minHeight = GetValue$1O(config, 'minHeight', 0);
+        var fitHeight = GetValue$1O(config, 'fitHeight', false);
 
         textObject._minWidth = minWidth;
         textObject._minHeight = minHeight;
@@ -19996,7 +19996,7 @@
         return textObject;
     };
 
-    const GetValue$1M = Phaser.Utils.Objects.GetValue;
+    const GetValue$1N = Phaser.Utils.Objects.GetValue;
 
     class Label extends LabelBase {
         constructor(scene, config) {
@@ -20009,14 +20009,14 @@
             this.type = 'rexLabel';
 
             // Add elements
-            var background = GetValue$1M(config, 'background', undefined);
-            var icon = GetValue$1M(config, 'icon', undefined);
-            var iconMask = GetValue$1M(config, 'iconMask', undefined);
-            var text = GetValue$1M(config, 'text', undefined);
-            var action = GetValue$1M(config, 'action', undefined);
-            var actionMask = GetValue$1M(config, 'actionMask', undefined);
+            var background = GetValue$1N(config, 'background', undefined);
+            var icon = GetValue$1N(config, 'icon', undefined);
+            var iconMask = GetValue$1N(config, 'iconMask', undefined);
+            var text = GetValue$1N(config, 'text', undefined);
+            var action = GetValue$1N(config, 'action', undefined);
+            var actionMask = GetValue$1N(config, 'actionMask', undefined);
             // Align
-            var align = GetValue$1M(config, 'align', undefined); // undefined/left/top: no space
+            var align = GetValue$1N(config, 'align', undefined); // undefined/left/top: no space
 
 
             if (background) {
@@ -20028,23 +20028,23 @@
                 if (this.orientation === 0) {
                     if (text || action) {
                         padding = {
-                            right: GetValue$1M(config, 'space.icon', 0),
-                            top: GetValue$1M(config, 'space.iconTop', 0),
-                            bottom: GetValue$1M(config, 'space.iconBottom', 0),
-                            left: GetValue$1M(config, 'space.iconLeft', 0),
+                            right: GetValue$1N(config, 'space.icon', 0),
+                            top: GetValue$1N(config, 'space.iconTop', 0),
+                            bottom: GetValue$1N(config, 'space.iconBottom', 0),
+                            left: GetValue$1N(config, 'space.iconLeft', 0),
                         };
                     }
                 } else {
                     if (text || action) {
                         padding = {
-                            bottom: GetValue$1M(config, 'space.icon', 0),
-                            left: GetValue$1M(config, 'space.iconLeft', 0),
-                            right: GetValue$1M(config, 'space.iconRight', 0),
-                            top: GetValue$1M(config, 'space.iconTop', 0),
+                            bottom: GetValue$1N(config, 'space.icon', 0),
+                            left: GetValue$1N(config, 'space.iconLeft', 0),
+                            right: GetValue$1N(config, 'space.iconRight', 0),
+                            top: GetValue$1N(config, 'space.iconTop', 0),
                         };
                     }
                 }
-                var fitRatio = GetValue$1M(config, 'squareFitIcon', false) ? 1 : 0;
+                var fitRatio = GetValue$1N(config, 'squareFitIcon', false) ? 1 : 0;
 
                 this.add(
                     icon,
@@ -20056,18 +20056,18 @@
                 }
 
                 if (!fitRatio) {
-                    var iconSize = GetValue$1M(config, 'iconSize', undefined);
+                    var iconSize = GetValue$1N(config, 'iconSize', undefined);
                     this.setIconSize(
-                        GetValue$1M(config, 'iconWidth', iconSize),
-                        GetValue$1M(config, 'iconHeight', iconSize)
+                        GetValue$1N(config, 'iconWidth', iconSize),
+                        GetValue$1N(config, 'iconHeight', iconSize)
                     );
                 }
             }
 
 
             if (text) {
-                var wrapText = GetValue$1M(config, 'wrapText', false);
-                var adjustTextFontSize = GetValue$1M(config, 'adjustTextFontSize', false);
+                var wrapText = GetValue$1N(config, 'wrapText', false);
+                var adjustTextFontSize = GetValue$1N(config, 'adjustTextFontSize', false);
                 if (wrapText) {
                     if (wrapText === true) {
                         wrapText = 'word';
@@ -20083,9 +20083,9 @@
 
                 }
 
-                var textSpace = GetValue$1M(config, 'space.text', 0);
-                var expandTextWidth = GetValue$1M(config, 'expandTextWidth', false);
-                var expandTextHeight = GetValue$1M(config, 'expandTextHeight', false);
+                var textSpace = GetValue$1N(config, 'space.text', 0);
+                var expandTextWidth = GetValue$1N(config, 'expandTextWidth', false);
+                var expandTextHeight = GetValue$1N(config, 'expandTextHeight', false);
                 var proportion, padding, expand;
                 if (this.orientation === 0) {
                     proportion = (expandTextWidth) ? 1 : 0;
@@ -20111,18 +20111,18 @@
                 var padding;
                 if (this.orientation === 0) {
                     padding = {
-                        top: GetValue$1M(config, 'space.actionTop', 0),
-                        bottom: GetValue$1M(config, 'space.actionBottom', 0),
-                        right: GetValue$1M(config, 'space.actionRight', 0),
+                        top: GetValue$1N(config, 'space.actionTop', 0),
+                        bottom: GetValue$1N(config, 'space.actionBottom', 0),
+                        right: GetValue$1N(config, 'space.actionRight', 0),
                     };
                 } else {
                     padding = {
-                        left: GetValue$1M(config, 'space.actionLeft', 0),
-                        right: GetValue$1M(config, 'space.actionRight', 0),
-                        bottom: GetValue$1M(config, 'space.actionBottom', 0),
+                        left: GetValue$1N(config, 'space.actionLeft', 0),
+                        right: GetValue$1N(config, 'space.actionRight', 0),
+                        bottom: GetValue$1N(config, 'space.actionBottom', 0),
                     };
                 }
-                var fitRatio = GetValue$1M(config, 'squareFitAction', false) ? 1 : 0;
+                var fitRatio = GetValue$1N(config, 'squareFitAction', false) ? 1 : 0;
                 this.add(
                     action,
                     { proportion: 0, padding: padding, fitRatio: fitRatio }
@@ -20133,10 +20133,10 @@
                 }
 
                 if (!fitRatio) {
-                    var actionSize = GetValue$1M(config, 'actionSize');
+                    var actionSize = GetValue$1N(config, 'actionSize');
                     this.setActionSize(
-                        GetValue$1M(config, 'actionWidth', actionSize),
-                        GetValue$1M(config, 'actionHeight', actionSize)
+                        GetValue$1N(config, 'actionWidth', actionSize),
+                        GetValue$1N(config, 'actionHeight', actionSize)
                     );
                 }
             }
@@ -20200,13 +20200,15 @@
         strokeAlpha,
         pathData,
         lineWidth,
-        closePath
+        closePath,
+        isDashed,
+        strokePathData,
+        strokePathMask
     }
     */
     var Utils$1 = Phaser.Renderer.WebGL.Utils;
 
-    var StrokePathWebGL = function (pipeline, src, alpha, dx, dy)
-    {
+    var StrokePathWebGL = function (pipeline, src, alpha, dx, dy) {
         var strokeTint = pipeline.strokeTint;
         var strokeTintColor = Utils$1.getTintAppendFloatAlpha(src.strokeColor, src.strokeAlpha * alpha);
 
@@ -20215,39 +20217,76 @@
         strokeTint.BL = strokeTintColor;
         strokeTint.BR = strokeTintColor;
 
-        var path = src.pathData;
+        var isDashed = src.isDashed && !!src.strokePathData;
+        var path = (!isDashed) ? src.pathData : src.strokePathData;
         var pathLength = path.length - 1;
         var lineWidth = src.lineWidth;
         var halfLineWidth = lineWidth / 2;
 
         var px1 = path[0] - dx;
         var py1 = path[1] - dy;
+        var px2, py2;
 
-        if (!src.closePath)
-        {
+        if (!src.closePath) {
             pathLength -= 2;
         }
 
-        for (var i = 2; i < pathLength; i += 2)
-        {
-            var px2 = path[i] - dx;
-            var py2 = path[i + 1] - dy;
+        if (!isDashed) {
+            // Default behavior
+            for (var i = 2; i < pathLength; i += 2) {
+                px2 = path[i] - dx;
+                py2 = path[i + 1] - dy;
 
-            pipeline.batchLine(
-                px1,
-                py1,
-                px2,
-                py2,
-                halfLineWidth,
-                halfLineWidth,
-                lineWidth,
-                i - 2,
-                (src.closePath) ? (i === pathLength - 1) : false
-            );
+                pipeline.batchLine(
+                    px1,
+                    py1,
+                    px2,
+                    py2,
+                    halfLineWidth,
+                    halfLineWidth,
+                    lineWidth,
+                    i - 2,
+                    (src.closePath) ? (i === pathLength - 1) : false
+                );
 
-            px1 = px2;
-            py1 = py2;
+                px1 = px2;
+                py1 = py2;
+            }
+
+        } else {
+            // Draw dashed line
+            var strokePathMask = src.strokePathMask;
+            var drawMaskIdx = 0;
+            var segLineIdx = 0;
+            for (var i = 2; i < pathLength; i += 2) {
+                px2 = path[i] - dx;
+                py2 = path[i + 1] - dy;
+
+                if (strokePathMask[drawMaskIdx]) {
+                    pipeline.batchLine(
+                        px1,
+                        py1,
+                        px2,
+                        py2,
+                        halfLineWidth,
+                        halfLineWidth,
+                        lineWidth,
+                        segLineIdx,
+                        false
+                    );
+                    segLineIdx++;
+
+                } else {
+                    segLineIdx = 0;
+
+                }
+
+                px1 = px2;
+                py1 = py2;
+                drawMaskIdx++;
+            }
         }
+
     };
 
     const GetCalcMatrix$1 = Phaser.GameObjects.GetCalcMatrix;
@@ -20296,6 +20335,45 @@
         ctx.fillStyle = 'rgba(' + red + ',' + green + ',' + blue + ',' + fillAlpha + ')';
     };
 
+    /*
+    src: {
+        fillColor,
+        fillAlpha,
+        pathData,
+        closePath
+    }
+    */
+    var FillPathCanvas = function (ctx, src, dx, dy) {
+        var path = src.pathData;
+        if (!path || (path.length < 4)) {
+            return;
+        }
+
+        var pathLength = path.length - 1;
+        var px1 = path[0] - dx;
+        var py1 = path[1] - dy;
+
+        ctx.beginPath();
+        ctx.moveTo(px1, py1);
+
+        if (!src.closePath) {
+            pathLength -= 2;
+        }
+
+        for (var i = 2; i < pathLength; i += 2) {
+            var px2 = path[i] - dx;
+            var py2 = path[i + 1] - dy;
+            ctx.lineTo(px2, py2);
+        }
+
+        if (src.closePath) {
+            ctx.closePath();
+        }
+
+        FillStyleCanvas(ctx, src);
+        ctx.fill();
+    };
+
     var LineStyleCanvas = function (ctx, src, altColor, altAlpha)
     {
         var strokeColor = (altColor) ? altColor : src.strokeColor;
@@ -20307,6 +20385,72 @@
 
         ctx.strokeStyle = 'rgba(' + red + ',' + green + ',' + blue + ',' + strokeAlpha + ')';
         ctx.lineWidth = src.lineWidth;
+    };
+
+    /*
+    src: {
+        strokeColor,
+        strokeAlpha,
+        pathData,
+        lineWidth,
+        closePath,
+        isDashed,
+        strokePathData,
+        strokePathMask
+    }
+    */
+    var StrokePathCanvas = function (ctx, src, dx, dy) {
+        var isDashed = src.isDashed && !!src.strokePathData;
+        var path = (!isDashed) ? src.pathData : src.strokePathData;
+        if (!path || (path.length < 4)) {
+            return;
+        }
+
+        var pathLength = path.length - 1;
+        var px1 = path[0] - dx;
+        var py1 = path[1] - dy;
+
+        LineStyleCanvas(ctx, src);
+        ctx.beginPath();
+
+        if (!src.closePath) {
+            pathLength -= 2;
+        }
+
+        if (!isDashed) {
+            // Default behavior
+            ctx.moveTo(px1, py1);
+            for (var i = 2; i < pathLength; i += 2) {
+                var px2 = path[i] - dx;
+                var py2 = path[i + 1] - dy;
+                ctx.lineTo(px2, py2);
+            }
+
+            if (src.closePath) {
+                ctx.closePath();
+            }
+
+        } else {
+            // Draw dashed line
+            var strokePathMask = src.strokePathMask;
+            var drawMaskIdx = 0;
+
+            for (var i = 2; i < pathLength; i += 2) {
+                var px2 = path[i] - dx;
+                var py2 = path[i + 1] - dy;
+
+                if (strokePathMask[drawMaskIdx]) {
+                    ctx.moveTo(px1, py1);
+                    ctx.lineTo(px2, py2);
+                }
+
+                px1 = px2;
+                py1 = py2;
+                drawMaskIdx++;
+            }
+        }
+
+        ctx.stroke();
     };
 
     const SetTransform$1 = Phaser.Renderer.Canvas.SetTransform;
@@ -20325,39 +20469,12 @@
             var dx = src._displayOriginX;
             var dy = src._displayOriginY;
 
-            var path = src.pathData;
-            var pathLength = path.length - 1;
-
-            var px1 = path[0] - dx;
-            var py1 = path[1] - dy;
-
-            ctx.beginPath();
-
-            ctx.moveTo(px1, py1);
-
-            if (!src.closePath) {
-                pathLength -= 2;
-            }
-
-            for (var i = 2; i < pathLength; i += 2) {
-                var px2 = path[i] - dx;
-                var py2 = path[i + 1] - dy;
-
-                ctx.lineTo(px2, py2);
-            }
-
-            ctx.closePath();
-
             if (src.isFilled) {
-                FillStyleCanvas(ctx, src);
-
-                ctx.fill();
+                FillPathCanvas(ctx, src, dx, dy);
             }
 
             if (src.isStroked) {
-                LineStyleCanvas(ctx, src);
-
-                ctx.stroke();
+                StrokePathCanvas(ctx, src, dx, dy);
             }
 
             //  Restore the context saved in SetTransform
@@ -20371,9 +20488,295 @@
 
     };
 
+    const EPSILON = 1e-6;
+    const DEFAULT_SEGMENT_COUNT = 10;
+    const DEFAULT_DRAW_RATIO = 0.5;
+
+    var GetValue$1M = Phaser.Utils.Objects.GetValue;
+
+    var NormalizeDashArray = function (dashPattern) {
+        if (!Array.isArray(dashPattern)) {
+            return null;
+        }
+
+        var normalized = [];
+        for (var i = 0, cnt = dashPattern.length; i < cnt; i++) {
+            var d = Number(dashPattern[i]);
+            if (isFinite(d) && (d > 0)) {
+                normalized.push(d);
+            }
+        }
+
+        return (normalized.length > 0) ? normalized : null;
+    };
+
+    var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
+        var segmentCount = GetValue$1M(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
+        var drawRatio = GetValue$1M(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+
+        segmentCount = Math.round(Number(segmentCount));
+        if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+            return null;
+        }
+
+        if (!(totalPathLength > EPSILON)) {
+            return null;
+        }
+
+        var segmentLength = totalPathLength / segmentCount;
+        if (!(segmentLength > EPSILON)) {
+            return null;
+        }
+
+        drawRatio = Math.max(0, Math.min(1, drawRatio));
+
+        if (drawRatio >= (1 - EPSILON)) {
+            // 100% draw ratio becomes a solid stroke.
+            return null;
+        }
+
+        var drawLength = segmentLength * drawRatio;
+        if (drawLength <= EPSILON) {
+            drawLength = EPSILON;
+        }
+
+        var gapLength = segmentLength - drawLength;
+        if (gapLength <= EPSILON) {
+            return null;
+        }
+
+        return [drawLength, gapLength];
+    };
+
+    var NormalizeDashPattern = function (dashPattern, totalPathLength) {
+        return NormalizeDashArray(dashPattern) || BuildAutoDashPattern(dashPattern, totalPathLength);
+    };
+
+    var WrapOffset = function (offset, totalLength) {
+        if (!isFinite(offset)) {
+            offset = 0;
+        }
+
+        offset = offset % totalLength;
+        if (offset < 0) {
+            offset += totalLength;
+        }
+
+        return offset;
+    };
+
+    var ForEachStrokeSegment = function (pathData, closePath, callback) {
+        if ((!pathData) || (pathData.length < 4)) {
+            return;
+        }
+
+        var pathLength = pathData.length - 1;
+        if (!closePath) {
+            pathLength -= 2;
+        }
+
+        if (pathLength < 2) {
+            return;
+        }
+
+        var px1 = pathData[0];
+        var py1 = pathData[1];
+
+        for (var i = 2; i < pathLength; i += 2) {
+            var px2 = pathData[i];
+            var py2 = pathData[i + 1];
+
+            callback(px1, py1, px2, py2);
+
+            px1 = px2;
+            py1 = py2;
+        }
+    };
+
+    var GetTotalPathLength = function (pathData, closePath) {
+        var totalLength = 0;
+        ForEachStrokeSegment(pathData, closePath, function (x0, y0, x1, y1) {
+            var dx = x1 - x0;
+            var dy = y1 - y0;
+            totalLength += Math.sqrt((dx * dx) + (dy * dy));
+        });
+        return totalLength;
+    };
+
+    var BuildDashStroke = function (pathData, config, out) {
+        if (config === undefined) {
+            config = {};
+        }
+        if (out === undefined) {
+            out = {};
+        }
+
+        var closePath = GetValue$1M(config, 'closePath', false);
+        var totalPathLength = GetTotalPathLength(pathData, closePath);
+        var dashPattern = NormalizeDashPattern(GetValue$1M(config, 'dashPattern', undefined), totalPathLength);
+        var dashOffset = GetValue$1M(config, 'dashOffset', 0);
+
+        // No valid dash pattern -> keep original stroke path, disable mask.
+        if (dashPattern === null) {
+            return null;
+        }
+
+        var strokePathData = [];
+        var strokePathMask = [];
+
+        var totalPatternLength = 0;
+        for (var i = 0, cnt = dashPattern.length; i < cnt; i++) {
+            totalPatternLength += dashPattern[i];
+        }
+
+        if (totalPatternLength <= EPSILON) {
+            out.strokePathData = (pathData) ? pathData.slice() : [];
+            out.strokePathMask = undefined;
+            return out;
+        }
+
+        var patternIndex = 0;
+        var draw = true;  // Pattern starts from a draw segment.
+        var patternRemain = dashPattern[patternIndex];
+
+        var AdvancePattern = function () {
+            patternIndex = (patternIndex + 1) % dashPattern.length;
+            draw = !draw;
+            patternRemain = dashPattern[patternIndex];
+        };
+
+        var offset = WrapOffset(dashOffset, totalPatternLength);
+        while (offset > EPSILON) {
+            if (offset < (patternRemain - EPSILON)) {
+                patternRemain -= offset;
+                offset = 0;
+            } else {
+                offset -= patternRemain;
+                AdvancePattern();
+            }
+        }
+
+        var PushSegment = function (x0, y0, x1, y1, drawState) {
+            if (strokePathData.length === 0) {
+                strokePathData.push(x0, y0);
+            } else {
+                var lastX = strokePathData[strokePathData.length - 2];
+                var lastY = strokePathData[strokePathData.length - 1];
+                if ((lastX !== x0) || (lastY !== y0)) {
+                    strokePathData.push(x0, y0);
+                }
+            }
+
+            strokePathData.push(x1, y1);
+            strokePathMask.push(drawState ? 1 : 0);
+        };
+
+        ForEachStrokeSegment(pathData, closePath, function (x0, y0, x1, y1) {
+            var dx = x1 - x0;
+            var dy = y1 - y0;
+            var segLength = Math.sqrt((dx * dx) + (dy * dy));
+
+            if (segLength <= EPSILON) {
+                return;
+            }
+
+            var traveled = 0;
+            while (traveled < (segLength - EPSILON)) {
+                var step = Math.min(patternRemain, segLength - traveled);
+                if (step <= EPSILON) {
+                    AdvancePattern();
+                    continue;
+                }
+
+                var t0 = traveled / segLength;
+                var t1 = (traveled + step) / segLength;
+
+                var sx = x0 + (dx * t0);
+                var sy = y0 + (dy * t0);
+                var ex = x0 + (dx * t1);
+                var ey = y0 + (dy * t1);
+
+                PushSegment(sx, sy, ex, ey, draw);
+
+                traveled += step;
+                patternRemain -= step;
+                if (patternRemain <= EPSILON) {
+                    AdvancePattern();
+                }
+            }
+        });
+
+        // Keep the existing open-path convention in StrokePathWebGL:
+        // an extra tail point is ignored by the renderer when closePath=false.
+        if (!closePath && (strokePathData.length >= 2)) {
+            strokePathData.push(
+                strokePathData[strokePathData.length - 2],
+                strokePathData[strokePathData.length - 1]
+            );
+        }
+
+        out.strokePathData = strokePathData;
+        out.strokePathMask = strokePathMask;
+
+        return out;
+    };
+
+    var StrokePathMethods = {
+        setDashPattern(dashPattern, dashOffset = 0) {
+            // dashPattern: [draw, gap] , or {segments, drawRatio}
+            this.dashPattern = dashPattern;
+            this.dashOffset = dashOffset;
+            this.isDashed = !!dashPattern;
+            return this;
+        },
+
+        clearDashPattern() {
+            this.setDashPattern();
+            return this;
+        },
+
+        setDashed(enable) {
+            if (enable === undefined) {
+                enable = true;
+            }
+
+            this.isDashed = enable;
+            return this;
+        },
+
+        // Internal use
+        buildStrokePath() {
+            if (this.isDashed) {
+                var result = BuildDashStroke(this.pathData, {
+                    closePath: this.closePath,
+                    dashPattern: this.dashPattern,
+                    dashOffset: this.dashOffset
+                }, this);
+
+                if (result) {
+                    this.strokePathData = result.strokePathData;
+                    this.strokePathMask = result.strokePathMask;
+                } else {
+                    this.isDashed = false;
+                }
+
+            }
+
+            return this;
+        }
+    };
+
     const Shape$1 = Phaser.GameObjects.Shape;
 
     class PolygnBase extends Shape$1 {
+        init() {
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+        }
+
         get fillColor() {
             return this._fillColor;
         }
@@ -20445,6 +20848,8 @@
         }
 
         updateData() {
+            // Update this.pathData
+            this.buildStrokePath();
             return this;
         }
 
@@ -20480,6 +20885,7 @@
 
     Object.assign(
         PolygnBase.prototype,
+        StrokePathMethods,
         Render$2
     );
 
@@ -20525,7 +20931,7 @@
 
     const IsPlainObject$j = Phaser.Utils.Objects.IsPlainObject;
     const GetValue$1L = Phaser.Utils.Objects.GetValue;
-    const Earcut$1 = Phaser.Geom.Polygon.Earcut;
+    const Earcut$2 = Phaser.Geom.Polygon.Earcut;
 
     let RoundRectangle$1 = class RoundRectangle extends PolygnBase {
         constructor(scene, x, y, width, height, radiusConfig, fillColor, fillAlpha) {
@@ -20557,6 +20963,7 @@
 
             var geom = new RoundRectangle$2();  // Configurate it later
             super(scene, 'rexRoundRectangleShape', geom);
+            this.init();
 
             this.setShapeType(shapeType);
 
@@ -20659,7 +21066,10 @@
             }
 
             pathData.push(pathData[0], pathData[1]); // Repeat first point to close curve
-            this.pathIndexes = Earcut$1(pathData);
+            this.pathIndexes = Earcut$2(pathData);
+
+            super.updateData();
+
             return this;
         }
 
@@ -21551,21 +21961,30 @@
         DataMethods
     );
 
-    const Earcut = Phaser.Geom.Polygon.Earcut;
+    const Earcut$1 = Phaser.Geom.Polygon.Earcut;
 
     class PathBase extends BaseGeom {
         constructor() {
             super();
 
             this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
             this.pathIndexes = [];
             this.closePath = false;
         }
 
         updateData() {
-            this.pathIndexes = Earcut(this.pathData);
+            this.pathIndexes = Earcut$1(this.pathData);
 
             super.updateData();
+
+            this.buildStrokePath();
             return this;
         }
 
@@ -21580,42 +21999,20 @@
         }
 
         canvasRender(ctx, dx, dy) {
-            var path = this.pathData;
-            var pathLength = path.length - 1;
-
-            var px1 = path[0] - dx;
-            var py1 = path[1] - dy;
-
-            ctx.beginPath();
-
-            ctx.moveTo(px1, py1);
-
-            if (!this.closePath) {
-                pathLength -= 2;
-            }
-
-            for (var i = 2; i < pathLength; i += 2) {
-                var px2 = path[i] - dx;
-                var py2 = path[i + 1] - dy;
-                ctx.lineTo(px2, py2);
-            }
-
-            if (this.closePath) {
-                ctx.closePath();
-            }
-
-
             if (this.isFilled) {
-                FillStyleCanvas(ctx, this);
-                ctx.fill();
+                FillPathCanvas(ctx, this, dx, dy);
             }
 
             if (this.isStroked) {
-                LineStyleCanvas(ctx, this);
-                ctx.stroke();
+                StrokePathCanvas(ctx, this, dx, dy);
             }
         }
     }
+
+    Object.assign(
+        PathBase.prototype,
+        StrokePathMethods,
+    );
 
     Phaser.Math.DegToRad;
 
@@ -22313,7 +22710,153 @@
         }
     }
 
-    Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+    const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+
+    let Rectangle$1 = class Rectangle extends BaseGeom {
+        constructor(x, y, width, height) {
+            if (x === undefined) { x = 0; }
+            if (y === undefined) { y = 0; }
+            if (width === undefined) { width = 0; }
+            if (height === undefined) { height = width; }
+
+            super();
+
+            this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
+            this.closePath = true;
+
+            this.setTopLeftPosition(x, y);
+            this.setSize(width, height);
+        }
+
+        get x() {
+            return this._x;
+        }
+
+        set x(value) {
+            this.dirty = this.dirty || (this._x !== value);
+            this._x = value;
+        }
+
+        get y() {
+            return this._y;
+        }
+
+        set y(value) {
+            this.dirty = this.dirty || (this._y !== value);
+            this._y = value;
+        }
+
+        setTopLeftPosition(x, y) {
+            this.x = x;
+            this.y = y;
+            return this;
+        }
+
+        get width() {
+            return this._width;
+        }
+
+        set width(value) {
+            this.dirty = this.dirty || (this._width !== value);
+            this._width = value;
+        }
+
+        get height() {
+            return this._height;
+        }
+
+        set height(value) {
+            this.dirty = this.dirty || (this._height !== value);
+            this._height = value;
+        }
+
+        setSize(width, height) {
+            this.width = width;
+            this.height = height;
+            return this;
+        }
+
+        get centerX() {
+            return this.x + (this.width / 2);
+        }
+
+        set centerX(value) {
+            this.x = value - (this.width / 2);
+        }
+
+        get centerY() {
+            return this.y + (this.height / 2);
+        }
+
+        set centerY(value) {
+            this.y = value - (this.height / 2);
+        }
+
+        setCenterPosition(x, y) {
+            this.centerX = x;
+            this.centerY = y;
+            return this;
+        }
+
+        updateData() {
+            this.pathData.length = 0;
+            var x0 = this.x,
+                x1 = x0 + this.width,
+                y0 = this.y,
+                y1 = y0 + this.height;
+            this.pathData.push(x0, y0);
+            this.pathData.push(x1, y0);
+            this.pathData.push(x1, y1);
+            this.pathData.push(x0, y1);
+            this.pathData.push(x0, y0);
+
+            super.updateData();
+
+            this.buildStrokePath();
+            return this;
+        }
+
+        webglRender(pipeline, calcMatrix, alpha, dx, dy) {
+            if (this.isFilled) {
+                var fillTint = pipeline.fillTint;
+                var fillTintColor = GetTint(this.fillColor, this.fillAlpha * alpha);
+
+                fillTint.TL = fillTintColor;
+                fillTint.TR = fillTintColor;
+                fillTint.BL = fillTintColor;
+                fillTint.BR = fillTintColor;
+
+                pipeline.batchFillRect(-dx + this.x, -dy + this.y, this.width, this.height);
+            }
+
+            if (this.isStroked) {
+                StrokePathWebGL(pipeline, this, alpha, dx, dy);
+            }
+        }
+
+        canvasRender(ctx, dx, dy) {
+            if (this.isFilled) {
+                FillStyleCanvas(ctx, this);
+                ctx.fillRect(-dx, -dy, this.width, this.height);
+            }
+
+            if (this.isStroked) {
+                StrokePathCanvas(ctx, this, dx, dy);
+            }
+        }
+    };
+
+    Object.assign(
+        Rectangle$1.prototype,
+        StrokePathMethods,
+    );
 
     const GetValue$1I = Phaser.Utils.Objects.GetValue;
 
@@ -22570,7 +23113,147 @@
         }
     }
 
-    Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+    const Earcut = Phaser.Geom.Polygon.Earcut;
+
+    let Triangle$1 = class Triangle extends BaseGeom {
+        constructor(x0, y0, x1, y1, x2, y2) {
+            if (x0 === undefined) { x0 = 0; }
+            if (y0 === undefined) { y0 = 0; }
+            if (x1 === undefined) { x1 = 0; }
+            if (y1 === undefined) { y1 = 0; }
+            if (x2 === undefined) { x2 = 0; }
+            if (y2 === undefined) { y2 = 0; }
+
+            super();
+
+            this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
+            this.pathIndexes = [];
+            this.closePath = true;
+
+            this.setP0(x0, y0);
+            this.setP1(x1, y1);
+            this.setP2(x2, y2);
+        }
+
+        get x0() {
+            return this._x0;
+        }
+
+        set x0(value) {
+            this.dirty = this.dirty || (this._x0 !== value);
+            this._x0 = value;
+        }
+
+        get y0() {
+            return this._y0;
+        }
+
+        set y0(value) {
+            this.dirty = this.dirty || (this._y0 !== value);
+            this._y0 = value;
+        }
+
+        setP0(x, y) {
+            this.x0 = x;
+            this.y0 = y;
+            return this;
+        }
+
+        get x1() {
+            return this._x1;
+        }
+
+        set x1(value) {
+            this.dirty = this.dirty || (this._x1 !== value);
+            this._x1 = value;
+        }
+
+        get y1() {
+            return this._y1;
+        }
+
+        set y1(value) {
+            this.dirty = this.dirty || (this._y1 !== value);
+            this._y1 = value;
+        }
+
+        setP1(x, y) {
+            this.x1 = x;
+            this.y1 = y;
+            return this;
+        }
+
+        get x2() {
+            return this._x2;
+        }
+
+        set x2(value) {
+            this.dirty = this.dirty || (this._x2 !== value);
+            this._x2 = value;
+        }
+
+        get y2() {
+            return this._y2;
+        }
+
+        set y2(value) {
+            this.dirty = this.dirty || (this._y2 !== value);
+            this._y2 = value;
+        }
+
+        setP2(x, y) {
+            this.dirty = this.dirty || (this.x2 !== x) || (this.y2 !== y);
+            this.x2 = x;
+            this.y2 = y;
+            return this;
+        }
+
+        updateData() {
+            this.pathData.length = 0;
+            this.pathData.push(this.x0, this.y0);
+            this.pathData.push(this.x1, this.y1);
+            this.pathData.push(this.x2, this.y2);
+            this.pathData.push(this.x0, this.y0);
+            this.pathIndexes = Earcut(this.pathData);
+
+            super.updateData();
+
+            this.buildStrokePath();
+            return this;
+        }
+
+        webglRender(pipeline, calcMatrix, alpha, dx, dy) {
+            if (this.isFilled) {
+                FillPathWebGL(pipeline, calcMatrix, this, alpha, dx, dy);
+            }
+
+            if (this.isStroked) {
+                StrokePathWebGL(pipeline, this, alpha, dx, dy);
+            }
+        }
+
+        canvasRender(ctx, dx, dy) {
+            if (this.isFilled) {
+                FillPathCanvas(ctx, this, dx, dy);
+            }
+
+            if (this.isStroked) {
+                StrokePathCanvas(ctx, this, dx, dy);
+            }
+        }
+    };
+
+    Object.assign(
+        Triangle$1.prototype,
+        StrokePathMethods,
+    );
 
     var UpdateShapes = function () {
         var skewX = this.skewX;
@@ -37893,6 +38576,7 @@
 
         if (key && !this.sizerChildren.hasOwnProperty(key)) {
             this.emit('createpage', key, this);
+            // Invoke 'this.addPage(child, key, align, padding, expand)' under this event
         }
 
         this._currentKey = key;
@@ -42831,7 +43515,7 @@
 
             var items;
             if (!this.isRootTarget) {
-                items = GetValue$2l(target, bindingKey);
+                items = GetValue$2m(target, bindingKey);
             } else {
                 items = target;
             }
@@ -43865,8 +44549,8 @@
         },
 
         setValueCallbacks(config) {
-            this.onGetValue = GetValue$2l(config, 'onGetValue');
-            this.onSetValue = GetValue$2l(config, 'onSetValue');
+            this.onGetValue = GetValue$2m(config, 'onGetValue');
+            this.onSetValue = GetValue$2m(config, 'onSetValue');
             return this;
         },
 
@@ -43876,7 +44560,7 @@
             }
 
             if (this.bindTargetKey != null) {
-                return GetValue$2l(this.bindingTarget, this.bindTargetKey);
+                return GetValue$2m(this.bindingTarget, this.bindTargetKey);
             }
 
             if (this.onGetValue) {
@@ -44305,7 +44989,7 @@
             config.title = GetLeafKey(bindingKey);
         }
 
-        config.value = GetValue$2l(target, bindingKey, undefined);
+        config.value = GetValue$2m(target, bindingKey, undefined);
 
         // Create InputRow
         var inputRowStyle = this.styles.inputRow || {};
@@ -49078,11 +49762,11 @@
 
     var GetValueFromAliasKeys = function (source, key0, key1, key2, defaultValue) {
         if (HasValue(source, key0)) {
-            return GetValue$2l(source, key0);
+            return GetValue$2m(source, key0);
         } else if (key1 && HasValue(source, key1)) {
-            return GetValue$2l(source, key1);
+            return GetValue$2m(source, key1);
         } else if (key2 && HasValue(source, key2)) {
-            return GetValue$2l(source, key2);
+            return GetValue$2m(source, key2);
         } else {
             return defaultValue;
         }

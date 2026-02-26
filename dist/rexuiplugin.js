@@ -320,12 +320,12 @@
     };
 
     const IsPlainObject$X = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$49 = Phaser.Utils.Objects.GetValue;
+    const GetValue$4a = Phaser.Utils.Objects.GetValue;
 
     var SetStretchMode = function(mode) {
         if (IsPlainObject$X(mode)) {
-            this.stretchMode.edge = parseMode(GetValue$49(mode, 'edge', 0));
-            this.stretchMode.internal = parseMode(GetValue$49(mode, 'internal', 0));
+            this.stretchMode.edge = parseMode(GetValue$4a(mode, 'edge', 0));
+            this.stretchMode.internal = parseMode(GetValue$4a(mode, 'internal', 0));
         } else {
             mode = parseMode(mode);
             this.stretchMode.edge = mode;
@@ -394,66 +394,66 @@
     };
 
     const IsPlainObject$W = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$48 = Phaser.Utils.Objects.GetValue;
+    const GetValue$49 = Phaser.Utils.Objects.GetValue;
 
     var NinePatchBase = function (GOClass, type) {
         class NinePatch extends GOClass {
             constructor(scene, x, y, width, height, key, baseFrame, columns, rows, config) {
                 if (IsPlainObject$W(x)) {
                     config = x;
-                    x = GetValue$48(config, 'x', 0);
-                    y = GetValue$48(config, 'y', 0);
-                    width = GetValue$48(config, 'width', 1);
-                    height = GetValue$48(config, 'height', 1);
-                    key = GetValue$48(config, 'key', undefined);
-                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
-                    columns = GetValue$48(config, 'columns', undefined);
-                    rows = GetValue$48(config, 'rows', undefined);
+                    x = GetValue$49(config, 'x', 0);
+                    y = GetValue$49(config, 'y', 0);
+                    width = GetValue$49(config, 'width', 1);
+                    height = GetValue$49(config, 'height', 1);
+                    key = GetValue$49(config, 'key', undefined);
+                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
+                    columns = GetValue$49(config, 'columns', undefined);
+                    rows = GetValue$49(config, 'rows', undefined);
                 } else if (IsPlainObject$W(width)) {
                     config = width;
-                    width = GetValue$48(config, 'width', 1);
-                    height = GetValue$48(config, 'height', 1);
-                    key = GetValue$48(config, 'key', undefined);
-                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
-                    columns = GetValue$48(config, 'columns', undefined);
-                    rows = GetValue$48(config, 'rows', undefined);
+                    width = GetValue$49(config, 'width', 1);
+                    height = GetValue$49(config, 'height', 1);
+                    key = GetValue$49(config, 'key', undefined);
+                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
+                    columns = GetValue$49(config, 'columns', undefined);
+                    rows = GetValue$49(config, 'rows', undefined);
                 } else if (IsPlainObject$W(key)) {
                     config = key;
-                    key = GetValue$48(config, 'key', undefined);
-                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
-                    columns = GetValue$48(config, 'columns', undefined);
-                    rows = GetValue$48(config, 'rows', undefined);
+                    key = GetValue$49(config, 'key', undefined);
+                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
+                    columns = GetValue$49(config, 'columns', undefined);
+                    rows = GetValue$49(config, 'rows', undefined);
                 } else if (IsPlainObject$W(baseFrame)) {
                     config = baseFrame;
-                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
-                    columns = GetValue$48(config, 'columns', undefined);
-                    rows = GetValue$48(config, 'rows', undefined);
+                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
+                    columns = GetValue$49(config, 'columns', undefined);
+                    rows = GetValue$49(config, 'rows', undefined);
                 } else if (Array.isArray(baseFrame)) {
                     config = rows;
                     rows = columns;
                     columns = baseFrame;
-                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
+                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
                 } else if (IsPlainObject$W(columns)) {
                     config = columns;
-                    columns = GetValue$48(config, 'columns', undefined);
-                    rows = GetValue$48(config, 'rows', undefined);
+                    columns = GetValue$49(config, 'columns', undefined);
+                    rows = GetValue$49(config, 'rows', undefined);
                 }
 
                 if (baseFrame === undefined) {
-                    baseFrame = GetValue$48(config, 'frame', undefined);
+                    baseFrame = GetValue$49(config, 'frame', undefined);
                 }
 
                 if (columns === undefined) {
-                    var leftWidth = GetValue$48(config, 'leftWidth', undefined);
-                    var rightWidth = GetValue$48(config, 'rightWidth', undefined);
+                    var leftWidth = GetValue$49(config, 'leftWidth', undefined);
+                    var rightWidth = GetValue$49(config, 'rightWidth', undefined);
                     if ((leftWidth !== undefined) && (rightWidth !== undefined)) {
                         columns = [leftWidth, undefined, rightWidth];
                     }
                 }
 
                 if (rows === undefined) {
-                    var topHeight = GetValue$48(config, 'topHeight', undefined);
-                    var bottomHeight = GetValue$48(config, 'bottomHeight', undefined);
+                    var topHeight = GetValue$49(config, 'topHeight', undefined);
+                    var bottomHeight = GetValue$49(config, 'bottomHeight', undefined);
                     if ((topHeight !== undefined) && (bottomHeight !== undefined)) {
                         rows = [topHeight, undefined, bottomHeight];
                     }
@@ -472,13 +472,13 @@
                 this._tileSprite = undefined; // Reserved for drawing image
                 this._image = undefined; // Reserved for drawing image
 
-                this.setGetFrameNameCallback(GetValue$48(config, 'getFrameNameCallback', undefined));
-                this.setStretchMode(GetValue$48(config, 'stretchMode', 0));
-                this.setPreserveRatio(GetValue$48(config, 'preserveRatio', true));
+                this.setGetFrameNameCallback(GetValue$49(config, 'getFrameNameCallback', undefined));
+                this.setStretchMode(GetValue$49(config, 'stretchMode', 0));
+                this.setPreserveRatio(GetValue$49(config, 'preserveRatio', true));
 
-                var maxFixedPartScale = GetValue$48(config, 'maxFixedPartScale', 1);
-                var maxFixedPartScaleX = GetValue$48(config, 'maxFixedPartScaleX', maxFixedPartScale);
-                var maxFixedPartScaleY = GetValue$48(config, 'maxFixedPartScaleY', undefined);
+                var maxFixedPartScale = GetValue$49(config, 'maxFixedPartScale', 1);
+                var maxFixedPartScaleX = GetValue$49(config, 'maxFixedPartScaleX', maxFixedPartScale);
+                var maxFixedPartScaleY = GetValue$49(config, 'maxFixedPartScaleY', undefined);
                 this.setMaxFixedPartScale(maxFixedPartScaleX, maxFixedPartScaleY);
 
                 this.setBaseTexture(key, baseFrame, columns, rows);
@@ -916,12 +916,12 @@
         }
     }
 
-    const GetValue$47 = Phaser.Utils.Objects.GetValue;
+    const GetValue$48 = Phaser.Utils.Objects.GetValue;
 
     var Pools$1 = {};
     let PoolManager$1 = class PoolManager {
         constructor(config) {
-            this.pools = GetValue$47(config, 'pools', Pools$1);
+            this.pools = GetValue$48(config, 'pools', Pools$1);
         }
 
         destroy() {
@@ -991,7 +991,7 @@
 
     const GameObject$4 = Phaser.GameObjects.GameObject;
     const IsPlainObject$V = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$46 = Phaser.Utils.Objects.GetValue;
+    const GetValue$47 = Phaser.Utils.Objects.GetValue;
     const List$1 = Phaser.Structs.List;
     const StableSort$1 = Phaser.Utils.Array.StableSort;
 
@@ -999,10 +999,10 @@
         constructor(scene, x, y, texture, frame, config) {
             if (IsPlainObject$V(x)) {
                 config = x;
-                x = GetValue$46(config, 'x', 0);
-                y = GetValue$46(config, 'y', 0);
-                texture = GetValue$46(config, 'texture');
-                frame = GetValue$46(config, 'frame');
+                x = GetValue$47(config, 'x', 0);
+                y = GetValue$47(config, 'y', 0);
+                texture = GetValue$47(config, 'texture');
+                frame = GetValue$47(config, 'frame');
             }
 
             if (x === undefined) {
@@ -1019,7 +1019,7 @@
             this.displayListDirty = false;
             this.lastAppendedChildren = [];
 
-            var reuseBob = GetValue$46(config, 'reuseBob', true);
+            var reuseBob = GetValue$47(config, 'reuseBob', true);
             this.poolManager = (reuseBob) ? (new PoolManager$1(config)) : undefined;
 
             this.setTexture(texture, frame);
@@ -1100,7 +1100,7 @@
 
     const ImageTypeName$1 = 'image';
 
-    var GetValue$45 = function (source, key, defaultValue, altSource) {
+    var GetValue$46 = function (source, key, defaultValue, altSource) {
         var isValidSource = source && (typeof source === 'object' || typeof source === 'function');
         var isValidAltSource = altSource && (typeof altSource === 'object' || typeof altSource === 'function');
 
@@ -1216,7 +1216,7 @@
 
         getData(key, defaultValue) {
             this.enableData();
-            return (key === undefined) ? this.data : GetValue$45(this.data, key, defaultValue);
+            return (key === undefined) ? this.data : GetValue$46(this.data, key, defaultValue);
         },
 
         incData(key, inc, defaultValue) {
@@ -1323,9 +1323,9 @@
         DataMethods$2
     );
 
-    const DegToRad$j = Phaser.Math.DegToRad;
+    const DegToRad$i = Phaser.Math.DegToRad;
     const RadToDeg$e = Phaser.Math.RadToDeg;
-    const GetValue$44 = Phaser.Utils.Objects.GetValue;
+    const GetValue$45 = Phaser.Utils.Objects.GetValue;
 
     let RenderBase$1 = class RenderBase extends Base$4 {
 
@@ -1387,7 +1387,7 @@
         }
 
         set angle(value) {
-            this.rotation = DegToRad$j(value);
+            this.rotation = DegToRad$i(value);
         }
 
         setAngle(angle) {
@@ -1567,11 +1567,11 @@
             }
 
             // ScaleX, ScaleY
-            var width = GetValue$44(o, 'width', undefined);
-            var height = GetValue$44(o, 'height', undefined);
-            var scale = GetValue$44(o, 'scale', undefined);
-            var scaleX = GetValue$44(o, 'scaleX', scale);
-            var scaleY = GetValue$44(o, 'scaleY', scale);
+            var width = GetValue$45(o, 'width', undefined);
+            var height = GetValue$45(o, 'height', undefined);
+            var scale = GetValue$45(o, 'scale', undefined);
+            var scaleX = GetValue$45(o, 'scaleX', scale);
+            var scaleY = GetValue$45(o, 'scaleY', scale);
 
             if (width !== undefined) {
                 if ((height === undefined) && (scaleY === undefined)) {
@@ -1597,7 +1597,7 @@
                 this.setDisplayHeight(o.displayHeight);
             }
 
-            var origin = GetValue$44(o, 'origin', undefined);
+            var origin = GetValue$45(o, 'origin', undefined);
             if (origin !== undefined) {
                 this.setOrigin(origin);
             } else {
@@ -1640,7 +1640,7 @@
     };
 
     const TransformMatrix$2 = Phaser.GameObjects.Components.TransformMatrix;
-    const GetTint$2 = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+    const GetTint$1 = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
 
     var FrameMatrix = new TransformMatrix$2();
 
@@ -1713,7 +1713,7 @@
 
         var quad = FrameMatrix.setQuad(tx, ty, tw, th, roundPixels);
 
-        var tint = GetTint$2(this.tint, this.alpha * alpha);
+        var tint = GetTint$1(this.tint, this.alpha * alpha);
 
         pipeline.batchQuad(
             this.parent,
@@ -2154,13 +2154,15 @@
         strokeAlpha,
         pathData,
         lineWidth,
-        closePath
+        closePath,
+        isDashed,
+        strokePathData,
+        strokePathMask
     }
     */
     var Utils$2 = Phaser.Renderer.WebGL.Utils;
 
-    var StrokePathWebGL = function (pipeline, src, alpha, dx, dy)
-    {
+    var StrokePathWebGL = function (pipeline, src, alpha, dx, dy) {
         var strokeTint = pipeline.strokeTint;
         var strokeTintColor = Utils$2.getTintAppendFloatAlpha(src.strokeColor, src.strokeAlpha * alpha);
 
@@ -2169,39 +2171,76 @@
         strokeTint.BL = strokeTintColor;
         strokeTint.BR = strokeTintColor;
 
-        var path = src.pathData;
+        var isDashed = src.isDashed && !!src.strokePathData;
+        var path = (!isDashed) ? src.pathData : src.strokePathData;
         var pathLength = path.length - 1;
         var lineWidth = src.lineWidth;
         var halfLineWidth = lineWidth / 2;
 
         var px1 = path[0] - dx;
         var py1 = path[1] - dy;
+        var px2, py2;
 
-        if (!src.closePath)
-        {
+        if (!src.closePath) {
             pathLength -= 2;
         }
 
-        for (var i = 2; i < pathLength; i += 2)
-        {
-            var px2 = path[i] - dx;
-            var py2 = path[i + 1] - dy;
+        if (!isDashed) {
+            // Default behavior
+            for (var i = 2; i < pathLength; i += 2) {
+                px2 = path[i] - dx;
+                py2 = path[i + 1] - dy;
 
-            pipeline.batchLine(
-                px1,
-                py1,
-                px2,
-                py2,
-                halfLineWidth,
-                halfLineWidth,
-                lineWidth,
-                i - 2,
-                (src.closePath) ? (i === pathLength - 1) : false
-            );
+                pipeline.batchLine(
+                    px1,
+                    py1,
+                    px2,
+                    py2,
+                    halfLineWidth,
+                    halfLineWidth,
+                    lineWidth,
+                    i - 2,
+                    (src.closePath) ? (i === pathLength - 1) : false
+                );
 
-            px1 = px2;
-            py1 = py2;
+                px1 = px2;
+                py1 = py2;
+            }
+
+        } else {
+            // Draw dashed line
+            var strokePathMask = src.strokePathMask;
+            var drawMaskIdx = 0;
+            var segLineIdx = 0;
+            for (var i = 2; i < pathLength; i += 2) {
+                px2 = path[i] - dx;
+                py2 = path[i + 1] - dy;
+
+                if (strokePathMask[drawMaskIdx]) {
+                    pipeline.batchLine(
+                        px1,
+                        py1,
+                        px2,
+                        py2,
+                        halfLineWidth,
+                        halfLineWidth,
+                        lineWidth,
+                        segLineIdx,
+                        false
+                    );
+                    segLineIdx++;
+
+                } else {
+                    segLineIdx = 0;
+
+                }
+
+                px1 = px2;
+                py1 = py2;
+                drawMaskIdx++;
+            }
         }
+
     };
 
     const GetCalcMatrix$1 = Phaser.GameObjects.GetCalcMatrix;
@@ -2250,6 +2289,45 @@
         ctx.fillStyle = 'rgba(' + red + ',' + green + ',' + blue + ',' + fillAlpha + ')';
     };
 
+    /*
+    src: {
+        fillColor,
+        fillAlpha,
+        pathData,
+        closePath
+    }
+    */
+    var FillPathCanvas = function (ctx, src, dx, dy) {
+        var path = src.pathData;
+        if (!path || (path.length < 4)) {
+            return;
+        }
+
+        var pathLength = path.length - 1;
+        var px1 = path[0] - dx;
+        var py1 = path[1] - dy;
+
+        ctx.beginPath();
+        ctx.moveTo(px1, py1);
+
+        if (!src.closePath) {
+            pathLength -= 2;
+        }
+
+        for (var i = 2; i < pathLength; i += 2) {
+            var px2 = path[i] - dx;
+            var py2 = path[i + 1] - dy;
+            ctx.lineTo(px2, py2);
+        }
+
+        if (src.closePath) {
+            ctx.closePath();
+        }
+
+        FillStyleCanvas(ctx, src);
+        ctx.fill();
+    };
+
     var LineStyleCanvas = function (ctx, src, altColor, altAlpha)
     {
         var strokeColor = (altColor) ? altColor : src.strokeColor;
@@ -2261,6 +2339,72 @@
 
         ctx.strokeStyle = 'rgba(' + red + ',' + green + ',' + blue + ',' + strokeAlpha + ')';
         ctx.lineWidth = src.lineWidth;
+    };
+
+    /*
+    src: {
+        strokeColor,
+        strokeAlpha,
+        pathData,
+        lineWidth,
+        closePath,
+        isDashed,
+        strokePathData,
+        strokePathMask
+    }
+    */
+    var StrokePathCanvas = function (ctx, src, dx, dy) {
+        var isDashed = src.isDashed && !!src.strokePathData;
+        var path = (!isDashed) ? src.pathData : src.strokePathData;
+        if (!path || (path.length < 4)) {
+            return;
+        }
+
+        var pathLength = path.length - 1;
+        var px1 = path[0] - dx;
+        var py1 = path[1] - dy;
+
+        LineStyleCanvas(ctx, src);
+        ctx.beginPath();
+
+        if (!src.closePath) {
+            pathLength -= 2;
+        }
+
+        if (!isDashed) {
+            // Default behavior
+            ctx.moveTo(px1, py1);
+            for (var i = 2; i < pathLength; i += 2) {
+                var px2 = path[i] - dx;
+                var py2 = path[i + 1] - dy;
+                ctx.lineTo(px2, py2);
+            }
+
+            if (src.closePath) {
+                ctx.closePath();
+            }
+
+        } else {
+            // Draw dashed line
+            var strokePathMask = src.strokePathMask;
+            var drawMaskIdx = 0;
+
+            for (var i = 2; i < pathLength; i += 2) {
+                var px2 = path[i] - dx;
+                var py2 = path[i + 1] - dy;
+
+                if (strokePathMask[drawMaskIdx]) {
+                    ctx.moveTo(px1, py1);
+                    ctx.lineTo(px2, py2);
+                }
+
+                px1 = px2;
+                py1 = py2;
+                drawMaskIdx++;
+            }
+        }
+
+        ctx.stroke();
     };
 
     const SetTransform$1 = Phaser.Renderer.Canvas.SetTransform;
@@ -2279,39 +2423,12 @@
             var dx = src._displayOriginX;
             var dy = src._displayOriginY;
 
-            var path = src.pathData;
-            var pathLength = path.length - 1;
-
-            var px1 = path[0] - dx;
-            var py1 = path[1] - dy;
-
-            ctx.beginPath();
-
-            ctx.moveTo(px1, py1);
-
-            if (!src.closePath) {
-                pathLength -= 2;
-            }
-
-            for (var i = 2; i < pathLength; i += 2) {
-                var px2 = path[i] - dx;
-                var py2 = path[i + 1] - dy;
-
-                ctx.lineTo(px2, py2);
-            }
-
-            ctx.closePath();
-
             if (src.isFilled) {
-                FillStyleCanvas(ctx, src);
-
-                ctx.fill();
+                FillPathCanvas(ctx, src, dx, dy);
             }
 
             if (src.isStroked) {
-                LineStyleCanvas(ctx, src);
-
-                ctx.stroke();
+                StrokePathCanvas(ctx, src, dx, dy);
             }
 
             //  Restore the context saved in SetTransform
@@ -2325,9 +2442,295 @@
 
     };
 
+    const EPSILON = 1e-6;
+    const DEFAULT_SEGMENT_COUNT = 10;
+    const DEFAULT_DRAW_RATIO = 0.5;
+
+    var GetValue$44 = Phaser.Utils.Objects.GetValue;
+
+    var NormalizeDashArray = function (dashPattern) {
+        if (!Array.isArray(dashPattern)) {
+            return null;
+        }
+
+        var normalized = [];
+        for (var i = 0, cnt = dashPattern.length; i < cnt; i++) {
+            var d = Number(dashPattern[i]);
+            if (isFinite(d) && (d > 0)) {
+                normalized.push(d);
+            }
+        }
+
+        return (normalized.length > 0) ? normalized : null;
+    };
+
+    var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
+        var segmentCount = GetValue$44(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
+        var drawRatio = GetValue$44(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+
+        segmentCount = Math.round(Number(segmentCount));
+        if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+            return null;
+        }
+
+        if (!(totalPathLength > EPSILON)) {
+            return null;
+        }
+
+        var segmentLength = totalPathLength / segmentCount;
+        if (!(segmentLength > EPSILON)) {
+            return null;
+        }
+
+        drawRatio = Math.max(0, Math.min(1, drawRatio));
+
+        if (drawRatio >= (1 - EPSILON)) {
+            // 100% draw ratio becomes a solid stroke.
+            return null;
+        }
+
+        var drawLength = segmentLength * drawRatio;
+        if (drawLength <= EPSILON) {
+            drawLength = EPSILON;
+        }
+
+        var gapLength = segmentLength - drawLength;
+        if (gapLength <= EPSILON) {
+            return null;
+        }
+
+        return [drawLength, gapLength];
+    };
+
+    var NormalizeDashPattern = function (dashPattern, totalPathLength) {
+        return NormalizeDashArray(dashPattern) || BuildAutoDashPattern(dashPattern, totalPathLength);
+    };
+
+    var WrapOffset = function (offset, totalLength) {
+        if (!isFinite(offset)) {
+            offset = 0;
+        }
+
+        offset = offset % totalLength;
+        if (offset < 0) {
+            offset += totalLength;
+        }
+
+        return offset;
+    };
+
+    var ForEachStrokeSegment = function (pathData, closePath, callback) {
+        if ((!pathData) || (pathData.length < 4)) {
+            return;
+        }
+
+        var pathLength = pathData.length - 1;
+        if (!closePath) {
+            pathLength -= 2;
+        }
+
+        if (pathLength < 2) {
+            return;
+        }
+
+        var px1 = pathData[0];
+        var py1 = pathData[1];
+
+        for (var i = 2; i < pathLength; i += 2) {
+            var px2 = pathData[i];
+            var py2 = pathData[i + 1];
+
+            callback(px1, py1, px2, py2);
+
+            px1 = px2;
+            py1 = py2;
+        }
+    };
+
+    var GetTotalPathLength = function (pathData, closePath) {
+        var totalLength = 0;
+        ForEachStrokeSegment(pathData, closePath, function (x0, y0, x1, y1) {
+            var dx = x1 - x0;
+            var dy = y1 - y0;
+            totalLength += Math.sqrt((dx * dx) + (dy * dy));
+        });
+        return totalLength;
+    };
+
+    var BuildDashStroke = function (pathData, config, out) {
+        if (config === undefined) {
+            config = {};
+        }
+        if (out === undefined) {
+            out = {};
+        }
+
+        var closePath = GetValue$44(config, 'closePath', false);
+        var totalPathLength = GetTotalPathLength(pathData, closePath);
+        var dashPattern = NormalizeDashPattern(GetValue$44(config, 'dashPattern', undefined), totalPathLength);
+        var dashOffset = GetValue$44(config, 'dashOffset', 0);
+
+        // No valid dash pattern -> keep original stroke path, disable mask.
+        if (dashPattern === null) {
+            return null;
+        }
+
+        var strokePathData = [];
+        var strokePathMask = [];
+
+        var totalPatternLength = 0;
+        for (var i = 0, cnt = dashPattern.length; i < cnt; i++) {
+            totalPatternLength += dashPattern[i];
+        }
+
+        if (totalPatternLength <= EPSILON) {
+            out.strokePathData = (pathData) ? pathData.slice() : [];
+            out.strokePathMask = undefined;
+            return out;
+        }
+
+        var patternIndex = 0;
+        var draw = true;  // Pattern starts from a draw segment.
+        var patternRemain = dashPattern[patternIndex];
+
+        var AdvancePattern = function () {
+            patternIndex = (patternIndex + 1) % dashPattern.length;
+            draw = !draw;
+            patternRemain = dashPattern[patternIndex];
+        };
+
+        var offset = WrapOffset(dashOffset, totalPatternLength);
+        while (offset > EPSILON) {
+            if (offset < (patternRemain - EPSILON)) {
+                patternRemain -= offset;
+                offset = 0;
+            } else {
+                offset -= patternRemain;
+                AdvancePattern();
+            }
+        }
+
+        var PushSegment = function (x0, y0, x1, y1, drawState) {
+            if (strokePathData.length === 0) {
+                strokePathData.push(x0, y0);
+            } else {
+                var lastX = strokePathData[strokePathData.length - 2];
+                var lastY = strokePathData[strokePathData.length - 1];
+                if ((lastX !== x0) || (lastY !== y0)) {
+                    strokePathData.push(x0, y0);
+                }
+            }
+
+            strokePathData.push(x1, y1);
+            strokePathMask.push(drawState ? 1 : 0);
+        };
+
+        ForEachStrokeSegment(pathData, closePath, function (x0, y0, x1, y1) {
+            var dx = x1 - x0;
+            var dy = y1 - y0;
+            var segLength = Math.sqrt((dx * dx) + (dy * dy));
+
+            if (segLength <= EPSILON) {
+                return;
+            }
+
+            var traveled = 0;
+            while (traveled < (segLength - EPSILON)) {
+                var step = Math.min(patternRemain, segLength - traveled);
+                if (step <= EPSILON) {
+                    AdvancePattern();
+                    continue;
+                }
+
+                var t0 = traveled / segLength;
+                var t1 = (traveled + step) / segLength;
+
+                var sx = x0 + (dx * t0);
+                var sy = y0 + (dy * t0);
+                var ex = x0 + (dx * t1);
+                var ey = y0 + (dy * t1);
+
+                PushSegment(sx, sy, ex, ey, draw);
+
+                traveled += step;
+                patternRemain -= step;
+                if (patternRemain <= EPSILON) {
+                    AdvancePattern();
+                }
+            }
+        });
+
+        // Keep the existing open-path convention in StrokePathWebGL:
+        // an extra tail point is ignored by the renderer when closePath=false.
+        if (!closePath && (strokePathData.length >= 2)) {
+            strokePathData.push(
+                strokePathData[strokePathData.length - 2],
+                strokePathData[strokePathData.length - 1]
+            );
+        }
+
+        out.strokePathData = strokePathData;
+        out.strokePathMask = strokePathMask;
+
+        return out;
+    };
+
+    var StrokePathMethods = {
+        setDashPattern(dashPattern, dashOffset = 0) {
+            // dashPattern: [draw, gap] , or {segments, drawRatio}
+            this.dashPattern = dashPattern;
+            this.dashOffset = dashOffset;
+            this.isDashed = !!dashPattern;
+            return this;
+        },
+
+        clearDashPattern() {
+            this.setDashPattern();
+            return this;
+        },
+
+        setDashed(enable) {
+            if (enable === undefined) {
+                enable = true;
+            }
+
+            this.isDashed = enable;
+            return this;
+        },
+
+        // Internal use
+        buildStrokePath() {
+            if (this.isDashed) {
+                var result = BuildDashStroke(this.pathData, {
+                    closePath: this.closePath,
+                    dashPattern: this.dashPattern,
+                    dashOffset: this.dashOffset
+                }, this);
+
+                if (result) {
+                    this.strokePathData = result.strokePathData;
+                    this.strokePathMask = result.strokePathMask;
+                } else {
+                    this.isDashed = false;
+                }
+
+            }
+
+            return this;
+        }
+    };
+
     const Shape$1 = Phaser.GameObjects.Shape;
 
     class PolygnBase extends Shape$1 {
+        init() {
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+        }
+
         get fillColor() {
             return this._fillColor;
         }
@@ -2399,6 +2802,8 @@
         }
 
         updateData() {
+            // Update this.pathData
+            this.buildStrokePath();
             return this;
         }
 
@@ -2434,6 +2839,7 @@
 
     Object.assign(
         PolygnBase.prototype,
+        StrokePathMethods,
         Render$3
     );
 
@@ -2631,7 +3037,7 @@
         return pathData;
     };
 
-    const DegToRad$i = Phaser.Math.DegToRad;
+    const DegToRad$h = Phaser.Math.DegToRad;
 
     var ArcTo$1 = function (centerX, centerY, radiusX, radiusY, startAngle, endAngle, antiClockWise, iteration, pathData) {
         // startAngle, endAngle: 0 ~ 360
@@ -2642,8 +3048,8 @@
         }
 
         var deltaAngle = endAngle - startAngle;
-        var step = DegToRad$i(deltaAngle) / iteration;
-        startAngle = DegToRad$i(startAngle);
+        var step = DegToRad$h(deltaAngle) / iteration;
+        startAngle = DegToRad$h(startAngle);
         for (var i = 0; i <= iteration; i++) {
             var angle = startAngle + (step * i);
             var x = centerX + (radiusX * Math.cos(angle));
@@ -2655,7 +3061,7 @@
 
     const IsPlainObject$T = Phaser.Utils.Objects.IsPlainObject;
     const GetValue$42 = Phaser.Utils.Objects.GetValue;
-    const Earcut$2 = Phaser.Geom.Polygon.Earcut;
+    const Earcut$3 = Phaser.Geom.Polygon.Earcut;
 
     let RoundRectangle$2 = class RoundRectangle extends PolygnBase {
         constructor(scene, x, y, width, height, radiusConfig, fillColor, fillAlpha) {
@@ -2687,6 +3093,7 @@
 
             var geom = new RoundRectangle$3();  // Configurate it later
             super(scene, 'rexRoundRectangleShape', geom);
+            this.init();
 
             this.setShapeType(shapeType);
 
@@ -2789,7 +3196,10 @@
             }
 
             pathData.push(pathData[0], pathData[1]); // Repeat first point to close curve
-            this.pathIndexes = Earcut$2(pathData);
+            this.pathIndexes = Earcut$3(pathData);
+
+            super.updateData();
+
             return this;
         }
 
@@ -3481,7 +3891,7 @@
         }
     };
 
-    const DegToRad$h = Phaser.Math.DegToRad;
+    const DegToRad$g = Phaser.Math.DegToRad;
 
     var AddRoundRectanglePath = function (context, x, y, width, height, radiusConfig, iteration) {
         var geom = new RoundRectangle$3(x, y, width, height, radiusConfig),
@@ -3607,8 +4017,8 @@
             endAngle += 360;
         }
 
-        startAngle = DegToRad$h(startAngle);
-        endAngle = DegToRad$h(endAngle);
+        startAngle = DegToRad$g(startAngle);
+        endAngle = DegToRad$g(endAngle);
 
         if (iteration == null) {  // undefined, or null
             context.ellipse(centerX, centerY, radiusX, radiusY, 0, startAngle, endAngle, antiClockWise);
@@ -4167,7 +4577,7 @@
     const IsPlainObject$S = Phaser.Utils.Objects.IsPlainObject;
     const GetValue$40 = Phaser.Utils.Objects.GetValue;
     const Linear$q = Phaser.Math.Linear;
-    const Earcut$1 = Phaser.Geom.Polygon.Earcut;
+    const Earcut$2 = Phaser.Geom.Polygon.Earcut;
 
     class Quad extends PolygnBase {
         constructor(scene, x, y, width, height, fillColor, fillAlpha) {
@@ -4194,6 +4604,7 @@
 
             var geom = new QuadGeom();  // Configurate it later
             super(scene, 'rexQuadShape', geom);
+            this.init();
 
             geom.setTo(0, 0, width, height);
 
@@ -4295,7 +4706,9 @@
             }
 
             pathData.push(pathData[0], pathData[1]); // Repeat first point to close curve
-            this.pathIndexes = Earcut$1(pathData);
+            this.pathIndexes = Earcut$2(pathData);
+
+            super.updateData();
 
             return this;
         }
@@ -9652,7 +10065,7 @@
         RenderMethods
     );
 
-    const DegToRad$g = Phaser.Math.DegToRad;
+    const DegToRad$f = Phaser.Math.DegToRad;
     const RadToDeg$d = Phaser.Math.RadToDeg;
     const GetValue$3T = Phaser.Utils.Objects.GetValue;
 
@@ -9769,7 +10182,7 @@
         get angle() { return RadToDeg$d(this._rotation); }
 
         set angle(value) {
-            this.rotation = DegToRad$g(value);
+            this.rotation = DegToRad$f(value);
         }
 
         setAngle(angle) {
@@ -19771,11 +20184,11 @@
         constructor(parent, config) {
             super(parent);
 
-            this.waitCompleteEventName = GetValue$45(config, 'completeEventName', this.waitCompleteEventName);
+            this.waitCompleteEventName = GetValue$46(config, 'completeEventName', this.waitCompleteEventName);
 
-            this.setClickTarget(GetValue$45(config, 'clickTarget', this.scene));
-            this.setClickShortcutKeys(GetValue$45(config, 'clickShortcutKeys', undefined));
-            this.setCameraTarget(GetValue$45(config, 'camera', this.scene.cameras.main));
+            this.setClickTarget(GetValue$46(config, 'clickTarget', this.scene));
+            this.setClickShortcutKeys(GetValue$46(config, 'clickShortcutKeys', undefined));
+            this.setCameraTarget(GetValue$46(config, 'camera', this.scene.cameras.main));
         }
 
         get clickTarget() {
@@ -20584,20 +20997,20 @@
     let BracketParser$1 = class BracketParser {
         constructor(config) {
             // Event emitter
-            this.setEventEmitter(GetValue$45(config, 'eventEmitter', undefined));
+            this.setEventEmitter(GetValue$46(config, 'eventEmitter', undefined));
 
             // Value convert
-            this.setValueConverter(GetValue$45(config, 'valueConvert', true));
+            this.setValueConverter(GetValue$46(config, 'valueConvert', true));
             // Loop
-            this.setLoopEnable(GetValue$45(config, 'loop', false));
+            this.setLoopEnable(GetValue$46(config, 'loop', false));
 
             // Brackets and generate regex
-            this.setMultipleLinesTagEnable(GetValue$45(config, 'multipleLinesTag', false));
-            var delimiters = GetValue$45(config, 'delimiters', '<>');
+            this.setMultipleLinesTagEnable(GetValue$46(config, 'multipleLinesTag', false));
+            var delimiters = GetValue$46(config, 'delimiters', '<>');
             this.setDelimiters(delimiters[0], delimiters[1]);
 
             // Translate tagName callback
-            this.setTranslateTagNameCallback(GetValue$45(config, 'translateTagNameCallback'));
+            this.setTranslateTagNameCallback(GetValue$46(config, 'translateTagNameCallback'));
 
             this.isRunning = false;
             this.isPaused = false;
@@ -20868,10 +21281,10 @@
             super(config);
 
             // Parameters for regex
-            this.setTagExpression(GetValue$45(config, 'regex.tag', undefined));
-            this.setValueExpression(GetValue$45(config, 'regex.value', undefined));
+            this.setTagExpression(GetValue$46(config, 'regex.tag', undefined));
+            this.setValueExpression(GetValue$46(config, 'regex.value', undefined));
             // Brackets and generate regex
-            var delimiters = GetValue$45(config, 'delimiters', '<>');
+            var delimiters = GetValue$46(config, 'delimiters', '<>');
             this.setDelimiters(delimiters[0], delimiters[1]);
         }
 
@@ -22025,13 +22438,13 @@
         this.cameraTarget.zoomTo(...params);
     };
 
-    const DegToRad$f = Phaser.Math.DegToRad;
+    const DegToRad$e = Phaser.Math.DegToRad;
 
     var OnParseRotateCameraTag = function (textPlayer, parser, config) {
         var tagName = 'camera.rotate';
         parser
             .on(`+${tagName}`, function (value) {
-                value = DegToRad$f(value);
+                value = DegToRad$e(value);
                 AppendCommand$3.call(textPlayer,
                     tagName,          // name
                     Rotate$1,           // callback
@@ -22041,7 +22454,7 @@
                 parser.skipEvent();
             })
             .on(`+${tagName}.to`, function (value, duration, ease) {
-                value = DegToRad$f(value);
+                value = DegToRad$e(value);
                 AppendCommand$3.call(textPlayer,
                     'camera.rotate.to',       // name
                     RotateTo,                 // callback
@@ -26892,21 +27305,30 @@
         DataMethods$2
     );
 
-    const Earcut = Phaser.Geom.Polygon.Earcut;
+    const Earcut$1 = Phaser.Geom.Polygon.Earcut;
 
     class PathBase extends BaseGeom {
         constructor() {
             super();
 
             this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
             this.pathIndexes = [];
             this.closePath = false;
         }
 
         updateData() {
-            this.pathIndexes = Earcut(this.pathData);
+            this.pathIndexes = Earcut$1(this.pathData);
 
             super.updateData();
+
+            this.buildStrokePath();
             return this;
         }
 
@@ -26921,44 +27343,22 @@
         }
 
         canvasRender(ctx, dx, dy) {
-            var path = this.pathData;
-            var pathLength = path.length - 1;
-
-            var px1 = path[0] - dx;
-            var py1 = path[1] - dy;
-
-            ctx.beginPath();
-
-            ctx.moveTo(px1, py1);
-
-            if (!this.closePath) {
-                pathLength -= 2;
-            }
-
-            for (var i = 2; i < pathLength; i += 2) {
-                var px2 = path[i] - dx;
-                var py2 = path[i + 1] - dy;
-                ctx.lineTo(px2, py2);
-            }
-
-            if (this.closePath) {
-                ctx.closePath();
-            }
-
-
             if (this.isFilled) {
-                FillStyleCanvas(ctx, this);
-                ctx.fill();
+                FillPathCanvas(ctx, this, dx, dy);
             }
 
             if (this.isStroked) {
-                LineStyleCanvas(ctx, this);
-                ctx.stroke();
+                StrokePathCanvas(ctx, this, dx, dy);
             }
         }
     }
 
-    const DegToRad$e = Phaser.Math.DegToRad;
+    Object.assign(
+        PathBase.prototype,
+        StrokePathMethods,
+    );
+
+    Phaser.Math.DegToRad;
 
     class Arc extends PathBase {
         constructor(x, y, radiusX, radiusY, startAngle, endAngle, anticlockwise, pie) {
@@ -27126,37 +27526,6 @@
             return this;
         }
 
-        canvasRender(ctx, dx, dy) {
-            ctx.beginPath();
-            var x = this.x - dx,
-                y = this.y - dy,
-                startAngle = DegToRad$e(this.startAngle),
-                endAngle = DegToRad$e(this.endAngle);
-            if (this.pie) {
-                ctx.moveTo(x, y);
-                ctx.lineTo(
-                    x + Math.cos(startAngle) * this.radiusX,
-                    y + Math.sin(startAngle) * this.radiusY
-                );
-            }
-            ctx.ellipse(
-                x, y,
-                this.radiusX, this.radiusY,
-                0,
-                startAngle, endAngle, this.anticlockwise
-            );
-            if (this.pie) {
-                ctx.lineTo(x, y);
-            }
-            if (this.isFilled) {
-                FillStyleCanvas(ctx, this);
-                ctx.fill();
-            }
-            if (this.isStroked) {
-                LineStyleCanvas(ctx, this);
-                ctx.stroke();
-            }
-        }
     }
 
     class Circle extends Arc {
@@ -27986,7 +28355,7 @@
         }
     }
 
-    const GetTint$1 = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+    const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
 
     let Rectangle$2 = class Rectangle extends BaseGeom {
         constructor(x, y, width, height) {
@@ -27998,6 +28367,13 @@
             super();
 
             this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
             this.closePath = true;
 
             this.setTopLeftPosition(x, y);
@@ -28087,13 +28463,15 @@
             this.pathData.push(x0, y0);
 
             super.updateData();
+
+            this.buildStrokePath();
             return this;
         }
 
         webglRender(pipeline, calcMatrix, alpha, dx, dy) {
             if (this.isFilled) {
                 var fillTint = pipeline.fillTint;
-                var fillTintColor = GetTint$1(this.fillColor, this.fillAlpha * alpha);
+                var fillTintColor = GetTint(this.fillColor, this.fillAlpha * alpha);
 
                 fillTint.TL = fillTintColor;
                 fillTint.TR = fillTintColor;
@@ -28115,13 +28493,15 @@
             }
 
             if (this.isStroked) {
-                LineStyleCanvas(ctx, this);
-                ctx.beginPath();
-                ctx.rect(-dx, -dy, this.width, this.height);
-                ctx.stroke();
+                StrokePathCanvas(ctx, this, dx, dy);
             }
         }
     };
+
+    Object.assign(
+        Rectangle$2.prototype,
+        StrokePathMethods,
+    );
 
     const GetValue$3l = Phaser.Utils.Objects.GetValue;
 
@@ -28378,7 +28758,7 @@
         }
     }
 
-    const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
+    const Earcut = Phaser.Geom.Polygon.Earcut;
 
     let Triangle$1 = class Triangle extends BaseGeom {
         constructor(x0, y0, x1, y1, x2, y2) {
@@ -28392,6 +28772,14 @@
             super();
 
             this.pathData = [];
+
+            this.isDashed = false;
+            this.strokePathData = undefined;
+            this.strokePathMask = undefined;
+            this.dashPattern = undefined;
+            this.dashOffset = 0;
+
+            this.pathIndexes = [];
             this.closePath = true;
 
             this.setP0(x0, y0);
@@ -28478,30 +28866,17 @@
             this.pathData.push(this.x1, this.y1);
             this.pathData.push(this.x2, this.y2);
             this.pathData.push(this.x0, this.y0);
+            this.pathIndexes = Earcut(this.pathData);
 
             super.updateData();
+
+            this.buildStrokePath();
             return this;
         }
 
         webglRender(pipeline, calcMatrix, alpha, dx, dy) {
             if (this.isFilled) {
-                var fillTintColor = GetTint(this.fillColor, this.fillAlpha * alpha);
-
-                var x0 = this.x0 - dx;
-                var y0 = this.y0 - dy;
-                var x1 = this.x1 - dx;
-                var y1 = this.y1 - dy;
-                var x2 = this.x2 - dx;
-                var y2 = this.y2 - dy;
-
-                var tx0 = calcMatrix.getX(x0, y0);
-                var ty0 = calcMatrix.getY(x0, y0);
-                var tx1 = calcMatrix.getX(x1, y1);
-                var ty1 = calcMatrix.getY(x1, y1);
-                var tx2 = calcMatrix.getX(x2, y2);
-                var ty2 = calcMatrix.getY(x2, y2);
-
-                pipeline.batchTri(this, tx0, ty0, tx1, ty1, tx2, ty2, 0, 0, 1, 1, fillTintColor, fillTintColor, fillTintColor, 2);
+                FillPathWebGL(pipeline, calcMatrix, this, alpha, dx, dy);
             }
 
             if (this.isStroked) {
@@ -28510,32 +28885,20 @@
         }
 
         canvasRender(ctx, dx, dy) {
-            var x1 = this.x1 - dx;
-            var y1 = this.y1 - dy;
-            var x2 = this.x2 - dx;
-            var y2 = this.y2 - dy;
-            var x3 = this.x3 - dx;
-            var y3 = this.y3 - dy;
-
-            ctx.beginPath();
-
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.lineTo(x3, y3);
-
-            ctx.closePath();
-
             if (this.isFilled) {
-                FillStyleCanvas(ctx, this);
-                ctx.fill();
+                FillPathCanvas(ctx, this, dx, dy);
             }
 
             if (this.isStroked) {
-                LineStyleCanvas(ctx, this);
-                ctx.stroke();
+                StrokePathCanvas(ctx, this, dx, dy);
             }
         }
     };
+
+    Object.assign(
+        Triangle$1.prototype,
+        StrokePathMethods,
+    );
 
     var ShapesUpdateMethods$4 = {
         buildShapes() {
@@ -38603,13 +38966,13 @@
         */
         constructor(config) {
             // Attach get-next-state function
-            var states = GetValue$45(config, 'states', undefined);
+            var states = GetValue$46(config, 'states', undefined);
             if (states) {
                 this.addStates(states);
             }
 
             // Attach extend members
-            var extend = GetValue$45(config, 'extend', undefined);
+            var extend = GetValue$46(config, 'extend', undefined);
             if (extend) {
                 for (var name in extend) {
                     if (!this.hasOwnProperty(name) || this[name] === undefined) {
@@ -38619,8 +38982,8 @@
             }
 
             // Event emitter
-            var eventEmitter = GetValue$45(config, 'eventEmitter', undefined);
-            var EventEmitterClass = GetValue$45(config, 'EventEmitterClass', undefined);
+            var eventEmitter = GetValue$46(config, 'eventEmitter', undefined);
+            var EventEmitterClass = GetValue$46(config, 'EventEmitterClass', undefined);
             this.setEventEmitter(eventEmitter, EventEmitterClass);
 
             this._stateLock = false;
@@ -38636,9 +38999,9 @@
         }
 
         resetFromJSON(o) {
-            this.setEnable(GetValue$45(o, 'enable', true));
-            this.start(GetValue$45(o, 'start', undefined));
-            var init = GetValue$45(o, 'init', undefined);
+            this.setEnable(GetValue$46(o, 'enable', true));
+            this.start(GetValue$46(o, 'start', undefined));
+            var init = GetValue$46(o, 'init', undefined);
             if (init) {
                 init.call(this);
             }
@@ -38868,7 +39231,7 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this._scene = GetValue$45(o, 'scene', undefined);
+            this._scene = GetValue$46(o, 'scene', undefined);
             return this;
         }
 
@@ -58857,11 +59220,11 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         constructor(config) {
             super();
 
-            this.setTable(GetValue$45(config, 'table'));
-            this.setMaxLevel(GetValue$45(config, 'maxLevel'));
+            this.setTable(GetValue$46(config, 'table'));
+            this.setMaxLevel(GetValue$46(config, 'maxLevel'));
 
-            var exp = GetValue$45(config, 'exp', 0);
-            var level = GetValue$45(config, 'level', undefined);
+            var exp = GetValue$46(config, 'exp', 0);
+            var level = GetValue$46(config, 'level', undefined);
             if ((level !== undefined) && !this.checkLevel(level, exp)) {
                 console.error(`Level ${level} and Exp ${exp} are mismatch`);
                 level = undefined;
@@ -59063,7 +59426,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
     }
 
     var RunCommands = function (queue, scope, config) {
-        var reverse = GetValue$45(config, 'reverse', false);
+        var reverse = GetValue$46(config, 'reverse', false);
 
         var retVal;
         if (IsArray(queue[0])) {
@@ -59084,8 +59447,8 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
     };
 
     var RunCommand = function (cmd, scope, config) {
-        var argsConvert = GetValue$45(config, 'argsConvert', undefined);
-        var argsConvertScope = GetValue$45(config, 'argsConvertScope', undefined);
+        var argsConvert = GetValue$46(config, 'argsConvert', undefined);
+        var argsConvertScope = GetValue$46(config, 'argsConvertScope', undefined);
 
         var fnName = cmd[0];
 
@@ -59109,7 +59472,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         if (typeof (fnName) === 'string') {
             fn = scope[fnName];
             if (fn == null) {
-                fn = GetValue$45(scope, fnName, null);
+                fn = GetValue$46(scope, fnName, null);
             }
         } else {
             fn = fnName;
@@ -67146,11 +67509,11 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
 
     var GetValueFromAliasKeys = function (source, key0, key1, key2, defaultValue) {
         if (HasValue(source, key0)) {
-            return GetValue$45(source, key0);
+            return GetValue$46(source, key0);
         } else if (key1 && HasValue(source, key1)) {
-            return GetValue$45(source, key1);
+            return GetValue$46(source, key1);
         } else if (key2 && HasValue(source, key2)) {
-            return GetValue$45(source, key2);
+            return GetValue$46(source, key2);
         } else {
             return defaultValue;
         }
@@ -69476,6 +69839,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
 
         if (key && !this.sizerChildren.hasOwnProperty(key)) {
             this.emit('createpage', key, this);
+            // Invoke 'this.addPage(child, key, align, padding, expand)' under this event
         }
 
         this._currentKey = key;
@@ -76716,7 +77080,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
 
             var items;
             if (!this.isRootTarget) {
-                items = GetValue$45(target, bindingKey);
+                items = GetValue$46(target, bindingKey);
             } else {
                 items = target;
             }
@@ -77736,8 +78100,8 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         },
 
         setValueCallbacks(config) {
-            this.onGetValue = GetValue$45(config, 'onGetValue');
-            this.onSetValue = GetValue$45(config, 'onSetValue');
+            this.onGetValue = GetValue$46(config, 'onGetValue');
+            this.onSetValue = GetValue$46(config, 'onSetValue');
             return this;
         },
 
@@ -77747,7 +78111,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
             }
 
             if (this.bindTargetKey != null) {
-                return GetValue$45(this.bindingTarget, this.bindTargetKey);
+                return GetValue$46(this.bindingTarget, this.bindTargetKey);
             }
 
             if (this.onGetValue) {
@@ -78176,7 +78540,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
             config.title = GetLeafKey(bindingKey);
         }
 
-        config.value = GetValue$45(target, bindingKey, undefined);
+        config.value = GetValue$46(target, bindingKey, undefined);
 
         // Create InputRow
         var inputRowStyle = this.styles.inputRow || {};
