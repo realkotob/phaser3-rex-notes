@@ -3,6 +3,7 @@ import FillPathWebGL from '../../../utils/render/FillPathWebGL.js';
 import StrokePathWebGL from '../../../utils/render/StrokePathWebGL.js';
 import FillStyleCanvas from '../../../utils/render/FillStyleCanvas.js';
 import LineStyleCanvas from '../../../utils/render/LineStyleCanvas.js';
+import StrokePathMethods from '../../../utils/strokepath/StrokePathMethods.js';
 
 const Earcut = Phaser.Geom.Polygon.Earcut;
 
@@ -11,6 +12,13 @@ class PathBase extends BaseGeom {
         super();
 
         this.pathData = [];
+
+        this.isDashed = false;
+        this.strokePathData = undefined;
+        this.strokePathMask = undefined;
+        this.dashPattern = undefined;
+        this.dashOffset = 0;
+
         this.pathIndexes = [];
         this.closePath = false;
     }
@@ -19,6 +27,8 @@ class PathBase extends BaseGeom {
         this.pathIndexes = Earcut(this.pathData);
 
         super.updateData();
+
+        this.buildStrokePath();
         return this;
     }
 
@@ -69,5 +79,10 @@ class PathBase extends BaseGeom {
         }
     }
 }
+
+Object.assign(
+    PathBase.prototype,
+    StrokePathMethods,
+)
 
 export default PathBase;

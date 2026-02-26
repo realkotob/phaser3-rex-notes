@@ -2,6 +2,7 @@ import BaseGeom from '../base/BaseGeom.js';
 import StrokePathWebGL from '../../../utils/render/StrokePathWebGL.js';
 import FillStyleCanvas from '../../../utils/render/FillStyleCanvas.js';
 import LineStyleCanvas from '../../../utils/render/LineStyleCanvas.js';
+import StrokePathMethods from '../../../utils/strokepath/StrokePathMethods.js';
 
 const GetTint = Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha;
 
@@ -15,6 +16,13 @@ class Rectangle extends BaseGeom {
         super();
 
         this.pathData = [];
+
+        this.isDashed = false;
+        this.strokePathData = undefined;
+        this.strokePathMask = undefined;
+        this.dashPattern = undefined;
+        this.dashOffset = 0;
+
         this.closePath = true;
 
         this.setTopLeftPosition(x, y);
@@ -104,6 +112,8 @@ class Rectangle extends BaseGeom {
         this.pathData.push(x0, y0);
 
         super.updateData();
+
+        this.buildStrokePath();
         return this;
     }
 
@@ -139,5 +149,10 @@ class Rectangle extends BaseGeom {
         }
     }
 }
+
+Object.assign(
+    Rectangle.prototype,
+    StrokePathMethods,
+)
 
 export default Rectangle;
