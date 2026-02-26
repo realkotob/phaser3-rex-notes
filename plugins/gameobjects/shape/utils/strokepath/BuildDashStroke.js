@@ -2,8 +2,6 @@ const EPSILON = 1e-6;
 const DEFAULT_SEGMENT_COUNT = 10;
 const DEFAULT_DRAW_RATIO = 0.5;
 
-var GetValue = Phaser.Utils.Objects.GetValue;
-
 var NormalizeDashArray = function (dashPattern) {
     if (!Array.isArray(dashPattern)) {
         return null;
@@ -21,11 +19,13 @@ var NormalizeDashArray = function (dashPattern) {
 };
 
 var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
-    var segmentCount = GetValue(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
-    var drawRatio = GetValue(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+    var {
+        segments = DEFAULT_SEGMENT_COUNT,
+        drawRatio = DEFAULT_DRAW_RATIO
+    } = dashPattern;
 
-    segmentCount = Math.round(Number(segmentCount));
-    if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+    segments = Math.round(segments);
+    if (!isFinite(segments) || (segments <= 0)) {
         return null;
     }
 
@@ -33,7 +33,7 @@ var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
         return null;
     }
 
-    var segmentLength = totalPathLength / segmentCount;
+    var segmentLength = totalPathLength / segments;
     if (!(segmentLength > EPSILON)) {
         return null;
     }
@@ -121,10 +121,14 @@ var BuildDashStroke = function (pathData, config, out) {
         out = {};
     }
 
-    var closePath = GetValue(config, 'closePath', false);
+    var {
+        closePath = false,
+        dashPattern,
+        dashOffset = 0,
+    } = config;
+
     var totalPathLength = GetTotalPathLength(pathData, closePath);
-    var dashPattern = NormalizeDashPattern(GetValue(config, 'dashPattern', undefined), totalPathLength);
-    var dashOffset = GetValue(config, 'dashOffset', 0);
+    dashPattern = NormalizeDashPattern(dashPattern, totalPathLength);
 
     // No valid dash pattern -> keep original stroke path, disable mask.
     if (dashPattern === null) {
