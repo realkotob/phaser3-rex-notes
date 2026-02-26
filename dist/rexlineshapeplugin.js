@@ -251,7 +251,6 @@
             this.isSizeChanged = false;
             this.dirty = false;
 
-
             return this;
         }
 
@@ -433,7 +432,7 @@
         lineStyle: LineStyle
     };
 
-    var GetValue$2 = function (source, key, defaultValue, altSource) {
+    var GetValue$1 = function (source, key, defaultValue, altSource) {
         var isValidSource = source && (typeof source === 'object' || typeof source === 'function');
         var isValidAltSource = altSource && (typeof altSource === 'object' || typeof altSource === 'function');
 
@@ -533,7 +532,7 @@
 
         getData(key, defaultValue) {
             this.enableData();
-            return (key === undefined) ? this.data : GetValue$2(this.data, key, defaultValue);
+            return (key === undefined) ? this.data : GetValue$1(this.data, key, defaultValue);
         },
 
         incData(key, inc, defaultValue) {
@@ -891,8 +890,6 @@
     const DEFAULT_SEGMENT_COUNT = 10;
     const DEFAULT_DRAW_RATIO = 0.5;
 
-    var GetValue$1 = Phaser.Utils.Objects.GetValue;
-
     var NormalizeDashArray = function (dashPattern) {
         if (!Array.isArray(dashPattern)) {
             return null;
@@ -910,11 +907,13 @@
     };
 
     var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
-        var segmentCount = GetValue$1(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
-        var drawRatio = GetValue$1(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+        var {
+            segments = DEFAULT_SEGMENT_COUNT,
+            drawRatio = DEFAULT_DRAW_RATIO
+        } = dashPattern;
 
-        segmentCount = Math.round(Number(segmentCount));
-        if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+        segments = Math.round(segments);
+        if (!isFinite(segments) || (segments <= 0)) {
             return null;
         }
 
@@ -922,7 +921,7 @@
             return null;
         }
 
-        var segmentLength = totalPathLength / segmentCount;
+        var segmentLength = totalPathLength / segments;
         if (!(segmentLength > EPSILON)) {
             return null;
         }
@@ -1010,10 +1009,14 @@
             out = {};
         }
 
-        var closePath = GetValue$1(config, 'closePath', false);
+        var {
+            closePath = false,
+            dashPattern,
+            dashOffset = 0,
+        } = config;
+
         var totalPathLength = GetTotalPathLength(pathData, closePath);
-        var dashPattern = NormalizeDashPattern(GetValue$1(config, 'dashPattern', undefined), totalPathLength);
-        var dashOffset = GetValue$1(config, 'dashOffset', 0);
+        dashPattern = NormalizeDashPattern(dashPattern, totalPathLength);
 
         // No valid dash pattern -> keep original stroke path, disable mask.
         if (dashPattern === null) {
@@ -1120,50 +1123,61 @@
         return out;
     };
 
-    var StrokePathMethods = {
-        setDashPattern(dashPattern, dashOffset = 0) {
-            // dashPattern: [draw, gap] , or {segments, drawRatio}
-            this.dashPattern = dashPattern;
-            this.dashOffset = dashOffset;
-            this.isDashed = !!dashPattern;
-            return this;
-        },
-
-        clearDashPattern() {
-            this.setDashPattern();
-            return this;
-        },
-
-        setDashed(enable) {
-            if (enable === undefined) {
-                enable = true;
-            }
-
-            this.isDashed = enable;
-            return this;
-        },
-
-        // Internal use
-        buildStrokePath() {
-            if (this.isDashed) {
-                var result = BuildDashStroke(this.pathData, {
-                    closePath: this.closePath,
-                    dashPattern: this.dashPattern,
-                    dashOffset: this.dashOffset
-                }, this);
-
-                if (result) {
-                    this.strokePathData = result.strokePathData;
-                    this.strokePathMask = result.strokePathMask;
-                } else {
-                    this.isDashed = false;
-                }
-
-            }
-
-            return this;
-        }
+    var SetDashPattern = function (dashPattern, dashOffset) {
+        // dashPattern: [draw, gap] , or {segments, drawRatio}
+        this.dashPattern = dashPattern;
+        this.dashOffset = dashOffset || 0;
+        this.isDashed = !!dashPattern;
+        return this;
     };
+
+    var ClearDashPattern = function () {
+        this.setDashPattern();
+        return this;
+    };
+
+    var SetDashed = function (enable) {
+        if (enable === undefined) {
+            enable = true;
+        }
+
+        this.isDashed = enable;
+        return this;
+    };
+
+    var BuildStrokePath = function () {
+        if (this.isDashed) {
+            var result = BuildDashStroke(this.pathData, {
+                closePath: this.closePath,
+                dashPattern: this.dashPattern,
+                dashOffset: this.dashOffset
+            }, this);
+
+            if (result) {
+                this.strokePathData = result.strokePathData;
+                this.strokePathMask = result.strokePathMask;
+            } else {
+                this.isDashed = false;
+            }
+
+        }
+
+        return this;
+    };
+
+    var StrokePathConfigMethods = {
+        setDashPattern: SetDashPattern,
+        clearDashPattern: ClearDashPattern,
+        setDashed: SetDashed
+    };
+
+    var Methods$1 = {
+        buildStrokePath: BuildStrokePath
+    };
+    Object.assign(
+        Methods$1,
+        StrokePathConfigMethods,
+    );
 
     const Earcut$1 = Phaser.Geom.Polygon.Earcut;
 
@@ -1215,7 +1229,7 @@
 
     Object.assign(
         PathBase.prototype,
-        StrokePathMethods,
+        Methods$1,
     );
 
     var LineTo = function (x, y, pathData) {
@@ -2095,7 +2109,7 @@
 
     Object.assign(
         Rectangle$2.prototype,
-        StrokePathMethods,
+        Methods$1,
     );
 
     Phaser.Utils.Objects.GetValue;
@@ -2239,7 +2253,7 @@
 
     Object.assign(
         Triangle.prototype,
-        StrokePathMethods,
+        Methods$1,
     );
 
     var DrawQuadraticBezierCurve = function (line) {
@@ -2543,6 +2557,9 @@
             this.bounds = GetBounds.call(this, body.pathData, true);
             SetSizeFromBounds.call(this);
 
+            if (hasPath) {
+                body.setDashPattern(this.dashPattern, this.dashOffset);
+            }
         }
     };
 
@@ -2613,7 +2630,8 @@
         Methods,
         EndPointsMethods,
         ShapesUpdateMethods,
-        SetInteractiveMethods
+        SetInteractiveMethods,
+        StrokePathConfigMethods
     );
 
     class Line extends BaseShapes {
@@ -2621,6 +2639,7 @@
             var lineType, pointRadius;
             var headShape, headSize, headColor, headAlpha, headStrokeWidth, headStrokeColor, headStrokeAlpha;
             var tailShape, tailSize, tailColor, tailAlpha, tailStrokeWidth, tailStrokeColor, tailStrokeAlpha;
+            var dashPattern, dashOffset;
             if (points !== undefined) {
                 if (typeof (points) === 'number') {
                     lineType = alpha;
@@ -2659,6 +2678,8 @@
             tailStrokeColor = config.tailStrokeColor;
             tailStrokeAlpha = config.tailStrokeAlpha;
 
+            dashPattern = config.dashPattern;
+            dashOffset = config.dashOffset;
 
             if (points === undefined) { points = []; }
             if (lineWidth === undefined) { lineWidth = 2; }
@@ -2695,6 +2716,8 @@
             this.setTailSize(tailSize);
             this.setTailFillStyle(tailColor, tailAlpha);
             this.setTailStrokeStyle(tailStrokeWidth, tailStrokeColor, tailStrokeAlpha);
+
+            this.setDashPattern(dashPattern, dashOffset);
 
             this.buildShapes();
 

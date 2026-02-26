@@ -251,7 +251,6 @@
             this.isSizeChanged = false;
             this.dirty = false;
 
-
             return this;
         }
 
@@ -425,7 +424,7 @@
         }
     };
 
-    const GetValue$8 = Phaser.Utils.Objects.GetValue;
+    const GetValue$7 = Phaser.Utils.Objects.GetValue;
 
     class ComponentBase {
         constructor(parent, config) {
@@ -434,7 +433,7 @@
             this.isShutdown = false;
 
             // Event emitter, default is private event emitter
-            this.setEventEmitter(GetValue$8(config, 'eventEmitter', true));
+            this.setEventEmitter(GetValue$7(config, 'eventEmitter', true));
 
             // Register callback of parent destroy event, also see `shutdown` method
             if (this.parent) {
@@ -511,7 +510,7 @@
         EventEmitterMethods
     );
 
-    const GetValue$7 = Phaser.Utils.Objects.GetValue;
+    const GetValue$6 = Phaser.Utils.Objects.GetValue;
 
     class TickTask extends ComponentBase {
         constructor(parent, config) {
@@ -520,7 +519,7 @@
             this._isRunning = false;
             this.isPaused = false;
             this.tickingState = false;
-            this.setTickingMode(GetValue$7(config, 'tickingMode', 1));
+            this.setTickingMode(GetValue$6(config, 'tickingMode', 1));
             // boot() later
         }
 
@@ -624,7 +623,7 @@
         'always': 2
     };
 
-    const GetValue$6 = Phaser.Utils.Objects.GetValue;
+    const GetValue$5 = Phaser.Utils.Objects.GetValue;
 
     class SceneUpdateTickTask extends TickTask {
         constructor(parent, config) {
@@ -635,7 +634,7 @@
 
             // If this.scene is not available, use game's 'step' event
             var defaultEventName = (this.scene) ? 'update' : 'step';
-            this.tickEventName = GetValue$6(config, 'tickEventName', defaultEventName);
+            this.tickEventName = GetValue$5(config, 'tickEventName', defaultEventName);
             this.isSceneTicker = !IsGameUpdateEvent(this.tickEventName);
 
         }
@@ -671,7 +670,7 @@
         return (eventName === 'step') || (eventName === 'poststep');
     };
 
-    const GetValue$5 = Phaser.Utils.Objects.GetValue;
+    const GetValue$4 = Phaser.Utils.Objects.GetValue;
     const Clamp = Phaser.Math.Clamp;
 
     class Timer {
@@ -680,15 +679,15 @@
         }
 
         resetFromJSON(o) {
-            this.state = GetValue$5(o, 'state', IDLE);
-            this.timeScale = GetValue$5(o, 'timeScale', 1);
-            this.delay = GetValue$5(o, 'delay', 0);
-            this.repeat = GetValue$5(o, 'repeat', 0);
-            this.repeatCounter = GetValue$5(o, 'repeatCounter', 0);
-            this.repeatDelay = GetValue$5(o, 'repeatDelay', 0);
-            this.duration = GetValue$5(o, 'duration', 0);
-            this.nowTime = GetValue$5(o, 'nowTime', 0);
-            this.justRestart = GetValue$5(o, 'justRestart', false);
+            this.state = GetValue$4(o, 'state', IDLE);
+            this.timeScale = GetValue$4(o, 'timeScale', 1);
+            this.delay = GetValue$4(o, 'delay', 0);
+            this.repeat = GetValue$4(o, 'repeat', 0);
+            this.repeatCounter = GetValue$4(o, 'repeatCounter', 0);
+            this.repeatDelay = GetValue$4(o, 'repeatDelay', 0);
+            this.duration = GetValue$4(o, 'duration', 0);
+            this.nowTime = GetValue$4(o, 'nowTime', 0);
+            this.justRestart = GetValue$4(o, 'justRestart', false);
         }
 
         toJSON() {
@@ -896,19 +895,19 @@
 
     }
 
-    const GetValue$4 = Phaser.Utils.Objects.GetValue;
+    const GetValue$3 = Phaser.Utils.Objects.GetValue;
     const GetAdvancedValue = Phaser.Utils.Objects.GetAdvancedValue;
     const GetEaseFunction = Phaser.Tweens.Builders.GetEaseFunction;
 
     class EaseValueTaskBase extends TimerTickTask {
         resetFromJSON(o) {
-            this.timer.resetFromJSON(GetValue$4(o, 'timer'));
-            this.setEnable(GetValue$4(o, 'enable', true));
-            this.setTarget(GetValue$4(o, 'target', this.parent));
+            this.timer.resetFromJSON(GetValue$3(o, 'timer'));
+            this.setEnable(GetValue$3(o, 'enable', true));
+            this.setTarget(GetValue$3(o, 'target', this.parent));
             this.setDelay(GetAdvancedValue(o, 'delay', 0));
             this.setDuration(GetAdvancedValue(o, 'duration', 1000));
-            this.setEase(GetValue$4(o, 'ease', 'Linear'));
-            this.setRepeat(GetValue$4(o, 'repeat', 0));
+            this.setEase(GetValue$3(o, 'ease', 'Linear'));
+            this.setRepeat(GetValue$3(o, 'repeat', 0));
 
             return this;
         }
@@ -1028,7 +1027,7 @@
         }
     }
 
-    const GetValue$3 = Phaser.Utils.Objects.GetValue;
+    const GetValue$2 = Phaser.Utils.Objects.GetValue;
     const Linear = Phaser.Math.Linear;
 
     class EaseValueTask extends EaseValueTaskBase {
@@ -1047,16 +1046,16 @@
             }
 
             var target = this.target;
-            this.propertyKey = GetValue$3(config, 'key', 'value');
+            this.propertyKey = GetValue$2(config, 'key', 'value');
             var currentValue = target[this.propertyKey];
-            this.fromValue = GetValue$3(config, 'from', currentValue);
-            this.toValue = GetValue$3(config, 'to', currentValue);
+            this.fromValue = GetValue$2(config, 'from', currentValue);
+            this.toValue = GetValue$2(config, 'to', currentValue);
 
-            this.setEase(GetValue$3(config, 'ease', this.ease));
-            this.setDuration(GetValue$3(config, 'duration', this.duration));
-            this.setRepeat(GetValue$3(config, 'repeat', 0));
-            this.setDelay(GetValue$3(config, 'delay', 0));
-            this.setRepeatDelay(GetValue$3(config, 'repeatDelay', 0));
+            this.setEase(GetValue$2(config, 'ease', this.ease));
+            this.setDuration(GetValue$2(config, 'duration', this.duration));
+            this.setRepeat(GetValue$2(config, 'repeat', 0));
+            this.setDelay(GetValue$2(config, 'delay', 0));
+            this.setRepeatDelay(GetValue$2(config, 'repeatDelay', 0));
 
             this.timer
                 .setDuration(this.duration)
@@ -1144,14 +1143,14 @@
         resume: Resume
     };
 
-    const GetValue$2 = Phaser.Utils.Objects.GetValue;
+    const GetValue$1 = Phaser.Utils.Objects.GetValue;
 
     class Base extends BaseShapes {
         constructor(scene, config) {
-            var x = GetValue$2(config, 'x', 0);
-            var y = GetValue$2(config, 'y', 0);
-            var width = GetValue$2(config, 'width', 64);
-            var height = GetValue$2(config, 'height', 64);
+            var x = GetValue$1(config, 'x', 0);
+            var y = GetValue$1(config, 'y', 0);
+            var width = GetValue$1(config, 'width', 64);
+            var height = GetValue$1(config, 'height', 64);
 
             super(scene, x, y, width, height);
 
@@ -1159,7 +1158,7 @@
 
             this.buildShapes(config);
 
-            if (GetValue$2(config, 'start', true)) {
+            if (GetValue$1(config, 'start', true)) {
                 this.start();
             }
         }
@@ -1172,22 +1171,22 @@
             var defaultValue;
 
             defaultValue = (setDefaults) ? 1000 : this.duration;
-            this.setDuration(GetValue$2(config, 'duration', defaultValue));
+            this.setDuration(GetValue$1(config, 'duration', defaultValue));
 
             defaultValue = (setDefaults) ? 'Linear' : this.ease;
-            this.setEase(GetValue$2(config, 'ease', defaultValue));
+            this.setEase(GetValue$1(config, 'ease', defaultValue));
 
             defaultValue = (setDefaults) ? 0 : this.delay;
-            this.setDelay(GetValue$2(config, 'delay', defaultValue));
+            this.setDelay(GetValue$1(config, 'delay', defaultValue));
 
             defaultValue = (setDefaults) ? 0 : this.repeatDelay;
-            this.setRepeatDelay(GetValue$2(config, 'repeatDelay', defaultValue));
+            this.setRepeatDelay(GetValue$1(config, 'repeatDelay', defaultValue));
 
             defaultValue = (setDefaults) ? 0xffffff : this.color;
-            this.setColor(GetValue$2(config, 'color', defaultValue));
+            this.setColor(GetValue$1(config, 'color', defaultValue));
 
             defaultValue = (setDefaults) ? 0 : this.value;
-            this.setValue(GetValue$2(config, 'value', defaultValue));
+            this.setValue(GetValue$1(config, 'value', defaultValue));
 
             return this;
         }
@@ -1305,7 +1304,7 @@
         lineStyle: LineStyle
     };
 
-    var GetValue$1 = function (source, key, defaultValue, altSource) {
+    var GetValue = function (source, key, defaultValue, altSource) {
         var isValidSource = source && (typeof source === 'object' || typeof source === 'function');
         var isValidAltSource = altSource && (typeof altSource === 'object' || typeof altSource === 'function');
 
@@ -1405,7 +1404,7 @@
 
         getData(key, defaultValue) {
             this.enableData();
-            return (key === undefined) ? this.data : GetValue$1(this.data, key, defaultValue);
+            return (key === undefined) ? this.data : GetValue(this.data, key, defaultValue);
         },
 
         incData(key, inc, defaultValue) {
@@ -1763,8 +1762,6 @@
     const DEFAULT_SEGMENT_COUNT = 10;
     const DEFAULT_DRAW_RATIO = 0.5;
 
-    var GetValue = Phaser.Utils.Objects.GetValue;
-
     var NormalizeDashArray = function (dashPattern) {
         if (!Array.isArray(dashPattern)) {
             return null;
@@ -1782,11 +1779,13 @@
     };
 
     var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
-        var segmentCount = GetValue(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
-        var drawRatio = GetValue(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+        var {
+            segments = DEFAULT_SEGMENT_COUNT,
+            drawRatio = DEFAULT_DRAW_RATIO
+        } = dashPattern;
 
-        segmentCount = Math.round(Number(segmentCount));
-        if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+        segments = Math.round(segments);
+        if (!isFinite(segments) || (segments <= 0)) {
             return null;
         }
 
@@ -1794,7 +1793,7 @@
             return null;
         }
 
-        var segmentLength = totalPathLength / segmentCount;
+        var segmentLength = totalPathLength / segments;
         if (!(segmentLength > EPSILON)) {
             return null;
         }
@@ -1882,10 +1881,14 @@
             out = {};
         }
 
-        var closePath = GetValue(config, 'closePath', false);
+        var {
+            closePath = false,
+            dashPattern,
+            dashOffset = 0,
+        } = config;
+
         var totalPathLength = GetTotalPathLength(pathData, closePath);
-        var dashPattern = NormalizeDashPattern(GetValue(config, 'dashPattern', undefined), totalPathLength);
-        var dashOffset = GetValue(config, 'dashOffset', 0);
+        dashPattern = NormalizeDashPattern(dashPattern, totalPathLength);
 
         // No valid dash pattern -> keep original stroke path, disable mask.
         if (dashPattern === null) {
@@ -1992,50 +1995,61 @@
         return out;
     };
 
-    var StrokePathMethods = {
-        setDashPattern(dashPattern, dashOffset = 0) {
-            // dashPattern: [draw, gap] , or {segments, drawRatio}
-            this.dashPattern = dashPattern;
-            this.dashOffset = dashOffset;
-            this.isDashed = !!dashPattern;
-            return this;
-        },
-
-        clearDashPattern() {
-            this.setDashPattern();
-            return this;
-        },
-
-        setDashed(enable) {
-            if (enable === undefined) {
-                enable = true;
-            }
-
-            this.isDashed = enable;
-            return this;
-        },
-
-        // Internal use
-        buildStrokePath() {
-            if (this.isDashed) {
-                var result = BuildDashStroke(this.pathData, {
-                    closePath: this.closePath,
-                    dashPattern: this.dashPattern,
-                    dashOffset: this.dashOffset
-                }, this);
-
-                if (result) {
-                    this.strokePathData = result.strokePathData;
-                    this.strokePathMask = result.strokePathMask;
-                } else {
-                    this.isDashed = false;
-                }
-
-            }
-
-            return this;
-        }
+    var SetDashPattern = function (dashPattern, dashOffset) {
+        // dashPattern: [draw, gap] , or {segments, drawRatio}
+        this.dashPattern = dashPattern;
+        this.dashOffset = dashOffset || 0;
+        this.isDashed = !!dashPattern;
+        return this;
     };
+
+    var ClearDashPattern = function () {
+        this.setDashPattern();
+        return this;
+    };
+
+    var SetDashed = function (enable) {
+        if (enable === undefined) {
+            enable = true;
+        }
+
+        this.isDashed = enable;
+        return this;
+    };
+
+    var BuildStrokePath = function () {
+        if (this.isDashed) {
+            var result = BuildDashStroke(this.pathData, {
+                closePath: this.closePath,
+                dashPattern: this.dashPattern,
+                dashOffset: this.dashOffset
+            }, this);
+
+            if (result) {
+                this.strokePathData = result.strokePathData;
+                this.strokePathMask = result.strokePathMask;
+            } else {
+                this.isDashed = false;
+            }
+
+        }
+
+        return this;
+    };
+
+    var StrokePathConfigMethods = {
+        setDashPattern: SetDashPattern,
+        clearDashPattern: ClearDashPattern,
+        setDashed: SetDashed
+    };
+
+    var Methods = {
+        buildStrokePath: BuildStrokePath
+    };
+    Object.assign(
+        Methods,
+        StrokePathConfigMethods,
+    );
 
     const Earcut = Phaser.Geom.Polygon.Earcut;
 
@@ -2087,7 +2101,7 @@
 
     Object.assign(
         PathBase.prototype,
-        StrokePathMethods,
+        Methods,
     );
 
     var LineTo = function (x, y, pathData) {

@@ -101,6 +101,10 @@ declare namespace Line {
          * Tail stroke alpha.
          */
         tailStrokeAlpha?: number,
+
+        dashPattern?: number[] | { segments?: number, drawRatio?: number }
+
+        dashOffset?: number,
     }
 }
 

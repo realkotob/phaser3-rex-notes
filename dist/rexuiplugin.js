@@ -320,12 +320,12 @@
     };
 
     const IsPlainObject$X = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$4a = Phaser.Utils.Objects.GetValue;
+    const GetValue$49 = Phaser.Utils.Objects.GetValue;
 
     var SetStretchMode = function(mode) {
         if (IsPlainObject$X(mode)) {
-            this.stretchMode.edge = parseMode(GetValue$4a(mode, 'edge', 0));
-            this.stretchMode.internal = parseMode(GetValue$4a(mode, 'internal', 0));
+            this.stretchMode.edge = parseMode(GetValue$49(mode, 'edge', 0));
+            this.stretchMode.internal = parseMode(GetValue$49(mode, 'internal', 0));
         } else {
             mode = parseMode(mode);
             this.stretchMode.edge = mode;
@@ -378,7 +378,7 @@
         //  NOOP
     };
 
-    var Methods$n = {
+    var Methods$o = {
         _beginDraw: NOOP,
         _drawImage: NOOP,
         _drawTileSprite: NOOP,
@@ -394,66 +394,66 @@
     };
 
     const IsPlainObject$W = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$49 = Phaser.Utils.Objects.GetValue;
+    const GetValue$48 = Phaser.Utils.Objects.GetValue;
 
     var NinePatchBase = function (GOClass, type) {
         class NinePatch extends GOClass {
             constructor(scene, x, y, width, height, key, baseFrame, columns, rows, config) {
                 if (IsPlainObject$W(x)) {
                     config = x;
-                    x = GetValue$49(config, 'x', 0);
-                    y = GetValue$49(config, 'y', 0);
-                    width = GetValue$49(config, 'width', 1);
-                    height = GetValue$49(config, 'height', 1);
-                    key = GetValue$49(config, 'key', undefined);
-                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
-                    columns = GetValue$49(config, 'columns', undefined);
-                    rows = GetValue$49(config, 'rows', undefined);
+                    x = GetValue$48(config, 'x', 0);
+                    y = GetValue$48(config, 'y', 0);
+                    width = GetValue$48(config, 'width', 1);
+                    height = GetValue$48(config, 'height', 1);
+                    key = GetValue$48(config, 'key', undefined);
+                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
+                    columns = GetValue$48(config, 'columns', undefined);
+                    rows = GetValue$48(config, 'rows', undefined);
                 } else if (IsPlainObject$W(width)) {
                     config = width;
-                    width = GetValue$49(config, 'width', 1);
-                    height = GetValue$49(config, 'height', 1);
-                    key = GetValue$49(config, 'key', undefined);
-                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
-                    columns = GetValue$49(config, 'columns', undefined);
-                    rows = GetValue$49(config, 'rows', undefined);
+                    width = GetValue$48(config, 'width', 1);
+                    height = GetValue$48(config, 'height', 1);
+                    key = GetValue$48(config, 'key', undefined);
+                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
+                    columns = GetValue$48(config, 'columns', undefined);
+                    rows = GetValue$48(config, 'rows', undefined);
                 } else if (IsPlainObject$W(key)) {
                     config = key;
-                    key = GetValue$49(config, 'key', undefined);
-                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
-                    columns = GetValue$49(config, 'columns', undefined);
-                    rows = GetValue$49(config, 'rows', undefined);
+                    key = GetValue$48(config, 'key', undefined);
+                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
+                    columns = GetValue$48(config, 'columns', undefined);
+                    rows = GetValue$48(config, 'rows', undefined);
                 } else if (IsPlainObject$W(baseFrame)) {
                     config = baseFrame;
-                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
-                    columns = GetValue$49(config, 'columns', undefined);
-                    rows = GetValue$49(config, 'rows', undefined);
+                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
+                    columns = GetValue$48(config, 'columns', undefined);
+                    rows = GetValue$48(config, 'rows', undefined);
                 } else if (Array.isArray(baseFrame)) {
                     config = rows;
                     rows = columns;
                     columns = baseFrame;
-                    baseFrame = GetValue$49(config, 'baseFrame', undefined);
+                    baseFrame = GetValue$48(config, 'baseFrame', undefined);
                 } else if (IsPlainObject$W(columns)) {
                     config = columns;
-                    columns = GetValue$49(config, 'columns', undefined);
-                    rows = GetValue$49(config, 'rows', undefined);
+                    columns = GetValue$48(config, 'columns', undefined);
+                    rows = GetValue$48(config, 'rows', undefined);
                 }
 
                 if (baseFrame === undefined) {
-                    baseFrame = GetValue$49(config, 'frame', undefined);
+                    baseFrame = GetValue$48(config, 'frame', undefined);
                 }
 
                 if (columns === undefined) {
-                    var leftWidth = GetValue$49(config, 'leftWidth', undefined);
-                    var rightWidth = GetValue$49(config, 'rightWidth', undefined);
+                    var leftWidth = GetValue$48(config, 'leftWidth', undefined);
+                    var rightWidth = GetValue$48(config, 'rightWidth', undefined);
                     if ((leftWidth !== undefined) && (rightWidth !== undefined)) {
                         columns = [leftWidth, undefined, rightWidth];
                     }
                 }
 
                 if (rows === undefined) {
-                    var topHeight = GetValue$49(config, 'topHeight', undefined);
-                    var bottomHeight = GetValue$49(config, 'bottomHeight', undefined);
+                    var topHeight = GetValue$48(config, 'topHeight', undefined);
+                    var bottomHeight = GetValue$48(config, 'bottomHeight', undefined);
                     if ((topHeight !== undefined) && (bottomHeight !== undefined)) {
                         rows = [topHeight, undefined, bottomHeight];
                     }
@@ -472,13 +472,13 @@
                 this._tileSprite = undefined; // Reserved for drawing image
                 this._image = undefined; // Reserved for drawing image
 
-                this.setGetFrameNameCallback(GetValue$49(config, 'getFrameNameCallback', undefined));
-                this.setStretchMode(GetValue$49(config, 'stretchMode', 0));
-                this.setPreserveRatio(GetValue$49(config, 'preserveRatio', true));
+                this.setGetFrameNameCallback(GetValue$48(config, 'getFrameNameCallback', undefined));
+                this.setStretchMode(GetValue$48(config, 'stretchMode', 0));
+                this.setPreserveRatio(GetValue$48(config, 'preserveRatio', true));
 
-                var maxFixedPartScale = GetValue$49(config, 'maxFixedPartScale', 1);
-                var maxFixedPartScaleX = GetValue$49(config, 'maxFixedPartScaleX', maxFixedPartScale);
-                var maxFixedPartScaleY = GetValue$49(config, 'maxFixedPartScaleY', undefined);
+                var maxFixedPartScale = GetValue$48(config, 'maxFixedPartScale', 1);
+                var maxFixedPartScaleX = GetValue$48(config, 'maxFixedPartScaleX', maxFixedPartScale);
+                var maxFixedPartScaleY = GetValue$48(config, 'maxFixedPartScaleY', undefined);
                 this.setMaxFixedPartScale(maxFixedPartScaleX, maxFixedPartScaleY);
 
                 this.setBaseTexture(key, baseFrame, columns, rows);
@@ -536,7 +536,7 @@
 
         Object.assign(
             NinePatch.prototype,
-            Methods$n
+            Methods$o
         );
 
         return NinePatch;
@@ -614,13 +614,13 @@
     let NinePatch$1 = class NinePatch extends NinePatchBase(RenderTexture$2, 'rexNinePatch') {
     };
 
-    var Methods$m = {
+    var Methods$n = {
         _drawImage: DrawImage$2,
         _drawTileSprite: DrawTileSprite$1,
     };
     Object.assign(
         NinePatch$1.prototype,
-        Methods$m
+        Methods$n
     );
 
     var IsNil = function (value) {
@@ -916,12 +916,12 @@
         }
     }
 
-    const GetValue$48 = Phaser.Utils.Objects.GetValue;
+    const GetValue$47 = Phaser.Utils.Objects.GetValue;
 
     var Pools$1 = {};
     let PoolManager$1 = class PoolManager {
         constructor(config) {
-            this.pools = GetValue$48(config, 'pools', Pools$1);
+            this.pools = GetValue$47(config, 'pools', Pools$1);
         }
 
         destroy() {
@@ -991,7 +991,7 @@
 
     const GameObject$4 = Phaser.GameObjects.GameObject;
     const IsPlainObject$V = Phaser.Utils.Objects.IsPlainObject;
-    const GetValue$47 = Phaser.Utils.Objects.GetValue;
+    const GetValue$46 = Phaser.Utils.Objects.GetValue;
     const List$1 = Phaser.Structs.List;
     const StableSort$1 = Phaser.Utils.Array.StableSort;
 
@@ -999,10 +999,10 @@
         constructor(scene, x, y, texture, frame, config) {
             if (IsPlainObject$V(x)) {
                 config = x;
-                x = GetValue$47(config, 'x', 0);
-                y = GetValue$47(config, 'y', 0);
-                texture = GetValue$47(config, 'texture');
-                frame = GetValue$47(config, 'frame');
+                x = GetValue$46(config, 'x', 0);
+                y = GetValue$46(config, 'y', 0);
+                texture = GetValue$46(config, 'texture');
+                frame = GetValue$46(config, 'frame');
             }
 
             if (x === undefined) {
@@ -1019,7 +1019,7 @@
             this.displayListDirty = false;
             this.lastAppendedChildren = [];
 
-            var reuseBob = GetValue$47(config, 'reuseBob', true);
+            var reuseBob = GetValue$46(config, 'reuseBob', true);
             this.poolManager = (reuseBob) ? (new PoolManager$1(config)) : undefined;
 
             this.setTexture(texture, frame);
@@ -1100,7 +1100,7 @@
 
     const ImageTypeName$1 = 'image';
 
-    var GetValue$46 = function (source, key, defaultValue, altSource) {
+    var GetValue$45 = function (source, key, defaultValue, altSource) {
         var isValidSource = source && (typeof source === 'object' || typeof source === 'function');
         var isValidAltSource = altSource && (typeof altSource === 'object' || typeof altSource === 'function');
 
@@ -1216,7 +1216,7 @@
 
         getData(key, defaultValue) {
             this.enableData();
-            return (key === undefined) ? this.data : GetValue$46(this.data, key, defaultValue);
+            return (key === undefined) ? this.data : GetValue$45(this.data, key, defaultValue);
         },
 
         incData(key, inc, defaultValue) {
@@ -1325,7 +1325,7 @@
 
     const DegToRad$i = Phaser.Math.DegToRad;
     const RadToDeg$e = Phaser.Math.RadToDeg;
-    const GetValue$45 = Phaser.Utils.Objects.GetValue;
+    const GetValue$44 = Phaser.Utils.Objects.GetValue;
 
     let RenderBase$1 = class RenderBase extends Base$4 {
 
@@ -1567,11 +1567,11 @@
             }
 
             // ScaleX, ScaleY
-            var width = GetValue$45(o, 'width', undefined);
-            var height = GetValue$45(o, 'height', undefined);
-            var scale = GetValue$45(o, 'scale', undefined);
-            var scaleX = GetValue$45(o, 'scaleX', scale);
-            var scaleY = GetValue$45(o, 'scaleY', scale);
+            var width = GetValue$44(o, 'width', undefined);
+            var height = GetValue$44(o, 'height', undefined);
+            var scale = GetValue$44(o, 'scale', undefined);
+            var scaleX = GetValue$44(o, 'scaleX', scale);
+            var scaleY = GetValue$44(o, 'scaleY', scale);
 
             if (width !== undefined) {
                 if ((height === undefined) && (scaleY === undefined)) {
@@ -1597,7 +1597,7 @@
                 this.setDisplayHeight(o.displayHeight);
             }
 
-            var origin = GetValue$45(o, 'origin', undefined);
+            var origin = GetValue$44(o, 'origin', undefined);
             if (origin !== undefined) {
                 this.setOrigin(origin);
             } else {
@@ -2080,7 +2080,7 @@
 
     };
 
-    var Methods$l = {
+    var Methods$m = {
         _drawImage: DrawImage$1,
         _drawTileSprite: DrawTileSprite,
     };
@@ -2095,7 +2095,7 @@
 
     Object.assign(
         NinePatch.prototype,
-        Methods$l
+        Methods$m
     );
 
     ObjectFactory.register('ninePatch2', function (x, y, width, height, key, columns, rows, config) {
@@ -2446,8 +2446,6 @@
     const DEFAULT_SEGMENT_COUNT = 10;
     const DEFAULT_DRAW_RATIO = 0.5;
 
-    var GetValue$44 = Phaser.Utils.Objects.GetValue;
-
     var NormalizeDashArray = function (dashPattern) {
         if (!Array.isArray(dashPattern)) {
             return null;
@@ -2465,11 +2463,13 @@
     };
 
     var BuildAutoDashPattern = function (dashPattern, totalPathLength) {
-        var segmentCount = GetValue$44(dashPattern, 'segments', DEFAULT_SEGMENT_COUNT);
-        var drawRatio = GetValue$44(dashPattern, 'drawRatio', DEFAULT_DRAW_RATIO);
+        var {
+            segments = DEFAULT_SEGMENT_COUNT,
+            drawRatio = DEFAULT_DRAW_RATIO
+        } = dashPattern;
 
-        segmentCount = Math.round(Number(segmentCount));
-        if (!isFinite(segmentCount) || (segmentCount <= 0)) {
+        segments = Math.round(segments);
+        if (!isFinite(segments) || (segments <= 0)) {
             return null;
         }
 
@@ -2477,7 +2477,7 @@
             return null;
         }
 
-        var segmentLength = totalPathLength / segmentCount;
+        var segmentLength = totalPathLength / segments;
         if (!(segmentLength > EPSILON)) {
             return null;
         }
@@ -2565,10 +2565,14 @@
             out = {};
         }
 
-        var closePath = GetValue$44(config, 'closePath', false);
+        var {
+            closePath = false,
+            dashPattern,
+            dashOffset = 0,
+        } = config;
+
         var totalPathLength = GetTotalPathLength(pathData, closePath);
-        var dashPattern = NormalizeDashPattern(GetValue$44(config, 'dashPattern', undefined), totalPathLength);
-        var dashOffset = GetValue$44(config, 'dashOffset', 0);
+        dashPattern = NormalizeDashPattern(dashPattern, totalPathLength);
 
         // No valid dash pattern -> keep original stroke path, disable mask.
         if (dashPattern === null) {
@@ -2675,50 +2679,61 @@
         return out;
     };
 
-    var StrokePathMethods = {
-        setDashPattern(dashPattern, dashOffset = 0) {
-            // dashPattern: [draw, gap] , or {segments, drawRatio}
-            this.dashPattern = dashPattern;
-            this.dashOffset = dashOffset;
-            this.isDashed = !!dashPattern;
-            return this;
-        },
-
-        clearDashPattern() {
-            this.setDashPattern();
-            return this;
-        },
-
-        setDashed(enable) {
-            if (enable === undefined) {
-                enable = true;
-            }
-
-            this.isDashed = enable;
-            return this;
-        },
-
-        // Internal use
-        buildStrokePath() {
-            if (this.isDashed) {
-                var result = BuildDashStroke(this.pathData, {
-                    closePath: this.closePath,
-                    dashPattern: this.dashPattern,
-                    dashOffset: this.dashOffset
-                }, this);
-
-                if (result) {
-                    this.strokePathData = result.strokePathData;
-                    this.strokePathMask = result.strokePathMask;
-                } else {
-                    this.isDashed = false;
-                }
-
-            }
-
-            return this;
-        }
+    var SetDashPattern = function (dashPattern, dashOffset) {
+        // dashPattern: [draw, gap] , or {segments, drawRatio}
+        this.dashPattern = dashPattern;
+        this.dashOffset = dashOffset || 0;
+        this.isDashed = !!dashPattern;
+        return this;
     };
+
+    var ClearDashPattern = function () {
+        this.setDashPattern();
+        return this;
+    };
+
+    var SetDashed = function (enable) {
+        if (enable === undefined) {
+            enable = true;
+        }
+
+        this.isDashed = enable;
+        return this;
+    };
+
+    var BuildStrokePath = function () {
+        if (this.isDashed) {
+            var result = BuildDashStroke(this.pathData, {
+                closePath: this.closePath,
+                dashPattern: this.dashPattern,
+                dashOffset: this.dashOffset
+            }, this);
+
+            if (result) {
+                this.strokePathData = result.strokePathData;
+                this.strokePathMask = result.strokePathMask;
+            } else {
+                this.isDashed = false;
+            }
+
+        }
+
+        return this;
+    };
+
+    var StrokePathConfigMethods = {
+        setDashPattern: SetDashPattern,
+        clearDashPattern: ClearDashPattern,
+        setDashed: SetDashed
+    };
+
+    var Methods$l = {
+        buildStrokePath: BuildStrokePath
+    };
+    Object.assign(
+        Methods$l,
+        StrokePathConfigMethods,
+    );
 
     const Shape$1 = Phaser.GameObjects.Shape;
 
@@ -2839,7 +2854,7 @@
 
     Object.assign(
         PolygnBase.prototype,
-        StrokePathMethods,
+        Methods$l,
         Render$3
     );
 
@@ -20184,11 +20199,11 @@
         constructor(parent, config) {
             super(parent);
 
-            this.waitCompleteEventName = GetValue$46(config, 'completeEventName', this.waitCompleteEventName);
+            this.waitCompleteEventName = GetValue$45(config, 'completeEventName', this.waitCompleteEventName);
 
-            this.setClickTarget(GetValue$46(config, 'clickTarget', this.scene));
-            this.setClickShortcutKeys(GetValue$46(config, 'clickShortcutKeys', undefined));
-            this.setCameraTarget(GetValue$46(config, 'camera', this.scene.cameras.main));
+            this.setClickTarget(GetValue$45(config, 'clickTarget', this.scene));
+            this.setClickShortcutKeys(GetValue$45(config, 'clickShortcutKeys', undefined));
+            this.setCameraTarget(GetValue$45(config, 'camera', this.scene.cameras.main));
         }
 
         get clickTarget() {
@@ -20997,20 +21012,20 @@
     let BracketParser$1 = class BracketParser {
         constructor(config) {
             // Event emitter
-            this.setEventEmitter(GetValue$46(config, 'eventEmitter', undefined));
+            this.setEventEmitter(GetValue$45(config, 'eventEmitter', undefined));
 
             // Value convert
-            this.setValueConverter(GetValue$46(config, 'valueConvert', true));
+            this.setValueConverter(GetValue$45(config, 'valueConvert', true));
             // Loop
-            this.setLoopEnable(GetValue$46(config, 'loop', false));
+            this.setLoopEnable(GetValue$45(config, 'loop', false));
 
             // Brackets and generate regex
-            this.setMultipleLinesTagEnable(GetValue$46(config, 'multipleLinesTag', false));
-            var delimiters = GetValue$46(config, 'delimiters', '<>');
+            this.setMultipleLinesTagEnable(GetValue$45(config, 'multipleLinesTag', false));
+            var delimiters = GetValue$45(config, 'delimiters', '<>');
             this.setDelimiters(delimiters[0], delimiters[1]);
 
             // Translate tagName callback
-            this.setTranslateTagNameCallback(GetValue$46(config, 'translateTagNameCallback'));
+            this.setTranslateTagNameCallback(GetValue$45(config, 'translateTagNameCallback'));
 
             this.isRunning = false;
             this.isPaused = false;
@@ -21281,10 +21296,10 @@
             super(config);
 
             // Parameters for regex
-            this.setTagExpression(GetValue$46(config, 'regex.tag', undefined));
-            this.setValueExpression(GetValue$46(config, 'regex.value', undefined));
+            this.setTagExpression(GetValue$45(config, 'regex.tag', undefined));
+            this.setValueExpression(GetValue$45(config, 'regex.value', undefined));
             // Brackets and generate regex
-            var delimiters = GetValue$46(config, 'delimiters', '<>');
+            var delimiters = GetValue$45(config, 'delimiters', '<>');
             this.setDelimiters(delimiters[0], delimiters[1]);
         }
 
@@ -27066,7 +27081,6 @@
             this.isSizeChanged = false;
             this.dirty = false;
 
-
             return this;
         }
 
@@ -27355,7 +27369,7 @@
 
     Object.assign(
         PathBase.prototype,
-        StrokePathMethods,
+        Methods$l,
     );
 
     Phaser.Math.DegToRad;
@@ -28500,7 +28514,7 @@
 
     Object.assign(
         Rectangle$2.prototype,
-        StrokePathMethods,
+        Methods$l,
     );
 
     const GetValue$3l = Phaser.Utils.Objects.GetValue;
@@ -28897,7 +28911,7 @@
 
     Object.assign(
         Triangle$1.prototype,
-        StrokePathMethods,
+        Methods$l,
     );
 
     var ShapesUpdateMethods$4 = {
@@ -38966,13 +38980,13 @@
         */
         constructor(config) {
             // Attach get-next-state function
-            var states = GetValue$46(config, 'states', undefined);
+            var states = GetValue$45(config, 'states', undefined);
             if (states) {
                 this.addStates(states);
             }
 
             // Attach extend members
-            var extend = GetValue$46(config, 'extend', undefined);
+            var extend = GetValue$45(config, 'extend', undefined);
             if (extend) {
                 for (var name in extend) {
                     if (!this.hasOwnProperty(name) || this[name] === undefined) {
@@ -38982,8 +38996,8 @@
             }
 
             // Event emitter
-            var eventEmitter = GetValue$46(config, 'eventEmitter', undefined);
-            var EventEmitterClass = GetValue$46(config, 'EventEmitterClass', undefined);
+            var eventEmitter = GetValue$45(config, 'eventEmitter', undefined);
+            var EventEmitterClass = GetValue$45(config, 'EventEmitterClass', undefined);
             this.setEventEmitter(eventEmitter, EventEmitterClass);
 
             this._stateLock = false;
@@ -38999,9 +39013,9 @@
         }
 
         resetFromJSON(o) {
-            this.setEnable(GetValue$46(o, 'enable', true));
-            this.start(GetValue$46(o, 'start', undefined));
-            var init = GetValue$46(o, 'init', undefined);
+            this.setEnable(GetValue$45(o, 'enable', true));
+            this.start(GetValue$45(o, 'start', undefined));
+            var init = GetValue$45(o, 'init', undefined);
             if (init) {
                 init.call(this);
             }
@@ -39231,7 +39245,7 @@
 
         resetFromJSON(o) {
             super.resetFromJSON(o);
-            this._scene = GetValue$46(o, 'scene', undefined);
+            this._scene = GetValue$45(o, 'scene', undefined);
             return this;
         }
 
@@ -59220,11 +59234,11 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         constructor(config) {
             super();
 
-            this.setTable(GetValue$46(config, 'table'));
-            this.setMaxLevel(GetValue$46(config, 'maxLevel'));
+            this.setTable(GetValue$45(config, 'table'));
+            this.setMaxLevel(GetValue$45(config, 'maxLevel'));
 
-            var exp = GetValue$46(config, 'exp', 0);
-            var level = GetValue$46(config, 'level', undefined);
+            var exp = GetValue$45(config, 'exp', 0);
+            var level = GetValue$45(config, 'level', undefined);
             if ((level !== undefined) && !this.checkLevel(level, exp)) {
                 console.error(`Level ${level} and Exp ${exp} are mismatch`);
                 level = undefined;
@@ -59426,7 +59440,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
     }
 
     var RunCommands = function (queue, scope, config) {
-        var reverse = GetValue$46(config, 'reverse', false);
+        var reverse = GetValue$45(config, 'reverse', false);
 
         var retVal;
         if (IsArray(queue[0])) {
@@ -59447,8 +59461,8 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
     };
 
     var RunCommand = function (cmd, scope, config) {
-        var argsConvert = GetValue$46(config, 'argsConvert', undefined);
-        var argsConvertScope = GetValue$46(config, 'argsConvertScope', undefined);
+        var argsConvert = GetValue$45(config, 'argsConvert', undefined);
+        var argsConvertScope = GetValue$45(config, 'argsConvertScope', undefined);
 
         var fnName = cmd[0];
 
@@ -59472,7 +59486,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         if (typeof (fnName) === 'string') {
             fn = scope[fnName];
             if (fn == null) {
-                fn = GetValue$46(scope, fnName, null);
+                fn = GetValue$45(scope, fnName, null);
             }
         } else {
             fn = fnName;
@@ -67509,11 +67523,11 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
 
     var GetValueFromAliasKeys = function (source, key0, key1, key2, defaultValue) {
         if (HasValue(source, key0)) {
-            return GetValue$46(source, key0);
+            return GetValue$45(source, key0);
         } else if (key1 && HasValue(source, key1)) {
-            return GetValue$46(source, key1);
+            return GetValue$45(source, key1);
         } else if (key2 && HasValue(source, key2)) {
-            return GetValue$46(source, key2);
+            return GetValue$45(source, key2);
         } else {
             return defaultValue;
         }
@@ -77080,7 +77094,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
 
             var items;
             if (!this.isRootTarget) {
-                items = GetValue$46(target, bindingKey);
+                items = GetValue$45(target, bindingKey);
             } else {
                 items = target;
             }
@@ -78100,8 +78114,8 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
         },
 
         setValueCallbacks(config) {
-            this.onGetValue = GetValue$46(config, 'onGetValue');
-            this.onSetValue = GetValue$46(config, 'onSetValue');
+            this.onGetValue = GetValue$45(config, 'onGetValue');
+            this.onSetValue = GetValue$45(config, 'onSetValue');
             return this;
         },
 
@@ -78111,7 +78125,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
             }
 
             if (this.bindTargetKey != null) {
-                return GetValue$46(this.bindingTarget, this.bindTargetKey);
+                return GetValue$45(this.bindingTarget, this.bindTargetKey);
             }
 
             if (this.onGetValue) {
@@ -78540,7 +78554,7 @@ scene.load.script('chartjs', 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.
             config.title = GetLeafKey(bindingKey);
         }
 
-        config.value = GetValue$46(target, bindingKey, undefined);
+        config.value = GetValue$45(target, bindingKey, undefined);
 
         // Create InputRow
         var inputRowStyle = this.styles.inputRow || {};
