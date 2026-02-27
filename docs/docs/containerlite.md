@@ -614,7 +614,7 @@ container.enableLayer();
 
 ### Shader effects
 
-Apply post-fx pipeline on [layer of containerLite](containerlite.md#render-layer).
+Apply post-fx pipeline on [layer of containerLite](containerlite.md#renderer-layer).
 
 ### Snapshot
 

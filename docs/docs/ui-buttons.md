@@ -492,7 +492,7 @@ buttons.forEachButtton(callback, scope);
         - `value`: `true`, or `false`.
         - `previousValue` : `true`, or `false`.
         - Also trigger `'button.statechange'` event.
-    - State of a button : Stored in [`buttons.data`](gameobject.md#private-data)
+    - State of a button : Stored in [`buttons.data`](gameobject.md#data)
     - Get states of all buttons :
         ```javascript
         var states = buttons.getAllButtonsState();  // { key: boolean }
