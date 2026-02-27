@@ -24204,6 +24204,7 @@
     class RoundRectangle extends PolygnBase {
         constructor(scene, x, y, width, height, radiusConfig, fillColor, fillAlpha) {
             var strokeColor, strokeAlpha, strokeWidth, shapeType;
+            var dashPattern, dashOffset;
             if (IsPlainObject$7(x)) {
                 var config = x;
 
@@ -24220,6 +24221,9 @@
                 strokeWidth = config.strokeWidth;
 
                 shapeType = config.shape;
+
+                dashPattern = config.dashPattern;
+                dashOffset = config.dashOffset;
             }
 
             if (x === undefined) { x = 0; }
@@ -24252,6 +24256,10 @@
                 strokeWidth = 2;
             }
             this.setStrokeStyle(strokeWidth, strokeColor, strokeAlpha);
+
+            if (dashPattern) {
+                this.setDashPattern(dashPattern, dashOffset);
+            }
 
             this.updateDisplayOrigin();
             this.dirty = true;
