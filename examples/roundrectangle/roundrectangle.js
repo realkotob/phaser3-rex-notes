@@ -112,8 +112,15 @@ class Demo extends Phaser.Scene {
             width: 100, height: 100, radius: 30,
             color: 0x008888, alpha: 0.75,
             strokeColor: 0x33CCCC, strokeAlpha: 1, strokeWidth: 4,
-            dashPattern: [20, 20], 
+            dashPattern: [20, 20],
         })
+            .setInteractive()
+            .on('pointerout', function () {
+                this.setDashed(true);
+            })
+            .on('pointerover', function () {
+                this.setDashed(false);
+            })
     }
 
     update() { }
